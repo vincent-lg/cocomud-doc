@@ -45,7 +45,7 @@ else:
 pages = redmine.wiki_page.filter(project_id=project_id)
 for page in pages:
     # Write the exported file
-    path = os.path.join(doc, page.title + ".txt")
+    path = os.path.join("..", "doc", page.title + ".txt")
     print "Writing", page.title, "in", path, "version", version
     text = page.text.decode("utf-8").encode("latin-1").replace("\r", "")
     file = open(path, "w")
