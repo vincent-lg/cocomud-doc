@@ -10,6 +10,7 @@ Requirements:
 """
 
 import argparse
+from codecs import open
 import os
 import sys
 import urllib2
@@ -47,7 +48,7 @@ for page in pages:
     # Write the exported file
     path = os.path.join("..", "doc", page.title + ".txt")
     print "Writing", page.title, "in", path
-    text = page.text.decode("utf-8").encode("latin-1").replace("\r", "")
-    file = open(path, "w")
+    text = page.text
+    file = open(path, "w", encoding="latin-1")
     file.write(text)
     file.close()
