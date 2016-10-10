@@ -1,86 +1,86 @@
-h1. Aliases in CocoMUD
+h1. Les alias dans CocoMUD
 
-Aliases are a special feature of MUD clients that can be used to shorten commands.  An alias is itself a command, but instead of being sent to the server as is, it is first analyzed by the client, modified and extended if necessary.  Some aliases don't leave the client at all.
+Les alias sont une fonctionnalité des clients MUD afin d'abréger une ou plusieurs commandes. Un alias est en vérité une commande, mais au lieu d'être envoyée au serveur, elle est d'abord analysée par le client, qui peut la modifier et la transmettre au serveur si besoin. Il est même possible de créer des alias qui n'ont de sens que pour le client et ne sont pas envoyés au serveur du tout.
 
-This document will introduce the concept of aliases and explain how to create and manage them.
+Ce document décrit le concept d'alias et explique la façon de les créer et les gérer dans CocoMUD.
 
 {{toc}}
 
-h2. Adding an alias
+h2. Ajouter un alias
 
-You can create an alias using the interface or through the [[#SharpScript-syntax|SharpScript syntax]].  The interface being easier at first glance, it will be explained in first.
+Vous pouvez créer un alias via l'interface ou en utilisant la [[#Syntaxe-du-SharpScript|syntaxe du SharpScript]].  L'interface étant plus intuitive, elle sera décrite en premier.
 
-h3. Through the dialog box
+h3. Création grâce à l'interface
 
-In the menu bar, select Game -> Aliases.  You will find yourself in a dialog listing the current aliases for this world.  Note that aliases are usually created in a world, being shared by characters.  This will change in future versions.
+Dans la barre de menu, sélectionnez Jeu -> Alias.  Vous vous trouverez dans une boîte de dialogue listant les alias existants pour cet univers. Notez que les alias sont généralement propres à un univers et partagés par les personnages de cet univers, ce qui changera dans les prochaines versions.
 
-In this dialog, you can add, edit or remove aliases.  By default, the list of alias will most likely be empty, so you can select *Add* to add one.
+Dans cette boîte de dialogue, vous pouvez ajouter, éditer et supprimer des alias. Par défaut, la liste des alias de cet univers sera probablement vide, vous pouvez cliquer sur *Ajouter* pour en ajouter un.
 
-You will then have to choose an alias name.  This is the command you want to create, basically.  In this example, we're going to create a "tts" alias that enables/disables the text-to-speech in the client.
+Vous devrez ensuite choisir le nom de l'alias que vous voulez créer. C'est le nom de la commande que vous devrez entrer pour exécuter l'alias. Dans cet exemple, nous allons créer un alias "tts" qui permet d'activer ou de désactiver le TTS (text-to-speech).
 
-Enter "tts" in this field.  When you press Tab, you will be presented with a list of actions to be performed when you type this command.  For instance, you may want the "rs" alias to send two commands at the MUD server:  "reload" and "shoot".  In this case, you would select the action named "send one or more commands to the server".
+Entrez donc "tts" dans ce champ de texte, puis appuyez sur la tabulation. Vous vous trouvez ensuite dans une liste d'actions possibles à lier à cet alias. Par exemple, vous pourriez vouloir créer un alias "rs" qui envoie deux commandes au serveur quand exécuté : "reload" et "shoot". Dans ce cas, vous devrez sélectionner l'action "Envoie une ou plusieurs commandes au serveur".
 
-In our example, we'll select "Enable/Disable TTS", since that's what we want to do when we type "tts" in the client.  Tab again and click the *Add action* button.
+Poursuivant notre exemple, nous devrons choisir "Active/Désactive le TTS", puisque c'est ce que devrait faire notre alias "tts" quand exécuté. Sélectionnez donc ce choix et faites tabulation pour cliquer sur le bouton *Ajouter l'action*.
 
-You will be prompted with a dialog asking you to review parameters to this action.  For this action, there is none, so you can press "OK" to add the action.
+Vous vous trouverez dans une nouvelle boîte de dialogue vous demandant des informations supplémentaires. Dans le cas de cette action, il n'y en a aucune, appuyez donc sur "OK" pour ajouter l'action.
 
-The new action has been added.  The cursor will be put in the list of current actions linked to this alias.  You can link an alias with several actions (even with the same action several times, to play several sounds, for instance, although it might not be very useful).
+La nouvelle action a bien été ajoutée. Le curseur se trouvera sur la liste des actions actuellement liées à cet alias. Vous pouvez lier un alias à plusieurs actions, si besoin lier un alias à la même action plusieurs fois (pour par exemple jouer différents sons en même temps, même si cela n'est peut-être pas bien utile).
 
-To summarize the dialog when you add or edit an alias, you will find:
+Pour résumer le contenu de cette boîte de dialogue quand vous ajoutez ou éditez un alias, vous avez:
 
-* The alias' name.
-* A list of actions that can be linked.
-* The button to add this action.
-* A list of actions that are currently linked with this alias.
-* A button to edit the selected line of action.
-* A button to remove this line of action from the alias.
+* Le nom de l'alias.
+* Une liste d'actions que vous pouvez relier à cet alias.
+* Le bouton pour ajouter une de ces actions.
+* La liste des actions liées à cet alias.
+* Un bouton pour éditer la ligne d'action sélectionnée.
+* Un bouton pour supprimer la liste d'action sélectionnée.
 
-You should get accustomed to this dialog, as it will be present for most configuration involving SharpScript.  It is, in fact, the SharpScript editor that do not ask you to edit the configuration file by hand.  You will find more examples in the rest of the documentation.
+Vous devriez vous habituer autant que possible à cette boîte de dialogue, car elle sera présente pour la plupart des fonctionnalités incluant du SharpScript dans CocoMUD. Il s'agit en fait de l'éditeur de SharpScript, qui vous permet d'éditer la configuration avancée du client sans ouvrir le fichier de configuration. Vous verrez bien d'autres exemples dans le reste de la documentation.
 
-To save the alias, don't forget to select "OK" several times, until the dialog box is closed.
+Pour enregistrer cet alias, n'oubliez pas de sélectionner "OK" plusieurs fois pour bien refermer toutes les boîtes de dialogues ouvertes.
 
-If you then type "tts" in the client, you should see (and hear):
+Si dans le client, vous entrez "tts", vous devriez voir :
 
 <pre>
 TTS off.
 </pre>
 
-Type it again to switch it on.  The text-to-speech will be disabled or enabled using this alias.
+Entrez cette commande de nouveau pour l'activer. Le TTS (text-to-speech) sera donc activé ou désactivé en entrant cet alias.
 
-h3. SharpScript syntax
+h3. Syntaxe du SharpScript
 
-You can also add an alias by editing your configuration file and adding it there.  This solution might be preferred by some.
+Vous pouvez aussi ajouter un alias en éditant un fichier de configuration. Cette solution sera peut-être préférée par certains.
 
-Open your configuration file for this world.  You will find it in the "worlds" directory.  Select the directory containing your world, then the "config.set" file.  You can open it with a small editor like notepad.
+Le fichier de configuration lié à cet univers se trouve dans le dossier "worlds", sous-dossier portant le nom de votre univers, fichier "config.set". Vous pouvez ouvrir ce fichier avec un éditeur simple, comme bloc-notes.
 
-To add an alias, use the @#alias@ action with two parameters:
+Pour ajouter un alias, utilisez l'action @#alias@ avec deux paramètres :
 
-* The alias' name.
-* The alias' actions to be performed.
+* Le nom de l'alias.
+* Les actions liées à cet alias.
 
-If you want to create a "tts" alias that will enable or disable the text-to-speech, add in your file the following line:
+Si vous voulez créer un alias "tts" qui active ou désactive le TTS (text-to-speech), écrivez dans votre fichier de configuration :
 
 <pre>
 #alias tts #tts
 </pre>
 
-If you have several actions, don't hesitate to describe the alias on several lines:
+Si vous voulez lier votre alias à plusieurs actions, n'hésitez pas à l'écrire sur plusieurs lignes :
 
 <pre>
 #alias go {
     #play sounds/go.wav
-    #say {Here we go!}
+    #say {C'est parti !}
 }
 </pre>
 
-For an explanation of the SharpScript syntax, refer to [[SharpScript|the section describing SharpScript]].
+Pour une explication plus détaillée de la syntaxe du SharpScript, référez-vous à [[SharpScript|la section consacrée au SharpScript]].
 
-h2. Editing an alias
+h2. Editer un alias
 
-At any time, whether you have created the alias in the dialog box or in the configuration file, you can edit it.  If you have created it in the configuration file, you can modify it through the interface, and vice versa.
+A tout moment, que vous ayez créé l'alias depuis l'interface ou depuis le fichier de configuration, vous pouvez l'éditer. Si vous l'avez créé via le fichier de configuration, vous pouvez l'éditer via l'interface, et réciproquement.
 
-Remember that the configuration is loaded when you select the world, which will most likely happen when you open the software.  If you modify the configuration file, restart the software to take it into account.
+Souvenez-vous : la configuration est chargée quand l'univers est sélectionnée, vraisemblablement à l'ouverture du programme. Si vous modifiez le fichier de configuration, redémarrez le programme pour voir ces modifications.
 
-h2. Removing an alias
+h2. Supprimer un alias
 
-You can remove an alias through the dialog box or by editing the configuration file.  If you do it through the dialog box, remember the changes will be lost if you close the dialog but do not use the "OK" button.
+Vous pouvez retirer un alias depuis l'interface ou le fichier de configuration. Souvenez-vous de bien quitter l'interface en cliquant sur "OK" même après avoir supprimé un alias, sans quoi la modification ne sera pas sauvegardée.
