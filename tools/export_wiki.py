@@ -49,6 +49,7 @@ for page in pages:
     path = os.path.join("..", "doc", page.title + ".txt")
     print "Writing", page.title, "in", path
     text = page.text
+    text = text.replace("\r", "").replace("\n", "\r\n")
     file = open(path, "w", encoding="latin-1")
     file.write(text)
     file.close()
