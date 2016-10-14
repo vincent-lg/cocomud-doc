@@ -50,9 +50,15 @@ Dans l'onglet *accessibilité* se trouvent plusieurs options qui modifient le com
 
 * Descend en bas du contenu quand TAB est pressé : par défaut, quand vous appuyez sur tabulation dans la zone d'édition, CocoMUD déplacera le curseur en bas de la zone de contenu. Ce n'est pas toujours agréable et peut être désactivé ici.
 * Ajoute une nouvelle ligne à la fin du contenu : quand un message est reçu depuis le serveur, une ligne vide sera ajoutée à la fin, ce qui est souvent le comportement désiré. Vous pouvez cependant désactiver cette option si elle vous fait perdre du temps.
-* Activer le curseur intelligent : le curseur intelligent est une fonctionnalité spéciale de CocoMUD. Quand vous vous trouvez dans la zone de contenu et appuyez sur des lettres, le curseur est déplacé dans la zone d'entrée pour vous permettre d'écrire. Si le curseur intelligent est actif, quand vous appuyez sur Entrée, le curseur est déplacé de nouveau dans la zone de contenu. Cela vous permet de rester dans la zone de contenu la plupart du temps, sans avoir besoin de basculer sans cesse de la zone d'entrée à la zone de contenu.
+* Activer le curseur intelligent : le curseur intelligent est une fonctionnalité spéciale de CocoMUD. Quand vous vous trouvez dans la zone de contenu et appuyez sur des lettres, le curseur est déplacé dans la zone d'entrée pour vous permettre d'écrire. Si le curseur intelligent est actif, quand vous appuyez sur Entrée, le curseur est déplacé de nouveau dans la zone de contenu. Vous trouverez plus d'informations dans [[#Le-curseur-intelligent|la section consacrée au curseur intelligent]].
 * Activer le TTS (Text-to-Speech): vous pouvez ici désactiver le TTS (Text-to-Speech). Le TTS permet d'envoyer au lecteur d'écran les messages reçus par le serveur. Parfois, avoir le TTS actif n'est pas utile, et vous pouvez le désactiver ici.
 * Activer le TTS hors de la fenêtre: par défaut, CocoMUD active le TTS même si vous vous trouvez dans une autre fenêtre. Ainsi, vous pourriez être sur le web, ou un livre, ou envoyer un e-mail, quand le lecteur d'écran se met à parler pour vous avertir de messages reçus sur le MUD auquel vous êtes connectés. Cela peut être utile, mais cela peut aussi être problématique, et vous pouvez le désactiver ici.
+
+h2. Le curseur intelligent
+
+Le curseur intelligent est une fonctionnalité mise en place pour diminuer le nombre de fois où vous avez besoin d'appuyer sur la touche de tabulation.  Quand vous vous connectez à un jeu, puis renseignez votre nom d'utilisateur et mot de passe si nécessaire, vous pouvez appuyer sur tabulation pour passer dans la zone de contenu, comme d'habitude.  À partir d'ici, cependant, si vous commencez à écrire, le curseur sera déplacé de nouveau dans la zone d'édition. Quand vous appuyerez sur Entrée pour envoyer la commande au serveur, le curseur sera de nouveau déplacé dans la zone de contenu.
+
+Si vous avez activé l'option pour descendre en bas du contenu quand tab est préssé, le curseur intelligent ne reviendra pas à l'endroit où vous étiez dans la zone de contenu, mais descendra en bas de la fenêtre. Le déplacement du curseur se produit avant la réponse du serveur, cependant, ce qui fait que vous pourriez vous trouver exactement sur la ligne répondue par le serveur au lieu de vous trouver exactement sur la dernière ligne.
 
 h2. Ajouter un univers
 
