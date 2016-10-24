@@ -1,0 +1,8 @@
+h1. What's new in recent builds
+
+This page describes the new features added and changes made to each build.  You can browse through each build using headings.
+
+h2. Build 23
+
+* Add the auto-completion (#34):
+  When the client receives messages from the server, it stores all words by frequency.  When you begin typing a letter or more and then press tab, the client will try to finish the word you were typing.  If you're not satisfied with this choice, you can press tab again and the client will display another result.
