@@ -2,6 +2,10 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 24
+
+* When tabbing to auto-complete, the TTS speaks (and displays) the found result.
+
 h2. Build 23
 
 * Ajout de l'auto-complétion (#34):
