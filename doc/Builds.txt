@@ -1,8 +1,8 @@
-h1. What's new in recent builds
+h1. Quoi de neuf dans les récents builds
 
-This page describes the new features added and changes made to each build.  You can browse through each build using headings.
+Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
 h2. Build 23
 
-* Add the auto-completion (#34):
-  When the client receives messages from the server, it stores all words by frequency.  When you begin typing a letter or more and then press tab, the client will try to finish the word you were typing.  If you're not satisfied with this choice, you can press tab again and the client will display another result.
+* Ajout de l'auto-complétion (#34):
+  Quand le client reçoit des messages du serveur de jeu, tous les mots contenus dans ces messages sont classés par fréquence (du plus fréquent au moins fréquent). Si vous commencez à écrire une lettre ou plusieurs, puis appuyez sur la touche de tabulation, le client cherchera à finir le mot que vous aviez commencé à écrire. Si le résultat trouvé par le client ne vous convient pas, vous pouvez appuyer de nouveau sur la touche de tabulation jusqu'à trouver le mot que vous vouliez entrer.
