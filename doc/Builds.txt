@@ -4,7 +4,7 @@ Cette page décrit les changements apportés par chaque build. Vous pouvez navigue
 
 h2. Build 24
 
-* When tabbing to auto-complete, the TTS speaks (and displays) the found result.
+* Quand un utilisateur appuie sur la touche de tabulation pour l'auto-complétion, le TTS prononce (et affiche) le résultat.
 
 h2. Build 23
 
