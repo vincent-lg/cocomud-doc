@@ -4,6 +4,8 @@ Cette page décrit les changements apportés par chaque build. Vous pouvez navigue
 
 h2. Build 24
 
+* Met à jour la documentation des fonctionnalités basiques (#36).
+* Retire les options obsolètes se basant sur une zone d'entrée qui n'existe plus (#35).
 * Quand un utilisateur appuie sur la touche de tabulation pour l'auto-complétion, le TTS prononce (et affiche) le résultat.
 
 h2. Build 23
