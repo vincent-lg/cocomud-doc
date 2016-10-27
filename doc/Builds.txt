@@ -2,6 +2,12 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 25
+
+* Add the command history
+  The command history remembers all commands you have entered.  You can use it by pressing CTRL + up or down to go up or down into your list of commands.  Alternatively, you can use command history in lock mode, by pressing Escape, then navigating in the history using the arrow keys.  You can leave lock mode by pressing Escape again.
+* One can now paste several lines to send multiple commands (#27).
+
 h2. Build 24
 
 * Update the documentation of the basic features (#36).

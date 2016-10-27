@@ -22,7 +22,10 @@ When you press RETURN on a world, CocoMUD tries to connect to the server.  If ev
 
 h2. The command history
 
-This feature is not available for the time being.
+Whenever you press RETURN to send a command, it is added into the command history.  You can browse through the command history to see what has been send, send a command again or even modify a command you have entered.  There are two ways to use the command history:
+
+* Using the CTRL + Up and Down arrow keys, you can browse through the command history.  If you press CTRL + up arrow key, you will be prompted with the command you entered previously.  You can press RETURN or modify this command at will.  Press CTRL + down arrow key to go down into your command history.
+* Using the lock mode.  To enter into lock mode, press Escape.  You can now navigate through the history using the arrow keys.  You have to leave the lock mode to see the result of your commands, by pressing Escape again.
 
 h2. Tab-completion
 
