@@ -22,7 +22,10 @@ Quand vous appuyez sur Entrée après avoir sélectionné un univers, CocoMUD essaye
 
 h2. Historique des commandes
 
-Cette fonctionnalité n'est plus disponible pour l'heure.
+Quand vous appuyez sur Entrée pour envoyer une commande, elle est ajoutée à votre historique de commandes. Vous pouvez naviguer dans cette historique de commande pour envoyer de nouveau une commande ou bien la modifier si nécessaire. Il existe deux façons d'utiliser l'historique des commandes :
+
+* En utilisant CTRL + les flèches haut ou bas, vous pouvez naviguer dans l'historique des commandes. Si vous appuyez sur CTRL + flèche haut, le client affichera la commande que vous venez d'entrer. Vous pouvez l'envoyer de nouveau en appuyant sur Entrée, ou bien la modifier avant envoi si nécessaire. Appuyez sur CTRL + flèche bas pour descendre dans votre historique de commandes.
+* En utilisant le mode verrouillé. Pour entrer dans ce mode, appuyez sur échappe. Vous pourrez maintenant naviguer avec les flèches haut et bas pour parcourir l'historique des commandes. Pour repasser en mode non-verrouillé et lire le résultats de vos commandes, appuyez sur échappe de nouveau.
 
 h2. Auto-complétion
 

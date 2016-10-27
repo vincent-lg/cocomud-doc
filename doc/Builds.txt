@@ -2,6 +2,12 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 25
+
+* Ajout de l'historique des commandes
+  L'historique des commandes se souvient de chaque commande que vous avez entrée. Vous pouvez l'utiliser en appuyant sur CTRL + flèche haut ou bas pour naviguer dans vos commandes entrées. Vous pouvez aussi utiliser l'historique de commande en mode verrouillé. Pour ce faire, appuyez sur échappe. Vous pourrez ensuite naviguer dans l'historique en utilisant les flèches. Repassez en mode non-verrouillé en appuyant sur échappe de nouveau.
+* Vous pouvez maintenant coller plusieurs lignes dans le client pour envoyer plusieurs commandes d'un coup (#27).
+
 h2. Build 24
 
 * Met à jour la documentation des fonctionnalités basiques (#36).
