@@ -4,7 +4,7 @@ Cette page décrit les changements apportés par chaque build. Vous pouvez navigue
 
 h2. Build 26
 
-* When outside of the window, if messages are received, the window title changes to let the user know notifications are waiting on the client (#20).
+* Quand l'utilisateur ne se trouve pas dans la fenêtre du client, si des messages sont reçus, le titre de la fenêtre change pour avertir l'utilisateur que des notifications l'attendent sur le client.
 
 h2. Build 25
 
