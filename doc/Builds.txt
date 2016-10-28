@@ -2,6 +2,10 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 26
+
+* When outside of the window, if messages are received, the window title changes to let the user know notifications are waiting on the client (#20).
+
 h2. Build 25
 
 * Add the command history
