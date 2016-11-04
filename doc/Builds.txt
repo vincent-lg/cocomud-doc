@@ -4,12 +4,12 @@ Cette page décrit les changements apportés par chaque build. Vous pouvez navigue
 
 h2. Build 27
 
-* Open multiple worlds in tabs (#42):
-  It is now possible to open several worlds in tabs, or even a world several times in tabs.  In the file menu are three new options, to create a new world, open a world in a different tab and close the current tab.  One can navigate between tabs using Ctrl + tab or Ctrl + Shift + tab as usual.
-  The feature to change the window's title when unread messages are received (#20) now takes into account the selected tab only.
-* New menus to disconnect and reconnect from a world (#43):
-  A new menu item in the menu bar, named connection, has been added.  In it are options to disconnect from the current world, and reconnect to it.
-* The client doesn't lag if connection to a distant server takes some time (#21).
+* Permet d'ouvrir plusieurs univers dans des onglets (#42) :
+  Il est maintenant possible d'ouvrir plusieurs univers dans des onglets séparés, ou même d'ouvrir le même univers plusieurs fois. Dans le menu fichier se trouve à présent trois options pour créer un univers, ouvrir un univers dans un onglet différent et fermer l'onglet actuel. Pour naviguer entre les onglets, utilisez Ctrl + tab et Ctrl + Shift + tab comme d'habitude.
+  La fonctionnalité permettant de changer le titre de la fenêtre si des messages non lus sont reçus par le client (#20) prend maintenant en compte l'onglet sélectionné uniquement.
+* Ajout de menus pour se déconnecter et se reconnecter à un univers (#43):
+  Un nouveau menu dans la barre de menu, appelé connexion, permet de se déconnecter ou se reconnecter à l'univers actuellement sélectionné.
+* Le client ne lag plus quand il essaye de se connecter à un serveur distant (#21).
 
 h2. Build 26
 
