@@ -2,6 +2,15 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 27
+
+* Open multiple worlds in tabs (#42):
+  It is now possible to open several worlds in tabs, or even a world several times in tabs.  In the file menu are three new options, to create a new world, open a world in a different tab and close the current tab.  One can navigate between tabs using Ctrl + tab or Ctrl + Shift + tab as usual.
+  The feature to change the window's title when unread messages are received (#20) now takes into account the selected tab only.
+* New menus to disconnect and reconnect from a world (#43):
+  A new menu item in the menu bar, named connection, has been added.  In it are options to disconnect from the current world, and reconnect to it.
+* The client doesn't lag if connection to a distant server takes some time (#21).
+
 h2. Build 26
 
 * When outside of the window, if messages are received, the window title changes to let the user know notifications are waiting on the client (#20).
