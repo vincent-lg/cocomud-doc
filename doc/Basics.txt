@@ -33,6 +33,8 @@ CocoMUD propose une fonctionnalité d'auto-complétion. Quand vous commencez à écr
 
 Quand vous appuyez sur la touche de tabulation, le mot est écrit juste avant le curseur. Vous pouvez continuer à écrire votre commande ou l'envoyer telle qu'elle. Si le mot trouvé par l'auto-complétion n'est pas le bon, vous pouvez de nouveau appuyer sur la touche de tabulation : le client cherchera un autre mot en se basant sur les premières lettres que vous aviez écrites. Vous pouvez appuyer sur la touche de tabulation autant de fois que nécessaire pour trouver votre mot : la sélection se base sur la fréquence (le plus souvent un mot apparaît, les meilleures chances il a d'être choisi pour l'auto-complétion). Si le client ne trouve plus de résultat, il vous remettra les lettres initialement écrites et vous devrez finir le mot vous-même.
 
+{{include(CommandStacking)}}
+
 h2. La barre de menu
 
 Certaines options sont accessibles dans la barre de menu. Dans Fichier -> Options, vous verrez plusieurs options que vous pouvez modifier pour rendre votre expérience avec CocoMUD plus agréable.
@@ -42,6 +44,8 @@ h2. Les options
 Quand vous sélectionnez Fichier -> Options dans la barre de menu, ou entrez _Alt + Entrée_, vous devriez voir une boîte de dialogue avec plusieurs onglets.  L'onglet sélectionné par défaut est *général*. Pour l'heure, il ne contient que le réglage de la langue de CocoMUD. Le client devrait être dans la langue de votre système, si une traduction existe dans le logiciel, ou bien anglais si ce n'est pas le cas.
 
 Dans l'onglet *affichage*, vous pouvez sélectionner un encodage différent. Par défaut, CocoMUD utilise un encodage Latin, mais vous pouvez le changer si besoin est.
+
+Dans l'onglet *commandes*, vous pouvez modifier le caractère utilisé pour l'envoi de commandes multiples (command stacking en anglais).
 
 Dans l'onglet *accessibilité* se trouvent plusieurs options qui modifient le comportement d'accessibilité du client. Les voici plus en détail :
 
