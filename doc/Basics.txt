@@ -33,6 +33,8 @@ CocoMUD client supports tab-completion.  If you start typing a word, you can pre
 
 When you press tab, the word will be written under the cursor.  You can continue typing or press RETURN to send the full command.  If you press tab again, the client will look for another possibility beginning with the same letters you had initially entered.  You can press tab as many times as you want, the client will write suggestions from most frequent to less frequent.  If the client can't find anything, it will just enter your initial letters and you'll have to type the rest of the word.
 
+{{include(CommandStacking)}}
+
 h2. The menu bar
 
 Some options are accessible through the menu bar.  In File -> Preferences, you will see some settings that you can modify to have your experience with CocoMUD more comfortable.
@@ -42,6 +44,8 @@ h2. The preferences
 When you select File -> Preferences in the menu bar, or press _Alt + Enter_, you should see a dialog with several tabs.  The first tab (selected by default) is *general*.  It only contains the language selection for the time being.  CocoMUD should be in the language of your system, if it is translated in this language.  Otherwise, English should be selected.
 
 In the *display* tab, you can select a different encoding.  By default, CocoMUD is set to use a Latin encoding, but you can change it.  If you connect to only-English MUDs, you may not need this setting.
+
+In the *input*  tab, you can change the delimiter for [[#command-stacking|command stacking]].
 
 In the *accessibility* tab are several options that affect accessibility.  Here they are, in more details:
 
