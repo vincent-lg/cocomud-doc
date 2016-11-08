@@ -2,6 +2,10 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 29
+
+* Attempt to fix a bug using the @#play@ function while several worlds are opened (#48).
+
 h2. Build 28
 
 * Add [[CommandStacking|command stacking]], to send multiple commands at once, using the semicolon or another character (#32).
