@@ -4,7 +4,7 @@ Cette page décrit les changements apportés par chaque build. Vous pouvez navigue
 
 h2. Build 29
 
-* Attempt to fix a bug using the @#play@ function while several worlds are opened (#48).
+* Corrige un bug des triggers sonores quand plusieurs univers sont ouverts en même temps (#48).
 
 h2. Build 28
 
