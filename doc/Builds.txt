@@ -2,6 +2,10 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 29
+
+* Attempt to fix a bug using the @#play@ function while several worlds are opened (#48).
+
 h2. Build 28
 
 * Ajout des [[CommandStacking|commandes multiples]] (command stacking en anglais), pour envoyer plusieurs commandes à la fois, en utilisant le point virgule ou un autre caractère (#32).
