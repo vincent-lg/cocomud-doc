@@ -4,7 +4,7 @@ Cette page décrit les changements apportés par chaque build. Vous pouvez navigue
 
 h2. Build 30
 
-* Add a logging system to debug events.
+* Ajout d'un système de logging pour débug les évènements automatiques.
 
 h2. Build 29
 
