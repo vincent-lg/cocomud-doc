@@ -2,6 +2,10 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 30
+
+* Add a logging system to debug events.
+
 h2. Build 29
 
 * Corrige un bug des triggers sonores quand plusieurs univers sont ouverts en même temps (#48).
