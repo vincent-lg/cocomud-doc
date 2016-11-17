@@ -2,6 +2,11 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 31
+
+* Improve the debug logging system.
+* Restructure the catalogs for translation (#41).
+
 h2. Build 30
 
 * Ajout d'un système de logging pour débug les évènements automatiques.
