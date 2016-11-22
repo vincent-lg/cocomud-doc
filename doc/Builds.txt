@@ -2,6 +2,13 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 32
+
+* Ajoute une syntaxe pour écrire des variables en SharpScript.
+  La syntaxe est @$variable@.  Les variables ont été ajoutées aux alias (#45) et aux triggers (#44).
+* Corrige un bug mineur dans les commandes multiples.
+* Ajoute les triggers muets, très utiles pour sonoriser un prompt.
+
 h2. Build 31
 
 * Améliore le système de logging.
