@@ -2,6 +2,13 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 33
+
+* Les alias/macros/triggers décrits sur plusieurs lignes marchent de nouveau (#63).
+* On peut maintenant écrire des instructions SharpScript dans des macros (#59).
+* Les variables sont à présent expliquées dans [[Alias|la documentation des alias]].
+* Le titre de la fenêtre quand plusieurs onglets sont ouverts est mis à jour correctement (#51).
+
 h2. Build 32
 
 * Ajoute une syntaxe pour écrire des variables en SharpScript.
