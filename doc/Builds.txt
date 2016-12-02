@@ -2,6 +2,13 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 33
+
+* Multiline aliases/macros/triggers do not bug anymore (#63).
+* One can now enter SharpScript in macros (#59).
+* Variables are now described in the [[Alias|alias]] documentation.
+* The title of the window with several open tabs is now accurately updated (#51).
+
 h2. Build 32
 
 * Add a syntax to write variables in SharpScript:

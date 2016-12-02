@@ -26,14 +26,16 @@ You will be prompted with a dialog asking you to review parameters to this actio
 
 The new action has been added.  The cursor will be put in the list of current actions linked to this alias.  You can link an alias with several actions (even with the same action several times, to play several sounds, for instance, although it might not be very useful).
 
+The list of current actions may be a bit scary.  It contains summarized information.  If you have selected the "Enable/Disable TTS", it will create the action @#tts@.  That's a shortcut, a notation used by the SharpScript engine, and you don't need to worry much about it, unless you want to play with the scripting system in CocoMUD.
+
 To summarize the dialog when you add or edit an alias, you will find:
 
-* The alias' name.
-* A list of actions that can be linked.
+* The alias' name (a text edit).
+* A list of actions that are currently linked with this alias.  If the alias isn't linked with any action, the list won't appear.
+* A button to edit the selected line of action.  If the alias isn't linked with any action, the button won't appear.
+* A button to remove this line of action from the alias.  If the alias isn't linked with any action, the button won't appear.
+* A list of actions that can be linked to this alias.
 * The button to add this action.
-* A list of actions that are currently linked with this alias.
-* A button to edit the selected line of action.
-* A button to remove this line of action from the alias.
 
 You should get accustomed to this dialog, as it will be present for most configuration involving SharpScript.  It is, in fact, the SharpScript editor that do not ask you to edit the configuration file by hand.  You will find more examples in the rest of the documentation.
 
@@ -84,3 +86,66 @@ Remember that the configuration is loaded when you select the world, which will 
 h2. Removing an alias
 
 You can remove an alias through the dialog box or by editing the configuration file.  If you do it through the dialog box, remember the changes will be lost if you close the dialog but do not use the "OK" button.
+
+h2. Aliases with variables
+
+CocoMUD provides a system of variables.  They can be used anywhere in your script or in any feature using the SharpScript engine (aliases, macros, triggers...).
+
+Variables can be more than useful for aliases to create shortcut commands with unknown parameters.  For instance:
+
+bq. I want to create an alias that begins by @=@.  Everything after the @=@ sign should be sent to the server using the @say@ command.  If I type @=hello !@ in the client, then it should send @say hello !@ to the MUD.
+
+For this case study, we will use variables.  The alias begins by an equal sign (@=@), but we don't know what's after that.  How to handle that context?  We will use the @*@ sign in our alias name, which means "about everything, as long as necessary".
+
+So if we enter @=*@ as an alias name, CocoMUD will understand it as meaning "everything starting with an equal sign".
+
+But we don't only need for the alias to be activated.  We need for it to send a command with what has been entered after the equal sign.  Here is the process step by step, explained below:
+
+* In the menu bar, select *game* then *aliases*.
+* Click the *add* button to add a new alias.
+* In the alias field, enter @=*@ (an equal sign and the asterisk sign).
+* Tab to move to the list of actions that can be linked to this alias.
+* Select "send one ore more commands to the server", tab and click the *add action* button.
+* You'll be asked to configure this action.  Tab until you hear "Commands to be sent to the server".  In this field, type @say $1@ (the @$1@ will be explained below).
+* Select *OK*.  The action has been linked, and you should see it in this field:
+<pre>
+#send {say $1}
+</pre>
+What it means will be detailed below.
+* Tab until you find the *OK* button and click on it.  You will find yourself in the list of aliases, press *OK* again.
+
+If you type in the client:
+
+<pre>
+=hello !
+</pre>
+
+The alias will send "say hello !" to the server.
+
+What happens is pretty simple:
+
+* You enter "=something".
+* CocoMUD identifies a matching alias.
+* The "something" part (after the equal sign) will be captured and put in a variable, called @$1@.
+* When you send "say $1" to the server, CocoMUD replaces it @$1@ with the "something" part.
+
+The variable is called @$1@ because you can create a lot of variables.  If you enter the alias:
+
+<pre>
+-*+*
+</pre>
+
+You will be able to send:
+
+<pre>
+remove $1
+wear $2
+</pre>
+
+And then type:
+
+<pre>
+-cloak+armor
+</pre>
+
+Variables in SharpScript are described more completely in [[SharpScript|the section describing SharpScript]].
