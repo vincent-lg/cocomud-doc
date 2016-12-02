@@ -97,7 +97,7 @@ bq. Je voudrais créer un alias qui commence par @=@. Ce qui vient après le signe
 
 Dans ce cas, on devra utiliser des variables. L'alias doit commencer par un signe égal (@=@), mais on ne sait pas ce qui vient après. Comment l'indiquer au client ? On va utiliser le signe @*@ dans notre alias qui veut dire "n'importe quoi, de n'importe quelle longueur".
 
-Si on entre *=*@ comme alias, CocoMUD l'interprétera comme "n'importe quelle commande commençant par un signe égal".
+Si on entre @=*@ comme alias, CocoMUD l'interprétera comme "n'importe quelle commande commençant par un signe égal".
 
 Cependant, on n'a pas seulement besoin de déclencher cet alias. On doit récupérer ce que l'utilisateur a entré après le signe égal. Voici le détail de la création de cet alias, pas à pas, en utilisant l'interface :
 
