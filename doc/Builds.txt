@@ -2,6 +2,14 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 34
+
+* Ajoute un système de canaux (#50):
+Les canaux sont utiles pour surveiller plusieurs évènements. Ils sont surtout utiles pour conserver les messages de canaux de communication sur un jeu. Grâce au système de triggers, il est possible d'envoyer les messages à un canal spécifique. Grâce aux macros ou alias, il est possible d'afficher cette liste dans une boîte de dialogue séparée.
+* Dans les préférences, onglet *accessibilité*, il est maintenant possible de configurer l'interruption du TTS si de nouveaux messages arrivent pendant la lecture (#40).
+* Quand les options du TTS sont modifiées dans les préférences, les changements sont appliqués instantanément (#55).
+* Corrige quelques bugs dans le moteur SharpScript.
+
 h2. Build 33
 
 * Les alias/macros/triggers décrits sur plusieurs lignes marchent de nouveau (#63).
