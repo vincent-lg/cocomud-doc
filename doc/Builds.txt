@@ -2,6 +2,14 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 34
+
+* Add the system of channels (#50):
+Channels can keep track of a list of events.  They are particularly useful to log communication channels on the MUD.  Through the trigger system, users can feed a channel.  Through a macro or alias, this channel can be displayed in a list, in a separate dialog box.
+* In the preferences dialog, *accessibility* tab, users now can set whether the TTS is interrupted or not (#40).
+* When changing the TTS options in the preferences, the options are taken into account immediately (#55).
+* Fix some bugs in the SharpScript engine.
+
 h2. Build 33
 
 * Multiline aliases/macros/triggers do not bug anymore (#63).
