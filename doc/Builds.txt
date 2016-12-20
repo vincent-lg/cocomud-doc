@@ -2,6 +2,11 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 35
+
+* Ajoute la fonctionnalité pour importer un univers depuis un fichier, ou depuis Internet (#60).
+  Dans le menu *fichier*, il y a un nouveau menu "importer un univers". Dedans se trouve deux sous-menus : le premier sert à importer un univers depuis un fichier, le second depuis Internet. Ce dernier regardera les univers configurés sur le site web du projet. Vous pourrez télécharger l'un d'entre eux depuis cette interface.
+
 h2. Build 34
 
 * Ajoute un système de canaux (#50):
