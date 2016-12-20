@@ -2,6 +2,11 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 35
+
+* Add the feature to import a world, from a file or online (#60).
+  There is now a new menu, "import", in the menu bar -> *file* menu.  In it are two options, one to import a world from a file, the other to import one online.  The second option tries to find the worlds already configured on the project's website.  One can download and install them directly.
+
 h2. Build 34
 
 * Add the system of channels (#50):
