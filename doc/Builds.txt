@@ -2,6 +2,13 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 36
+
+* Ajoute les triggers marqués (#30).
+  Une marque peut être placée sur un trigger, ce qui déplace le curseur automatiquement sur la ligne reçue ayant déclenché le trigger. Cela peut être utile quand vous recevez un nouveau message, si un trigger y est associé. Cela peut aussi être utile pendant l'exploration, pour déplacer directement le curseur sur la liste des sorties, par exemple.
+* Met à jour la fenêtre visuellement pour essayer de la rendre plus agréable.
+* Ajoute la gestion des couleurs ANSI dans le client (#65).
+
 h2. Build 35
 
 * Ajoute la fonctionnalité pour importer un univers depuis un fichier, ou depuis Internet (#60).
