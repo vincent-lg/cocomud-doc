@@ -2,6 +2,13 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 36
+
+* Add the marked trigger (#30).
+  Marked triggers can ask to move the cursor to a specific line.  For instance, if one receives a message, the cursor can be moved right on this message.  This can also help to explore, to move the cursor on the list of exits, for instance.
+* Update the client's design and window.
+* Add support for handling colors (#65).
+
 h2. Build 35
 
 * Add the feature to import a world, from a file or online (#60).
