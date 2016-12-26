@@ -2,6 +2,17 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 37
+
+h2. Build 37
+
+* Ajout une fonctionnalité pour créer des personnages (#61) :
+  On peut désormais configurer un univers avec plusieurs personnages. Un personnage possède des informations de configuration plus spécifiques (comme des alias, macros ou triggers qui lui sont propres), mais il possède surtout des informations de connexion (un nom d'utilisateur et mot de passe, par exemple). Ces informations sont conservées dans un fichier crypté.
+  Pour créer un nouveau personnage, dans la boîte de dialogue de connexion, sélectionnez l'univers auquel vous souhaitez vous connecer, puis faites Tab pour voir la liste des personnages associés à cet univers. Par défaut, il ne devrait y en avoir qu'un seul, appelé "aucun". Validez sur ce personnage (ou cliquez sur le bouton *se connecter*). CocoMUD vous connecte à un univers sans personnage. Pour créer un personnage, rendez-vous dans la barre de menu, *jeu* -> *Changer les options de ce personnage...*. Précisez dans cette boîte de dialogue le nom du personnage. Vous pouvez préciser les commandes à entrer avant le mot de passe (généralement un nom d'utilisateur), le mot de passe-même et les commandes à entrer après le mot de passe (si il y en). Cliquez sur *OK* pour sauvegarder le personnage dans un fichier crypté. À la prochaine connexion, vous verrez ce personnage dans la liste (choisissez l'univers, faites Tab pour vous retrouver dans la liste des personnages associées à cet univers). Les commandes que vous avez entrées dans la boîte de dialogue seront envoyées au serveur de jeu dès l'ouverture de la session, pour vous connecter plus rapidement. Elles seront de nouveau envoyées si vous souhaitez vous reconnecter.
+* Corrige un bug empêchant de créer un univers (#66).
+* Ajout de la boîte de dialogue en cas de crash :
+  Cette boîte de dialogue apparaît quand une erreur imprévue survient dans le client. Elle vous donne plus d'informations sur l'origine du bug, ainsi que des explications sur la façon de rapporter ce bug à l'équipe des développeurs.
+
 h2. Build 36
 
 * Ajoute les triggers marqués (#30).
