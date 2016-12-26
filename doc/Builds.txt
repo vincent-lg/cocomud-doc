@@ -2,6 +2,15 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 37
+
+* Add the ability to configure characters in worlds (#61):
+  This feature allows to create several characters per world.  Characters can contain more specific configuration (like aliases, macros or triggers), but also login information.  A character will store the information in an encrypted file, to login more quickly.
+  To create a character, choose a world from the list in the connection area, then press tab and select "any" (the default choice).  Press RETURN or click the *connect* button.  You have opened a random character associated with this world.  To now save it, go to the menu bar, *game* -> *Change this character's setting...*.  In this dialog, enter a name for the newly-created character, a username (or a list of commands to be sent before the password), the password itself and then a list of commands to be sent after the password (if any).  Click *OK* to save in an encrypted file.  The next time you connect, you should see this character in the available list (select the world, then press Tab to find this character).  CocoMUD will enter the commands you have provided, and will do so if you ask to be reconnected as well.
+* Fix a bug when trying to create a new world (#66).
+* Add the crash report dialog:
+  This dialog appears when an error occurs during a given task.  It will provide you with additional information about the bug, and will explain you how to report this bug to the team of developers.
+
 h2. Build 36
 
 * Add the marked trigger (#30).
