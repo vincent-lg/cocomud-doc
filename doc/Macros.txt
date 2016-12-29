@@ -1,30 +1,30 @@
 h1. Macros
 
-CocoMUD supports a system of macros as most MUD clients do, allowing to link a shortcut with an action (as a command to be sent to the server).  This document explains the creation of simple and more complex macros.
+CocoMUD propose un système de macros comme la plupart des autres clients MUD, qui permet de relier une touche de raccourci avec une action (comme une commande à envoyer au serveur. Ce document explique la création de macros simples et plus complexes.
 
 {{toc}}
 
-h2. Basic feature
+h2. Fonctionnalité basique
 
-In its most simple version, a macro is a link between a keyboard shortcut and a command: for instance, if you press @Ctrl + F1@, CocoMUD may send the "look" command to the server.  In this documentation, we will see how to create a macro to link the @F1@ key with the "north" command, as some MUD clients are already configured to doing.
+Dans sa version la plus simple, un macro fait le lien entre une touche de raccourci et une commande : par exemple, si vous appuyez sur @Ctrl + F1@, CocoMUD pourrait envoyer la commande "regarder" au serveur de jeu. Dans cette documentation, nous verrons comment créer un macro reliant la touche @F1@ avec la commande "nord".
 
-h2. Adding a macro
+h2. Ajouter un macro
 
-There are two ways to add a macro, and as the interface is the easiest alternative, we will see it first.
+Il existe deux moyens d'ajouter un macro. L'interface étant l'alternative la plus simple, ce moyen sera décrit en premier.
 
-h3. Through the interface
+h3. Via l'interface
 
-In the menu bar, select *Game* -> *Macro*.  A dialog box should open with your list of current macros.  More likely than not, this list will be empty at first.  Click on the *Add* button.
+Dans la barre de menu, cliquez sur *Jeu* -> *Macro*. Une boîte de dialogue devrait s'ouvrir, contenant la liste des macros actuellement configurés. Cette liste sera probablement vide la première fois que vous ouvrirez cette interface. Cliquez sur le bouton *Ajouter*.
 
-Another dialog opens.  The cursor should be on a text entry, but you are not expected to type in it, just press the key combination.  For instance, in our example, press the @F1@ key.
+Une autre boîte de dialogue devrait s'ouvrir pour ajouter un nouveau macro. Le curseur devrait se trouver sur une zone de texte, mais il ne vous est pas demandé d'entrer du texte ici : à la place, appuyez sur la combinaison de touches que vous souhaitez associer à ce macro. Par exemple, appuyez sur la touche @F1@.
 
-When you do, "F1" should appear in the text entry.  You can try to press a lot of different keys.  For instance, press the @Ctrl@ key, hold it down and press the @I@ key, then release both keys.  You should see in the text area:
+Dans la zone de texte devrait apparaître le nom du raccourci, "F1" dans notre cas. Vous pouvez utiliser de nombreuses touches de raccourci pour vos macros. Par exemple, appuyez sur la touche @Ctrl@, maintenez-la enfoncée, appuyez sur la touche @I@ et relâchez les deux touches. Dans la zone de texte devrait apparaître :
 
 <pre>
 Ctrl + I
 </pre>
 
-You can, in theory, use Shift, Ctrl or Alt in your macros.  It's not recommended to use Alt, however, since it can be linked to menu shortcuts (like @Alt + F@ to open the *file* menu).  There's not many limitations on what to use for macros.  For instance:
+Vous pouvez utiliser Shift, Ctrl ou Alt dans vos macros.  En pratique, ce n'est pas conseillé d'utiliser Alt, qui est une touche réservée pour les menus (@Alt + F@ ouvre le menu *fichier*, par exemple). Il y a malgré tout un grand nombre de raccourcis possibles, par exemple :
 
 <pre>
 Shift + Backspace
@@ -33,57 +33,55 @@ Ctrl + Shift + O
 Ctrl + PavNum8
 </pre>
 
-If you wish to connect a macro to a key from the numpad, you should switch it on before pressing the *Add* button, or at least, move in another area before doing so.  Otherwise, CocoMUD will associate a macro with the Numpad Lock key, which isn't often desirable.
+Si vous voulez connecter un macro à une touche du pavé numérique, vous devez activer ce dernier avant de cliquer sur le bouton *Ajouter*, ou bien naviguer dans une autre partie de la fenêtre pour ce faire. Sinon, CocoMUD va associer la touche du verrouillage de pavé numérique avec le macro, ce qui n'est pas souvent souhaitable.
 
-When you have pressed the desired shortcut to associate with this macro, press Tab to go to the next area.  It's also a text area, this time for the command to be sent to the server.
+Après avoir entré le raccourci voulu, appuyez sur la touche de tabulation. Le second champ de cette boîte de dialogue est également un champ de texte, celui-ci devant contenir la ou les commandes à envoyer au serveur de jeu quand on presse le raccourci renseigné précédemment. En poursuivant notre exemple, après avoir sélectionné *Ajouter*, appuyé sur la touche @F1@, puis sur la touche de tabulation, vous pouvez maintenant écrire "nord".
 
-So, following our example, you pressed the *Add* button, then @F1@, then Tab, you can now type "north".
+La zone suivante est une liste d'actions à associer à ce macro. Cette fonctionnalité sera détaillée plus bas, elle n'est pas nécessaire pour les macros simples. Tabulez jusqu'à trouver le bouton *OK* et validez. Vous devriez voir le macro que vous avez ajouté dans la liste.
 
-If you tab again, you find a list of actions.  We will study it later, it's only necessary for more complex macros, so you can press tab again until you find the *OK* button.  Click on it to add the macro.  You should see it in the list of macros.
+Si vous voulez changer la ou les commandes à envoyer au serveur quand le macro est activé, vous devez l'éditer (en le sélectionnant dans la liste, et tabuler jusqu'à trouver le bouton *Editer*). Cependant, si vous souhaitez changer le raccourci associé à un macro, il vous suffit de le sélectionner et de tabuler une fois. Vous devriez voir une zone de texte (ou plutôt, une zone d'édition du raccourci). Appuyez sur la nouvelle combinaison de touches que vous souhaitez associer à ce macro, puis tabulez jusqu'à trouver le bouton *OK*. Si vous quittez cette boîte de dialogue sans cliquer sur *OK*, vos modifications seront perdues (cela inclut le macro que vous avez ajouté).
 
-If you want to change the command to send to the server for a specific macro, you need to edit it (selecting it in the list of macros, and clicking the *Edit* button).  However, if you wish to change the shortcut associated with this macro, you can just select it, then press Tab.  The cursor will be in another text area, or rather, in a shortcut area, when you can press a new key to associate with this macro.  Simply do so, then navigate to *OK* to save the modifications.  If you close this dialog box without pressing *OK*, the modifications you have done (including the macros you have added) will be lost.
+De retour dans la fenêtre principale de CocoMUD, appuyez sur @F1@. La commande "nord" est envoyée (silencieusement) au serveur de jeu qui devrait vous répondre, en fonction de l'univers. Pour moi, je reçois le message :
 
-Back in the client's main window, press the @F1@ key.  The command is sent (silently) to the server and, if you are connected to a server that understands this command, you should receive an answer.  In my case, I get:
+bq. Vous ne pouvez aller par là...
 
-bq. You cannot go in that direction.
+h3. Via le SharpScript
 
-h3. Through SharpScript
+Vous pouvez aussi ajouter un macro via une syntaxe du scripting SharpScript. En fait, c'est comme ça que vos triggers, macros et alias sont enregistrés dans votre fichier *config.set* (une configuration par univers).
 
-You can also add a macro through SharpScript.  This is the way your macros added through the interface are stored, incidentally.  A file, named "config.set", is created in your world settings, containing your macros, aliases and triggers, as well as additional configuration.
+Pour créer un macro, utilisez l'action @#macro@. Elle prend deux paramètres :
 
-To create a macro, you should use the @#macro@ action.  It takes two arguments:
+* Le raccourci à associer à ce macro ;
+* La commande à envoyer au serveur quand on entre ce raccourci.
 
-* The shortcut to associate with this macro.
-* The command to send to the server.
-
-In our example, we could have created our macro using the following SharpScript instruction:
+Dans notre exemple, on aurait pu créer notre macro en entrant l'instruction SharpScript suivante :
 
 <pre>
-#macro F1 north
+#macro F1 nord
 </pre>
 
-You can actually paste this instruction right in your client's main window and press RETURN, just as if to send a command.  CocoMUD sees that the command beings with a single sharp symbol and sends it to the SharpScript interpreter.  If you add a macro in this way (assuming you made no mistake), it will be visible instantly in the *Game* -> *Macro* menu.
+Vous pouvez coller cette instruction directement dans CocoMUD et appuyez sur Entrée, comme pour envoyer une commande. CocoMUD voit que cette commande commence par un seul signe dièse et l'envoie à l'interpréteur SharpScript. Si vous ajoutez un macro de cette manière (et si vous n'avez pas fait d'erreurs de syntaxe), le macro sera visible instantanément dans la barre de menu *Jeu* -> *Macro*.
 
-If one of the parameter is too long, don't forget to place it between braces:
+Si l'un des paramètres contient des espaces, n'oubliez pas de l'entourer d'accolades :
 
 <pre>
-#macro {Ctrl + Shift + O} {say that's a rather long line of text.}
+#macro {Ctrl + Shift + O} {dire c'est plutôt une longue commande.}
 </pre>
 
-Braces are necessary when your parameter contains spaces.  You can put them even if your parameter doesn't contain spaces, the SharpScript engine will not mind.
+Les accolades ne sont absolument nécessaires que si le paramètre contient des espaces. Mais vous pouvez mettre des accolades autour des paramètres même si ils n'ont pas d'espaces, le moteur SharpScript les retirera sans faire d'histoire.
 
-h2. Editing a macro
+h2. Editer un macro
 
-We saw how to edit a macro in the previous section.  There's nothing really complicated about it, actually.  Just remember that, if you only with to change a shortcut associated with a macro, you can simply select it in the list of macros (in the *Game* -> *Macro* menu) and press Tab, then press your new combination of keys to associate with this macro.  If you wish to change the text to send to the server, however, you should select the macro and press the *Edit* button.  The dialog is the same as described above to add a new macro.
+Nous avons vu plus haut comment éditer un macro. Il n'y a rien de très compliqué, en vérité. L'important à retenir, c'est que si vous voulez changer le raccourci associé à un macro, vous devez juste le sélectionner et faire Tab pour entrer le nouveau raccourci. Si vous souhaitez changer la ou les commandes associées à ce macro, cependant, vous devez le sélectionner et cliquer sur le bouton *Editer*. La boîte de dialogue est identique à celle pour ajouter un macro, décrite précédemment.
 
-h2. Removing a macro
+h2. Supprimer un macro
 
-You can easily remove a macro.  In the interface (menu bar -> *Game* -> *Macro*), select the macro you wish to remove and click the *Remove* button.  You will be asked for confirmation.  Don't forget to exit the dialog box by clicking on *OK*, otherwise the macro won't be removed.
+Supprimer un macro se fait des plus simplement.  Dans la boîte de dialogue (menu *Jeu* -> *Macro*), sélectionnez le macro que vous voulez supprimer, et tabulez jusqu'à trouver le bouton *Supprimer*. Une confirmation de suppression sera affichée. N'oubliez pas de validez en cliquant sur le bouton *OK*, sans quoi le macro ne sera pas complètement supprimé.
 
-h2. More complex macros
+h2. Macros un peu plus complexes
 
-Macros often connect a keyboard shortcut to a command being sent to the server.  But they can actually connect a keyboard shortcut with more complex actions, like playing a sound, displaying a message or a variable, displaying a channel or more.  The interest is not always obvious at first glance.  The example of more complex macros can be found in some configurations, when the world provides audio prompting, for instance.
+Les macros relient souvent une touche de raccourci à une ou plusieurs commandes à envoyer au serveur. Cependant, vous pouvez aussi relier un raccourci clavier avec une action plus complexe, comme jouer un son, afficher un message (avec variables, éventuellement) ou afficher un canal. L'intérêt de telles action n'est pas forcément apparent tout d'abord. Un exemple de macro plus complexe peut se trouver dans l'utilisation des prompts sonores.
 
-The general idea of audio prompting is that the line of prompt (where you can find health points and movement points and that appears at each command, or almost) is hidden.  It is captured by a trigger.  The information is stored in variables.  That's beyond the scope of this document to explain how, but the important point is, you can configure a macro to display this variable.  For instance, if you press @Ctrl + H@, you should get the health points (captured by the trigger).
+Le principe d'un prompt sonorisé est que la barre de prompt (contenant vos points de vie, magie et mouvement, par exemple) est interceptée par un trigger et n'apparaît plus. Votre vie, magie et mouvement actuels sont conservés dans des variables à part. Ceci dépasse le cadre de cette documentation, mais l'important est qu'un macro peut être créé pour afficher ces variables. Par exemple, si vous appuyez sur @Ctrl + J@, vous pourriez voir votre vie actuelle.
 
-We have used the second text area to send commands to the server.  The truth is, you can also type SharpScript instructions in this area.  But as writing SharpScript can be a bit technical, you can also use the SharpScript editor.  It is not as complicated as it sounds: when you add or edit a macro, simply leave the second text area blank.  Tab to the list of actions and select one.  For instance, select "Display a message and send it to the screen reader".  Click on the *Add action* button.  You will be prompted for additional information (in this case, what message to display and how to display it).  When you're done, click *OK*.  In the second text area will be your SharpScript instruction.  You don't need it, it's just a landmark.  Click on the *OK* button several times to exit the dialog by saving your modifications.
+Nous avons utilisé la seconde zone de texte pour préciser quelles commandes envoyer au serveur de jeu quand on entre le raccourci indiqué. En vérité, on peut entrer des instructions SharpScript dans cette zone de texte. Mais puisque écrire les instructions SharpScript à la main n'est pas le plus facile, on peut passer par l'éditeur SharpScript. Cela n'est vraiment pas compliqué : dans l'interface d'ajout ou d'édition d'un macro, laissez le second champ de texte vide, et tabulez une fois pour vous trouver sur la liste des actions. Sélectionnez une action, par exemple "Affiche un message et l'envoie au lecteur d'écran". Cliquez sur le bouton *Ajouter l'action*. On vous demandera d'entrer d'autres informations (dans notre cas, le message à afficher, et des informations sur comment l'afficher). Validez une fois ces informations renseignées. N'oubliez pas d'appuyer sur *OK* pour fermer la boîte de dialogue en sauvegardant les modifications.
