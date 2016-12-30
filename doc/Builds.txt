@@ -2,6 +2,14 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 38
+
+* Add notepads for each world and characters (#62):
+  CocoMUD now keeps track of separate files, where you can store any information, like exploring landmarks, quest reminders and so on.  You have a specific notepad for each world, which can be opened through the menu bar -> *Game* -> *Notepad* -> *For this world...* menu.  Simply type in your text, press Escape when you want to close it and save it.  The same system holds true for character-specific notepads, which you can open in the menu bar, *Game* -> *Notepad* -> *For this character...* menu.  This second notepad will not be accessible through other characters of this world.
+* Add the mark triggers in the trigger dialog (#30).
+* Allow triggers without action (most useful for mark triggers).
+* Fix several visual errors in the interface.
+
 h2. Build 37
 
 * Add the ability to configure characters in worlds (#61):
