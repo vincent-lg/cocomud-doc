@@ -2,7 +2,14 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
-h2. Build 37
+h2. Build 38
+
+* Ajout de bloc-notes pour chaque univers et chaque personnage (#62):
+  CocoMUD permet désormais d'accéder à des bloc-notes indépendants, des fichiers de texte que vous pouvez utiliser pour conserver certains points de repère, des informations de quête ou autre. Il y a un bloc-notes différent pour chaque univers, que vous pouvez ouvrir via la barre de menu -> *Jeu* -> *Bloc-notes* -> *Pour cet univers...*. Vous pouvez écrire du texte dans ce bloc-notes, appuyer sur échappe pour le fermer et l'enregistrer. Le second bloc-notes fonctionne selon le même principe, et est accessible via la barre de menu *Jeu* -> *Bloc-notes* -> *Pour ce personnage...*. Ce second bloc-notes ne sera pas partagé entre les personnages de cet univers.
+* Ajoute une documentation pour les [[Macros|macros]].
+* Ajoute les triggers marqués dans la boîte de dialogue des triggers (#30).
+* Autorise les triggers sans action, particulièrement utile pour les triggers marqués.
+* Corrige plusieurs bugs d'affichage dans l'interface.
 
 h2. Build 37
 
