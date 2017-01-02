@@ -2,6 +2,14 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 39
+
+* Add a button to import a world right in the connection window (#60):
+  It is now possible to import a world before connecting (which makes more sense in most cases).  Simply click on the *Import*  button in the connection window and select whether you want to import a world online or on disk.
+* Display a dialog box to announce the world was correctly installed (#63).
+* Installing a world with channels doesn't create "popup" windows (#81).
+* Restarting CocoMUD after installing a new world isn't required anymore.
+
 h2. Build 38
 
 * Add notepads for each world and characters (#62):
