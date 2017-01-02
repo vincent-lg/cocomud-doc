@@ -2,6 +2,14 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 39
+
+* Ajoute un bouton pour importer un univers depuis l'écran de connexion (#60):
+  Il est désorlmais possible d'importer un univers avant de se connecter (ce qui est assez logique la plupart du temps). Cliquez simplement sur le bouton *Importer* sur l'écran de connexion, et choisissez si vous désirez importer l'univers depuis un fichier ou depuis le site Web.
+* Affiche une boîte de dialogue pour confirmer que l'installation d'un univers s'est bien déroulée (#63).
+* Installer un univers avec canaux n'ouvre plus de boîtes de dialogues secondaires (#81).
+* Redémarrer CocoMUD après avoir installé un univers n'est plus nécessaire.
+
 h2. Build 38
 
 * Ajout de bloc-notes pour chaque univers et chaque personnage (#62):
