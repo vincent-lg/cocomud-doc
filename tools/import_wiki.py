@@ -64,7 +64,7 @@ for filename in os.listdir(path):
     title = filename[:-4]
     parent = parents.get(title, "")
     if args.interactive:
-        answer = raw_input("Do you want to export '{}' (Y/N)? ".format(
+        answer = raw_input("Import '{}' (Y/N)? ".format(
                 title))
         if answer.lower() != "y":
             continue
