@@ -2,6 +2,13 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 40
+
+* Add a setting to disable rich text control (#82).
+  You will find this setting in the menu bar, *File* -> *Preferences*, *Accessibility* tab.  Disabling the rich text control can be useful for accessibility, although it removes colors from the client.
+* Creating a new world and closing the dialog does not lead to an error (#69).
+* Fix a bug when closing all tabs in the client.
+
 h2. Build 39
 
 * Add a button to import a world right in the connection window (#60):
