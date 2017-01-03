@@ -2,6 +2,14 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 40
+
+* Ajoute une option pour désactiver le "rich text" dans le client (#82).
+  Cette option se trouve dans le menu *Fichier* -> *Options*, onglet *Accessibilité*. Désactiver le "rich text" est parfois utile pour l'accessibilité, bien que cela retire toute couleur du client.
+* Créer un univers et fermer la boîte de dialogue ne crée plus d'erreur (#69).
+  Un merci tout particulier au testeur qui a reporté ce bug (#68).
+* Corrige un bug quand on ferme tous les onglets de CocoMUD.
+
 h2. Build 39
 
 * Ajoute un bouton pour importer un univers depuis l'écran de connexion (#60):
