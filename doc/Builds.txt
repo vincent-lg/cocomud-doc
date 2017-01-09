@@ -2,6 +2,15 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 41
+
+* Add default characters (#77):
+  In the character dialog, one can now specify that a character should be loaded by default.  When selecting a world in the connection list, the default character of this world (if any) is automatically selected.  This saves time if you often login to the same character of a world, and doesn't prevent login on others.
+* When creating a new character with special characters (like accents), CocoMUD doesn't crash at startup (#78).
+* When CocoMUD loses connection, it will attempt to reconnect and enter the username / password if a character is set (#67):
+  This fix is not perfect, it remains difficult to handle connection errors.
+* When no update is available, the message is correctly displayed (#75).
+
 h2. Build 40
 
 * Add a setting to disable rich text control (#82).
