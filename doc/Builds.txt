@@ -2,6 +2,16 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 41
+
+* Ajout des personnages par défaut (#77) :
+  Dans la boîte de dialogue pour configurer un personnage, on peut maintenant préciser si ce personnage doit être chargé par défaut. Si oui, à la connexion, en choisissant un univers dans la liste, CocoMUD sélectionne automatiquement ce personnage. Cela permet de gagner du temps si l'on se connecte souvent au même personnage d'un univers, et n'empêche pas de se connecter à d'autres.
+* Quand on crée un personnage avec des caractères spéciaux (comme des lettres accentuées), CocoMUD ne plante plus au démarrage (#78).
+  Un merci tout particulier au contributeur qui a signalé ce bug sur le site (#76).
+* Quand CocoMUD perd la connexion au serveur, il essaye de se reconnecter, entrant le nom d'utilisateur / mot de passe si configuré pour (#67) :
+  Cette correction n'est pas parfaite, il est difficile de gérer les erreurs de connexion.
+* Quand aucune mise à jour n'est disponible, le message s'affiche correctement (#75).
+
 h2. Build 40
 
 * Ajoute une option pour désactiver le "rich text" dans le client (#82).
