@@ -2,6 +2,13 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 42
+
+* Add the triggers with substitution (#79):
+  Triggers can now handle substitution, that is replace one or more lines in the client.
+* Update proper colors with the rich-text setting.
+* Fix a bug with the cursor moving a bit randomly when several tabs were opened (#53).
+
 h2. Build 41
 
 * Add default characters (#77):
