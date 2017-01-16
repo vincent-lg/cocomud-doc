@@ -2,6 +2,13 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 42
+
+* Ajoute les triggers avec substitution (#79) :
+  Les triggers peuvent maintenant remplacer une ou plusieurs lignes directement dans le client, quand ils s'exécutent.
+* Mise à jour des couleurs et du style de la fenêtre en mode rich-text.
+* Corrige un bug avec le curseur instable quand plusieurs onglets sont ouverts (#53).
+
 h2. Build 41
 
 * Ajout des personnages par défaut (#77) :
