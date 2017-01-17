@@ -2,6 +2,11 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 43
+
+* Add a documentation file to [[Download|download and install CocoMUD]].
+* Add shortcut keys to add, edit or remove in all dialog boxes (#87).
+
 h2. Build 42
 
 * Add the triggers with substitution (#79):
