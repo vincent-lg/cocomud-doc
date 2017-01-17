@@ -2,6 +2,11 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 43
+
+* Ajout d'une page de documentation pour [[Download|télécharger et installer CocoMUD]].
+* Ajout de raccourcis clavier pour ajouter, éditer ou supprimer dans toutes les boîtes de dialogue (#87).
+
 h2. Build 42
 
 * Ajoute les triggers avec substitution (#79) :
