@@ -2,6 +2,13 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 44
+
+* Ajoute une action SharpScript pour répéter la dernière commande entrée (#85) :
+  Cette action, appelée @#repeat@, peut être utilisée pour répéter la dernière commande entrée ou envoyer une commande plusieurs fois.
+* Quand un raccourci associé à un macro est utilisé, le curseur va automatiquement en bas de la fenêtre  (#80).
+* Corrige plusieurs conflits quand un univers était ouvert plusieurs fois dans différents onglets (#90).
+
 h2. Build 43
 
 * Ajout d'une page de documentation pour [[Download|télécharger et installer CocoMUD]].
