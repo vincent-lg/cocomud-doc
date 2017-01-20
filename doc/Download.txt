@@ -5,7 +5,7 @@ CocoMUD is pre-built on Windows as a portable archive.  It means that the only t
 h2. Downloading CocoMUD
 
 | Build | Windows |
-| +*42*+ | "CocoMUD for Windows (.zip)":https://cocomud.plan.io/attachments/download/59/CocoMUD.zip |
+| +*43*+ | "CocoMUD for Windows (.zip)":https://cocomud.plan.io/attachments/download/60/CocoMUD.zip |
 
 If you are using another platform, you might wish to [[InstallFromSource|install CocoMUD from source]].  CocoMUD can run on Linux or Mac OS, although there's no pre-built version yet.
 
