@@ -4,10 +4,10 @@ Cette page décrit les changements apportés par chaque build. Vous pouvez navigue
 
 h2. Build 45
 
-* CocoMUD no longer makes the screen reader freeze (#96).
-* CocoMUD now supports the SSL protocol, to encrypt the telnet connection (#94).
-  SSL is not supported by all games, and is usually set on a different port than the plain telnet protocol.
-* Add a new menu item to disable trigger sounds (#89).
+* CocoMUD ne fait plus planter le lecteur d'écran en bloquant la fenêtre (#96).
+* CocoMUD supporte maintenant le protocole SSL, permettant de crypter la connexion telnet (#94).
+  SSL n'est pas proposé par tous les jeux, et est configuré sur un port différent du protocole telnet.
+* Ajoute une option dans la barre de menu pour désactiver tous les sons du client comme ceux générés par des triggers (#89).
 
 h2. Build 44
 
