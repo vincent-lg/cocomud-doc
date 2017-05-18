@@ -2,6 +2,13 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 45
+
+* CocoMUD no longer makes the screen reader freeze (#96).
+* CocoMUD now supports the SSL protocol, to encrypt the telnet connection (#94).
+  SSL is not supported by all games, and is usually set on a different port than the plain telnet protocol.
+* Add a new menu item to disable trigger sounds (#89).
+
 h2. Build 44
 
 * Ajoute une action SharpScript pour répéter la dernière commande entrée (#85) :
