@@ -2,6 +2,12 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 46
+
+* Les commandes multiples fonctionnent de nouveau et sont à présent systématiquement testées (#98).
+* Les commandes multiples supportent maintenant les caractères spéciaux (#99).
+* CocoMUD gère mieux les variables dont les valeurs contiennent des caractères spéciaux(#93).
+
 h2. Build 45
 
 * CocoMUD ne fait plus planter le lecteur d'écran en bloquant la fenêtre (#96).

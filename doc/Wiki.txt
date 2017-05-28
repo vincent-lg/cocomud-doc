@@ -1,0 +1,25 @@
+h1. CocoMUD
+
+CocoMUD est un client MUD qui se veut simple et accessible avec un lecteur d'écran. Son but est de proposer autant de fonctionnalités que n'importe quel client MUD disponible, mais en étant plus accessible. Une des fonctionnalités basiques du client est un Text-To-Speech (TTS) permettant d'envoyer du texte pour être lu par le lecteur d'écran, ou affiché par une plage braille.
+
+[[fr:|Accueil]] [[Download|Téléchargement]] [[Basics|Premiers pas]]
+
+CocoMUD dans d'autres langues: [[cocomud-client:|Anglais]].
+
+h2. Utiliser CocoMUD
+
+Pour télécharger le client CocoMUD, rendez-vous sur [[Download|la page de téléchargement]]. Si c'est la première fois que vous utilisez CocoMUD, vous pourriez vouloir lire [[Basics|les premiers pas avec CocoMUD]] pour apprendre à utiliser les fonctionnalités basiques du client.
+
+h2. Fonctionnalités basiques
+
+Les fonctionnalités suivantes servent de base à la planification du développement du client, en suivant sa feuille de route (road map). Vous pouvez cliquer sur l'une de ces fonctionnalités pour voir son avancement (en anglais).
+
+* Un client MUD avec un système réseau stable (#5).
+* Un client accessible avec la plupart des lecteurs d'écran (#6).
+* Un client MUD portable sous Windows, Linux et Mac OS (#7).
+* Une interface traduite en plusieurs langues (#8).
+* Un mécanisme simple mais puissant pour personnaliser l'expérience utilisateur (#9), avec [[Alias|des alias]], [[Macros|des macros]], [[Triggers|des triggers]] et bien d'autres choses.
+
+h2. Licence
+
+CocoMUD est distribué sous la licence "3-clause BSD":https://opensource.org/licenses/BSD-3-Clause.  Son code source est disponible dans son "dépôt Github":https://github.com/vlegoff/cocomud . Malgré tout, la majorité du projet (discussions, bugs, suggestions, forums, documentation) est hébergé par "PlanIO":https://cocomud.plan.io.

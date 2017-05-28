@@ -22,6 +22,8 @@ parser = argparse.ArgumentParser(
         description="export wiki pages in TXT formats")
 parser.add_argument("lang", help="the language code (en, fr, es...)",
         nargs='?', choices=["en", "fr"], default="en")
+parser.add_argument("-i", "--interactive", action="store_true",
+        help="should the program ask a confirmation for each file?")
 args = parser.parse_args()
 
 # Configure the system
@@ -47,6 +49,12 @@ pages = redmine.wiki_page.filter(project_id=project_id)
 for page in pages:
     # Write the exported file
     path = os.path.join("..", "doc", page.title + ".txt")
+    if args.interactive:
+        answer = raw_input("Import '{}' (Y/N)? ".format(
+                page.title))
+        if answer.lower() != "y":
+            continue
+
     print "Writing", page.title, "in", path
     text = page.text
     text = text.replace("\r", "").replace("\n", "\r\n")

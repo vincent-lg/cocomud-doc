@@ -5,7 +5,7 @@ CocoMUD est prêt à l'emplois sous Windows, dans une version portable. Vous n'ave
 h2. Télécharger CocoMUD
 
 | Build | Windows |
-| +*44*+ | "CocoMUD pour Windows (.zip)":https://cocomud.plan.io/attachments/download/62/CocoMUD.zip |
+| +*45*+ | "CocoMUD pour Windows (.zip)":https://cocomud.plan.io/attachments/download/64/CocoMUD.zip |
 
 Si vous utilisez un autre système d'exploitation que Windows, vous pourriez vouloir [[InstallFromSource|installer CocoMUD depuis les sources]]. CocoMUD fonctionne sous Linux et Mac OS, bien qu'il n'existe pas encore de version prête à l'emplois pour ces systèmes.
 
