@@ -2,6 +2,12 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 46
+
+* Command stacking is now working again and systematically checked (#98).
+* Command stacking now supports special characters (#99).
+* CocoMUD better handles variables if their value contains special characters (#93).
+
 h2. Build 45
 
 * CocoMUD no longer makes the screen reader freeze (#96).
