@@ -15,7 +15,7 @@ import os
 import sys
 import urllib2
 
-from redmine import Redmine
+from redminelib import Redmine
 
 # Create an argument parser
 parser = argparse.ArgumentParser(

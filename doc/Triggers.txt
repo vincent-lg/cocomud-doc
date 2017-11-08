@@ -73,7 +73,7 @@ Joue un son
 
 Et cliquez sur le bouton suivant : *Ajouter l'action*.
 
-On vous demande maintenant de configurer cette action (dans notre cas, choisir le fichier sonore à jouer quand ce trigger se déclenche). Vous avez un bouton "Parcourir" qui vous permet de trouver le fichier sonore sur votre disque dur. Le bouton "Test" permet de vérifier que CocoMUD parvient bien à lire et jouer ce fichier. Si tout se passe bien, cliquez sur *OK*. L'action sera ajoutée au trigger. vous vous trouverez dans la liste des actions liées à ce trigger :
+On vous demande maintenant de configurer cette action (dans notre cas, choisir le fichier sonore à jouer quand ce trigger se déclenche). Vous avez un bouton "Parcourir" qui vous permet de trouver le fichier sonore sur votre disque dur. Le bouton "Test" permet de vérifier que CocoMUD parvient bien à lire et jouer ce fichier (CocoMUD lit les fichiers @.wav@ et @.ogg@). Si tout se passe bien, cliquez sur *OK*. L'action sera ajoutée au trigger. vous vous trouverez dans la liste des actions liées à ce trigger :
 
 <pre>
 #play mon_fichier.wav
