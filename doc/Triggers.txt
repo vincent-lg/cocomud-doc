@@ -73,7 +73,7 @@ Play an audio file
 
 Then press Tab again and click on the *Add action* button.
 
-You are now asked to configure this action.  What audio file do you want to play when this trigger fires?  You have a *Browse* button if you want to select the file in your file system.  And once selected, you have a *Test* button, to check that CocoMUD can play this audio file just right.  If everything works, just press *OK*.  The action will be added.  The cursor is moved into a list where you see only one item:
+You are now asked to configure this action.  What audio file do you want to play when this trigger fires?  You have a *Browse* button if you want to select the file in your file system.  And once selected, you have a *Test* button, to check that CocoMUD can play this audio file just right (CocoMUD supports @.wav@ and @.ogg@ files).  If everything works, just press *OK*.  The action will be added.  The cursor is moved into a list where you see only one item:
 
 <pre>
 #play whatever.wav
