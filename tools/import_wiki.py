@@ -13,7 +13,7 @@ import argparse
 import os
 import sys
 
-from redmine import Redmine
+from redminelib import Redmine
 
 # Create an argument parser
 parser = argparse.ArgumentParser(
