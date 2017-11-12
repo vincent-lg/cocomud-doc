@@ -4,15 +4,15 @@ Cette page décrit les changements apportés par chaque build. Vous pouvez navigue
 
 h2. Build 47
 
-* You can now easily export a world in a ZIP archive, choosing what you want to export (*File* -> *Export this world*).  You can share this file and others can import it through *File* -> *Import a world* (#86).
-* CocoMUD better handles the clipboard and pasting, particularly under Linux (#106).  It also provides a checkbox to disable auto send when pasting text (#91).
-* CocoMUD now supports and displays both *wav* and *OGG* files for playing sounds (#112).
-* Rich-text was disabled by default to offer a better user experience with fewer bugs (#114).
-* Several bug fixes and improvements under Linux (#105, #106).
-* CocoMUD now opens and correctly closes preferences when the user language isn't supported (#108).
-* Importing a world from the website doesn't generate encoding errors anymore (#117).
-* CocoMUD now displays text using a more appropriate font, thank you again, sighted contributors.
-* Note: for compatibility reasons, file encoding was updated.  CocoMUD should support older versions of configuration files and convert them at startup, but there might be issues with some heavily modified configuration with special characters.
+* Vous pouvez simplement exporter un univers dans un fichier ZIP, en choisissant quoi exporter (*Fichier* -> *Exporter cet univers*). Vous pouvez ensuite partager ce fichier ZIP avec d'autres utilisateurs qui pourront l'importer depuis *Fichier* -> *Importer un univers* (#86).
+* CocoMUD gère mieux le contenu du presse-papier, en particulier sous Linux (#106).  Une case à cocher a été ajoutée dans les options pour désactiver l'envoi automatique du texte quand on colle depuis le presse-papier (#91).
+* CocoMUD supporte et affiche les fichiers au format *WAV* et *OGG* pour jouer des sons (#112).
+* Le rich-text a été désactivé par défaut pour offrir une expérience utilisateur plus fluide pour les nouveaux utilisateurs (#114).
+* Plusieurs améliorations et corrections de bug pour Linux (#105, #106).
+* CocoMUD ouvre et enregistre les préférences utilisateurs convenablement même si la langue de l'utilisateur n'est pas supportée par le client (#108).
+* Importer un univers depuis le site web ne génère plus d'erreur d'encodage (#117).
+* CocoMUD affiche à présent le texte utilisant une police de caractère plus agréable (merci encore aux contributeurs voyants).
+* Note : pour des raisons de compatibilité, l'encodage des fichiers de configuration a été modifié. CocoMUD devrait supporter les anciens fichiers de configuration et les convertir à l'ouverture, mais il est possible que certaines erreurs surviennent avec des fichiers contenant de nombreux caractères spéciaux.
 
 h2. Build 46
 
