@@ -2,6 +2,18 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 47
+
+* You can now easily export a world in a ZIP archive, choosing what you want to export (*File* -> *Export this world*).  You can share this file and others can import it through *File* -> *Import a world* (#86).
+* CocoMUD better handles the clipboard and pasting, particularly under Linux (#106).  It also provides a checkbox to disable auto send when pasting text (#91).
+* CocoMUD now supports and displays both *wav* and *OGG* files for playing sounds (#112).
+* Rich-text was disabled by default to offer a better user experience with fewer bugs (#114).
+* Several bug fixes and improvements under Linux (#105, #106).
+* CocoMUD now opens and correctly closes preferences when the user language isn't supported (#108).
+* Importing a world from the website doesn't generate encoding errors anymore (#117).
+* CocoMUD now displays text using a more appropriate font, thank you again, sighted contributors.
+* Note: for compatibility reasons, file encoding was updated.  CocoMUD should support older versions of configuration files and convert them at startup, but there might be issues with some heavily modified configuration with special characters.
+
 h2. Build 46
 
 * Les commandes multiples fonctionnent de nouveau et sont à présent systématiquement testées (#98).
