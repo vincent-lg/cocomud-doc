@@ -226,7 +226,7 @@ h2. CocoMUD channels in triggers
 
 CocoMUD has a more interesting feature of channels.  A channel is basically a list of events.  It will store these events and you can display this list whenever you want.  It might be useful, for instance, when exploring the game and not paying particular attention to some messages (on the public channel, or the ooc channel, for instance).  Afterward you might want to read them, so you display the list of messages.
 
-You will find more informatioon in the [Channels|documentation about channels]].
+You will find more informatioon in the [[Channels|documentation about channels]].
 
 h2. Mute triggers
 

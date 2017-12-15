@@ -2,7 +2,7 @@ h1. Channels in CocoMUD
 
 CocoMUD offers an interesting feature of channels.  Channels are basically lists of messages and you can put whatever you want in them.  We often use CocoMUD channels to track game channels: when we receive a message on one of these channels (lie "public" or "ooc"), we can automatically capture this message and put it in a CocoMUD channel.  A simple key press could allow to display this channel and read all the messages in it.  This is pretty useful when you're exploring or figthing on the game, and don't have time to read all messages spoken by others, but you want to read them afterward.
 
-We'll take this example for the rest of the documentation: an attempt to capture the context of a public channel.  This example also relates to [Triggers|triggers], which is barely a coincidence.
+We'll take this example for the rest of the documentation: an attempt to capture the context of a public channel.  This example also relates to [[Triggers|triggers]], which is barely a coincidence.
 
 {{toc}}
 
@@ -12,7 +12,7 @@ The first step is to create a channel, an empty list that will contain the messa
 
 In the CocoMUD menu bar, open *game* -> *channels*.  You find yourself in a dialog box showing current channels.  It's probable you don't have any at that point.  Go to the *add* button and click on it.  You will be asked the name of the channel.  Keep it short and explicit: here, we'll create a channel named @public@ .
 
-We can now send information to this channel using [Triggers|triggers].  If you're not familiar with this feature, you might want to read the [Triggers|documentation about triggers] first.
+We can now send information to this channel using [[Triggers|triggers]].  If you're not familiar with this feature, you might want to read the [[Triggers|documentation about triggers]] first.
 
 h2. Feeding a channel with triggers
 
