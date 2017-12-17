@@ -4,12 +4,12 @@ Cette page décrit les changements apportés par chaque build. Vous pouvez navigue
 
 h2. Build 48
 
-* A new option in the menu bar (*Game* -> *Channels*) allows to edit channels.  You will find the [[Channels|documentation on channels here]] (#120).
-* A new sharp script function @#randplay@ has been added, to play a random sound in a list.  This function is usable but not yet present in the graphical user interface.
-* Some work has been done on general configuration.  This will be available on the next update.
-* One can now clear the output window through the menu *Game* -> * Clear the output window* (#64).
-* Several fixes on importing worlds from the website (#123).
-* Fixes the error in changing preferences (#125).
+* Une option dans la barre de menu (*Jeu* -> *Canaux*) permet d'éditer les canaux. Vous trouverez [[Channels|la documentation sur les canaux ici]] (#120).
+* Une nouvelle fonction SharpScript @#randplay@ a été ajoutée, permettant de jouer un son aléatoirement choisi dans une liste. La fonction est utilisable, mais elle n'est pas encore présente dans l'interface du client.
+* Le travail pour supporter les options globales a été fait et sera probablement disponible lors de la prochaine mise à jour.
+* On peut maintenant vider la fenêtre de contenu grâce à l'option dans la barre de menu *Jeu* -> *Nettoyer la fenêtre de contenu* (#64).
+* Plusieurs correctifs pour rendre l'importation d'univers depuis le site web de nouveau possible (#123).
+* Correction de l'erreur en modifiant les préférences (#125).
 
 h2. Build 47
 
