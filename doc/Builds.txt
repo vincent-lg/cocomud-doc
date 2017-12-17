@@ -2,6 +2,15 @@ h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 48
+
+* A new option in the menu bar (*Game* -> *Channels*) allows to edit channels.  You will find the [[Channels|documentation on channels here]] (#120).
+* A new sharp script function @#randplay@ has been added, to play a random sound in a list.  This function is usable but not yet present in the graphical user interface.
+* Some work has been done on general configuration.  This will be available on the next update.
+* One can now clear the output window through the menu *Game* -> * Clear the output window* (#64).
+* Several fixes on importing worlds from the website (#123).
+* Fixes the error in changing preferences (#125).
+
 h2. Build 47
 
 * Vous pouvez simplement exporter un univers dans un fichier ZIP, en choisissant quoi exporter (*Fichier* -> *Exporter cet univers*). Vous pouvez ensuite partager ce fichier ZIP avec d'autres utilisateurs qui pourront l'importer depuis *Fichier* -> *Importer un univers* (#86).
