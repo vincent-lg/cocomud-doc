@@ -2,6 +2,15 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 48
+
+* A new option in the menu bar (*Game* -> *Channels*) allows to edit channels.  You will find the [[Channels|documentation on channels here]] (#120).
+* A new sharp script function @#randplay@ has been added, to play a random sound in a list.  This function is usable but not yet present in the graphical user interface.
+* Some work has been done on general configuration.  This will be available on the next update.
+* One can now clear the output window through the menu *Game* -> * Clear the output window* (#64).
+* Several fixes on importing worlds from the website (#123).
+* Fixes the error in changing preferences (#125).
+
 h2. Build 47
 
 * You can now easily export a world in a ZIP archive, choosing what you want to export (*File* -> *Export this world*).  You can share this file and others can import it through *File* -> *Import a world* (#86).
