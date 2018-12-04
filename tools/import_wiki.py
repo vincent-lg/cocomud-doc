@@ -64,25 +64,21 @@ for filename in os.listdir(path):
     title = filename[:-4]
     parent = parents.get(title, "")
     if args.interactive:
-        answer = raw_input("Import '{}' (Y/N)? ".format(
+        answer = input("Import '{}' (Y/N)? ".format(
                 title))
         if answer.lower() != "y":
             continue
 
-    file = open(filepath, "r")
-    text = file.read()
-    file.close()
+    with open(filepath, "r", encoding="utf-8") as file:
+        text = file.read()
 
-    # Skip the version number
-    text = text.decode("latin-1")
+        # Create the page if needed
+        if title in existing.keys():
+            page = existing[title]
+            page.text = text
+            page.save()
+        else:
+            page = redmine.wiki_page.create(project_id=project_id,
+                    title=title, text=text, parent_title=parent)
 
-    # Create the page if needed
-    if title in existing.keys():
-        page = existing[title]
-        page.text = text
-        page.save()
-    else:
-        page = redmine.wiki_page.create(project_id=project_id,
-                title=title, text=text, parent_title=parent)
-
-    print "Imported '{}' in wiki '{}'.".format(title, project_id)
+    print("Imported '{}' in wiki '{}'.".format(title, project_id))
