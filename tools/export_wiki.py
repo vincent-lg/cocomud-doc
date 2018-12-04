@@ -10,10 +10,8 @@ Requirements:
 """
 
 import argparse
-from codecs import open
 import os
 import sys
-import urllib2
 
 from redminelib import Redmine
 
@@ -50,14 +48,13 @@ for page in pages:
     # Write the exported file
     path = os.path.join("..", "doc", page.title + ".txt")
     if args.interactive:
-        answer = raw_input("Import '{}' (Y/N)? ".format(
+        answer = input("Import '{}' (Y/N)? ".format(
                 page.title))
         if answer.lower() != "y":
             continue
 
-    print "Writing", page.title, "in", path
+    print("Writing", page.title, "in", path)
     text = page.text
-    text = text.replace("\r", "").replace("\n", "\r\n")
-    file = open(path, "w", encoding="latin-1")
-    file.write(text)
-    file.close()
+    with open(path, "w", encoding="utf-8") as file:
+        file.write(text)
+        file.close()
