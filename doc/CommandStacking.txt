@@ -1,21 +1,21 @@
 h2. Commandes multiples
 
-L'envoi de commandes multiples (command stacking en anglais) est une fonctionnalité permettant d'envoyer plusieurs commandes à la fois. Par exemple :
+L'envoi de commandes multiples (command stacking en anglais) est une fonctionnalitÃ© permettant d'envoyer plusieurs commandes Ã  la fois. Par exemple :
 
 <pre>
 say sounds;say good
 </pre>
 
-Cette syntaxe est identique à :
+Cette syntaxe est identique Ã  :
 
 <pre>
 say sounds
 say good
 </pre>
 
-Envoyer plusieurs commandes à la fois peut être utile dans certains cas. Par défaut, le délimiteur pour les commandes multiples est le point virgule (;), mais vous pouvez le modifier dans les options, onglet commandes. Si vous voulez retirer la fonctionnalité des commandes multiples, supprimez simplement le délimiteur dans les options.
+Envoyer plusieurs commandes Ã  la fois peut Ãªtre utile dans certains cas. Par dÃ©faut, le dÃ©limiteur pour les commandes multiples est le point virgule (;), mais vous pouvez le modifier dans les options, onglet commandes. Si vous voulez retirer la fonctionnalitÃ© des commandes multiples, supprimez simplement le dÃ©limiteur dans les options.
 
-Vous pouvez entrer le délimiteur plusieurs fois pour l'envoyer dans vos commandes. Si vous avez laissé le délimiteur par défaut (;) par exemple :
+Vous pouvez entrer le dÃ©limiteur plusieurs fois pour l'envoyer dans vos commandes. Si vous avez laissÃ© le dÃ©limiteur par dÃ©faut (;) par exemple :
 
 <pre>
 say une commande;say une autre commande avec un clin d'oeil ;;)
@@ -28,9 +28,9 @@ say une commande
 say une autre commande avec un clin d'oeil ;)
 </pre>
 
-Quand le délimiteur est présent plus d'une fois, il est ignoré par le système des commandes multiples. Ainsi :
+Quand le dÃ©limiteur est prÃ©sent plus d'une fois, il est ignorÃ© par le systÃ¨me des commandes multiples. Ainsi :
 
-| Commande | Équivalent |
+| Commande | Ã‰quivalent |
 | @say ;;)@ | @say ;)@ |
 | @say ;;;)@ | @say ;;)@ |
 | @say ;;;;)@ | @say ;;;)@ |

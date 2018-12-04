@@ -1,31 +1,31 @@
 h1. Les triggers dans CocoMUD
 
-Il est possible que les triggers soient la fonctionnalité la plus puissante de tout client MUD. CocoMUD propose un système simple et flexible de triggers, qui sera présenté ici avec de nombreux exemples.
+Il est possible que les triggers soient la fonctionnalitÃ© la plus puissante de tout client MUD. CocoMUD propose un systÃ¨me simple et flexible de triggers, qui sera prÃ©sentÃ© ici avec de nombreux exemples.
 
 {{toc}}
 
 h2. Qu'est-ce qu'un trigger ?
 
-Normalement, si vous entrez une commande dans le client, le serveur devrait vous "répondre" en envoyant une ou plusieurs lignes. Cette réponse est constituée en grande partie (sinon en totalité, à l'exception des couleurs) de texte, tout comme votre commande.
+Normalement, si vous entrez une commande dans le client, le serveur devrait vous "rÃ©pondre" en envoyant une ou plusieurs lignes. Cette rÃ©ponse est constituÃ©e en grande partie (sinon en totalitÃ©, Ã  l'exception des couleurs) de texte, tout comme votre commande.
 
-Les triggers peuvent intercepter une ligne particulière et réagir en fonction, en faisant quelque chose. C'est l'expression la plus simple d'un trigger : je surveille le texte envoyé par le serveur, je réagis si je rencontre une certaine ligne et je fais quelque chose en retour.
+Les triggers peuvent intercepter une ligne particuliÃ¨re et rÃ©agir en fonction, en faisant quelque chose. C'est l'expression la plus simple d'un trigger : je surveille le texte envoyÃ© par le serveur, je rÃ©agis si je rencontre une certaine ligne et je fais quelque chose en retour.
 
-Les triggers étant potentiellement puissants, leur configuration a été répartie dans différentes couches de complexité : vous n'avez pas besoin de comprendre (ni même de connaître l'existence) des types de triggers les plus avancés pour utiliser cette fonctionnalité. Cette documentation va décrire dans l'ordre la mise en place, pas à pas, des triggers les plus simples jusqu'aux triggers les plus complexes.
+Les triggers Ã©tant potentiellement puissants, leur configuration a Ã©tÃ© rÃ©partie dans diffÃ©rentes couches de complexitÃ© : vous n'avez pas besoin de comprendre (ni mÃªme de connaÃ®tre l'existence) des types de triggers les plus avancÃ©s pour utiliser cette fonctionnalitÃ©. Cette documentation va dÃ©crire dans l'ordre la mise en place, pas Ã  pas, des triggers les plus simples jusqu'aux triggers les plus complexes.
 
-h2. Créer un trigger
+h2. CrÃ©er un trigger
 
-Commençons par quelque chose de simple : un trigger qui joue un son quand quelqu'un (n'importe qui) parle sur un canal du jeu.
+CommenÃ§ons par quelque chose de simple : un trigger qui joue un son quand quelqu'un (n'importe qui) parle sur un canal du jeu.
 
-Cet exemple sera différent sur différents MUDs, bien entendu, n'hésitez donc pas à l'adapter en fonction de vos besoins. Pour notre exemple, admettons que nous pouvons utiliser la commande "hrp" pour envoyer un message sur le canal "hrp", comme ceci :
+Cet exemple sera diffÃ©rent sur diffÃ©rents MUDs, bien entendu, n'hÃ©sitez donc pas Ã  l'adapter en fonction de vos besoins. Pour notre exemple, admettons que nous pouvons utiliser la commande "hrp" pour envoyer un message sur le canal "hrp", comme ceci :
 
 <pre>
-hrp bonjour à vous !
+hrp bonjour Ã  vous !
 </pre>
 
-Et si tout va bien, le MUD devrait répondre avec :
+Et si tout va bien, le MUD devrait rÃ©pondre avec :
 
 <pre>
-[hrp] Vous dites : bonjour à vous !
+[hrp] Vous dites : bonjour Ã  vous !
 </pre>
 
 Ou bien, si quelqu'un d'autre parle sur le canal "hrp", vous pourriez voir un message comme ceci :
@@ -34,38 +34,38 @@ Ou bien, si quelqu'un d'autre parle sur le canal "hrp", vous pourriez voir un me
 [hrp] Aaron dit : coucou
 </pre>
 
-En bref, si nous voulons créer un trigger qui intercepte ces lignes, il nous faut un trigger qui intercepte les lignes qui commencent par "[hrp]" ("hrp" entouré de crochets).
+En bref, si nous voulons crÃ©er un trigger qui intercepte ces lignes, il nous faut un trigger qui intercepte les lignes qui commencent par "[hrp]" ("hrp" entourÃ© de crochets).
 
 bq. Pourquoi intercepter ces messages ?
 
-Si vous êtes nouveau dans l'utilisation des triggers, vous pourriez vous demander à quoi ils servent. La réponse dans ce cas précis pourrait être que, quand on reçoit un message sur le canal "hrp", le client joue un son. C'est sur cela que nous allons travailler.
+Si vous Ãªtes nouveau dans l'utilisation des triggers, vous pourriez vous demander Ã  quoi ils servent. La rÃ©ponse dans ce cas prÃ©cis pourrait Ãªtre que, quand on reÃ§oit un message sur le canal "hrp", le client joue un son. C'est sur cela que nous allons travailler.
 
-Nous allons donc voir comment créer un trigger qui :
+Nous allons donc voir comment crÃ©er un trigger qui :
 
-* Réagit quand le client reçoit une ligne commençant par "[hrp]" ;
-* Joue un son à ce moment.
+* RÃ©agit quand le client reÃ§oit une ligne commenÃ§ant par "[hrp]" ;
+* Joue un son Ã  ce moment.
 
-Comme la plupart des fonctionnalités sur CocoMUD, on peut créer des triggers en passant par l'interface ou par une instruction SharpScript. La première étant la plus facile pour commencer, nous allons la voir d'abord.
+Comme la plupart des fonctionnalitÃ©s sur CocoMUD, on peut crÃ©er des triggers en passant par l'interface ou par une instruction SharpScript. La premiÃ¨re Ã©tant la plus facile pour commencer, nous allons la voir d'abord.
 
 h3. Depuis l'interface
 
-Pour ajouter, éditer ou suppriemr un trigger depuis l'interface de CocoMUD, ouvrez la barre de menu, *Jeu* -> *Triggers*.
+Pour ajouter, Ã©diter ou suppriemr un trigger depuis l'interface de CocoMUD, ouvrez la barre de menu, *Jeu* -> *Triggers*.
 
-Vous devriez vous trouver dans une boîte de dialogue listant les triggers actuellement configurés sur cet univers. Il est très possible que cette liste soit vide la première fois que vous ouvrez cette boîte de dialogue. Pour créer un trigger, cliquez sur le bouton *Ajouter*.
+Vous devriez vous trouver dans une boÃ®te de dialogue listant les triggers actuellement configurÃ©s sur cet univers. Il est trÃ¨s possible que cette liste soit vide la premiÃ¨re fois que vous ouvrez cette boÃ®te de dialogue. Pour crÃ©er un trigger, cliquez sur le bouton *Ajouter*.
 
-Une nouvelle boîte de dialogue s'ouvre alors. Le curseur devrait se trouver dans une zone d'édition, où l'on vous demande d'entrer le trigger (c'est-à-dire, son déclencheur, la partie qui va indiquer à CocoMUD quoi surveiller).
+Une nouvelle boÃ®te de dialogue s'ouvre alors. Le curseur devrait se trouver dans une zone d'Ã©dition, oÃ¹ l'on vous demande d'entrer le trigger (c'est-Ã -dire, son dÃ©clencheur, la partie qui va indiquer Ã  CocoMUD quoi surveiller).
 
-Pour notre exemple, nous avons déterminé que notre trigger devrait s'exécuter quand le client reçoit une ligne commençant par @[hrp]@. Vous pouvez écrire @[hrp]@ dans cette zone de texte, mais ne la quittez pas encore : si vous créez un trigger déclenché par @[hrp]@, le trigger ne sera exécuté que si le client envoie une ligne ne contenant *que* @[hrp]@. Ce n'est pas ce que l'on veut faire ici : nous voulons que le trigger réagisse à une ligne commençant par @[hrp]@ . La solution est de mettre un signe astérisque (@*@) après @{hrp}@, pour dire au client que @[hrp]@ peut être suivi de n'importe quoi.
+Pour notre exemple, nous avons dÃ©terminÃ© que notre trigger devrait s'exÃ©cuter quand le client reÃ§oit une ligne commenÃ§ant par @[hrp]@. Vous pouvez Ã©crire @[hrp]@ dans cette zone de texte, mais ne la quittez pas encore : si vous crÃ©ez un trigger dÃ©clenchÃ© par @[hrp]@, le trigger ne sera exÃ©cutÃ© que si le client envoie une ligne ne contenant *que* @[hrp]@. Ce n'est pas ce que l'on veut faire ici : nous voulons que le trigger rÃ©agisse Ã  une ligne commenÃ§ant par @[hrp]@ . La solution est de mettre un signe astÃ©risque (@*@) aprÃ¨s @{hrp}@, pour dire au client que @[hrp]@ peut Ãªtre suivi de n'importe quoi.
 
-Peut-être reconnaissez-vous cette syntaxe : c'est la même que pour créer des [[Alias|alias]] avec variables, et ce n'est pas une coïncidence, nous verrons plus tard pourquoi.
+Peut-Ãªtre reconnaissez-vous cette syntaxe : c'est la mÃªme que pour crÃ©er des [[Alias|alias]] avec variables, et ce n'est pas une coÃ¯ncidence, nous verrons plus tard pourquoi.
 
-Pour l'instant, vous pouvez écrire dans ce champ de texte :
+Pour l'instant, vous pouvez Ã©crire dans ce champ de texte :
 
 <pre>
 [hrp]*
 </pre>
 
-Si vous appuyez sur Tab, vous devriez vous trouver dans une liste d'actions que l'on peut associer à ce trigger. Dans notre exemple, nous voudrions jouer un son quand ce trigger se déclenche : parcourez la liste jusqu'à trouver l'action :
+Si vous appuyez sur Tab, vous devriez vous trouver dans une liste d'actions que l'on peut associer Ã  ce trigger. Dans notre exemple, nous voudrions jouer un son quand ce trigger se dÃ©clenche : parcourez la liste jusqu'Ã  trouver l'action :
 
 <pre>
 Joue un son
@@ -73,112 +73,112 @@ Joue un son
 
 Et cliquez sur le bouton suivant : *Ajouter l'action*.
 
-On vous demande maintenant de configurer cette action (dans notre cas, choisir le fichier sonore à jouer quand ce trigger se déclenche). Vous avez un bouton "Parcourir" qui vous permet de trouver le fichier sonore sur votre disque dur. Le bouton "Test" permet de vérifier que CocoMUD parvient bien à lire et jouer ce fichier (CocoMUD lit les fichiers @.wav@ et @.ogg@). Si tout se passe bien, cliquez sur *OK*. L'action sera ajoutée au trigger. vous vous trouverez dans la liste des actions liées à ce trigger :
+On vous demande maintenant de configurer cette action (dans notre cas, choisir le fichier sonore Ã  jouer quand ce trigger se dÃ©clenche). Vous avez un bouton "Parcourir" qui vous permet de trouver le fichier sonore sur votre disque dur. Le bouton "Test" permet de vÃ©rifier que CocoMUD parvient bien Ã  lire et jouer ce fichier (CocoMUD lit les fichiers @.wav@ et @.ogg@). Si tout se passe bien, cliquez sur *OK*. L'action sera ajoutÃ©e au trigger. vous vous trouverez dans la liste des actions liÃ©es Ã  ce trigger :
 
 <pre>
 #play mon_fichier.wav
 </pre>
 
-Bien sûr, "mon_fichier.wav" sera remplacé par le chemin et le nom du fichier que vous avez sélectionné. La représentation de l'action est en version courte (version SharpScript), cela explique pourquoi vous voyez @#play mon_fichier.wav@. Ne vous en inquiétez pas trop, c'est surtout un point de repère pour vérifier que l'action a bien été ajoutée, ainsi qu'un moyen de l'éditer, si vous voulez par exemple jouer un autre fichier sonore à la place.
+Bien sÃ»r, "mon_fichier.wav" sera remplacÃ© par le chemin et le nom du fichier que vous avez sÃ©lectionnÃ©. La reprÃ©sentation de l'action est en version courte (version SharpScript), cela explique pourquoi vous voyez @#play mon_fichier.wav@. Ne vous en inquiÃ©tez pas trop, c'est surtout un point de repÃ¨re pour vÃ©rifier que l'action a bien Ã©tÃ© ajoutÃ©e, ainsi qu'un moyen de l'Ã©diter, si vous voulez par exemple jouer un autre fichier sonore Ã  la place.
 
-Ces deux listes et les quelques boutons qui l'entourent forment l'éditeur SharpScript, permettant de configurer des actions assez complexes sans toucher au SharpScript de près ou de loin. Cette fenêtre peut s'avérer un peu intimidante au premier abord, voici donc un résumé de ce qu'elle contient. Notez que vous trouverez la même hiérarchie pour configurer [[Alias|les alias]] ou [[Macros|les macros]] et d'autres fonctionnalités de CocoMUD dépendantes du SharpScript :
+Ces deux listes et les quelques boutons qui l'entourent forment l'Ã©diteur SharpScript, permettant de configurer des actions assez complexes sans toucher au SharpScript de prÃ¨s ou de loin. Cette fenÃªtre peut s'avÃ©rer un peu intimidante au premier abord, voici donc un rÃ©sumÃ© de ce qu'elle contient. Notez que vous trouverez la mÃªme hiÃ©rarchie pour configurer [[Alias|les alias]] ou [[Macros|les macros]] et d'autres fonctionnalitÃ©s de CocoMUD dÃ©pendantes du SharpScript :
 
-* La première chose à renseigner pour les triggers est le déclencheur, comme nous l'avons fait plus haut. C'est une zone de texte toute simple ;
-* Au-dessous se trouve une liste d'actions connectés à ce trigger. C'est une liste, vous pouvez naviguer avec les flèches pour la parcourir ou sélectionner une action précise ;
-* À droite se trouve le bouton pour éditer la ligne d'action sélectionnée (dans notre cas, nous pourrions vouloir changer le fichier sonore joué par le trigger) ;
-* Toujours à droite se trouve le bouton pour supprimer la ligne d'action. Notez que ces trois champs (liste d'actions, bouton éditer et bouton supprimer) n'apparaissent pas si aucune action n'est associée à ce trigger ;
-* Au-dessous se trouve une liste d'actions que l'on pourrait vouloir lier à ce trigger. C'est dans cette liste que nous avons sélectionné "joue un son" dans l'exemple ci-dessus. Elle apparaît dans tous les cas, car un trigger peut être connecté à aucune, une, deux ou de nombreuses actions, il n'y a pas vraiment de limite.
-* À droite se trouve le bouton pour ajouter l'action sélectionnée.
-* Le reste de la fenêtre contient d'autres cases à cocher et options qui seront détaillées dans la suite de cette documentation.
+* La premiÃ¨re chose Ã  renseigner pour les triggers est le dÃ©clencheur, comme nous l'avons fait plus haut. C'est une zone de texte toute simple ;
+* Au-dessous se trouve une liste d'actions connectÃ©s Ã  ce trigger. C'est une liste, vous pouvez naviguer avec les flÃ¨ches pour la parcourir ou sÃ©lectionner une action prÃ©cise ;
+* Ã€ droite se trouve le bouton pour Ã©diter la ligne d'action sÃ©lectionnÃ©e (dans notre cas, nous pourrions vouloir changer le fichier sonore jouÃ© par le trigger) ;
+* Toujours Ã  droite se trouve le bouton pour supprimer la ligne d'action. Notez que ces trois champs (liste d'actions, bouton Ã©diter et bouton supprimer) n'apparaissent pas si aucune action n'est associÃ©e Ã  ce trigger ;
+* Au-dessous se trouve une liste d'actions que l'on pourrait vouloir lier Ã  ce trigger. C'est dans cette liste que nous avons sÃ©lectionnÃ© "joue un son" dans l'exemple ci-dessus. Elle apparaÃ®t dans tous les cas, car un trigger peut Ãªtre connectÃ© Ã  aucune, une, deux ou de nombreuses actions, il n'y a pas vraiment de limite.
+* Ã€ droite se trouve le bouton pour ajouter l'action sÃ©lectionnÃ©e.
+* Le reste de la fenÃªtre contient d'autres cases Ã  cocher et options qui seront dÃ©taillÃ©es dans la suite de cette documentation.
 
-Nous avons créé notre trigger @[hrp]*@ connecté à une action pour jouer un son : vous pouvez donc cliquer sur *OK*. Vous devriez vous retrouver dans la liste des triggers actuels, sur le trigger que vous venez d'ajouter. Appuyez de nouveau sur *OK* pour fermer la boîte de dialogue en sauvegardant. Si vous quittez la boîte de dialogue autrement, le trigger ne sera pas ajouté.
+Nous avons crÃ©Ã© notre trigger @[hrp]*@ connectÃ© Ã  une action pour jouer un son : vous pouvez donc cliquer sur *OK*. Vous devriez vous retrouver dans la liste des triggers actuels, sur le trigger que vous venez d'ajouter. Appuyez de nouveau sur *OK* pour fermer la boÃ®te de dialogue en sauvegardant. Si vous quittez la boÃ®te de dialogue autrement, le trigger ne sera pas ajoutÃ©.
 
-Pour vérifier que notre nouveau trigger marche correctement, essayons d'envoyer un message sur le canal "hrp" :
-
-<pre>
-hrp Est-ce que ça marche ?
-</pre>
-
-Si tout va bien (et partant du principe que le serveur répond comme on l'attend), on devrait recevoir la ligne :
+Pour vÃ©rifier que notre nouveau trigger marche correctement, essayons d'envoyer un message sur le canal "hrp" :
 
 <pre>
-[hrp] Vous dites : est-ce que ça marche ?
+hrp Est-ce que Ã§a marche ?
 </pre>
 
-Et vous devriez entendre le son que vous avez sélectionné à l'étape précédente. Voilà ! Ce n'était pas si difficile, si ?
+Si tout va bien (et partant du principe que le serveur rÃ©pond comme on l'attend), on devrait recevoir la ligne :
+
+<pre>
+[hrp] Vous dites : est-ce que Ã§a marche ?
+</pre>
+
+Et vous devriez entendre le son que vous avez sÃ©lectionnÃ© Ã  l'Ã©tape prÃ©cÃ©dente. VoilÃ  ! Ce n'Ã©tait pas si difficile, si ?
 
 h3. Depuis le SharpScript
 
-Comme toujours, l'interface permet de manipuler des options potentiellement complexes, mais elles sont toutes converties en SharpScript à la fin, même si vous n'avez pas vraiment besoin de vous en occuper. Créer le trigger de notre exemple en SharpScript est assez facile : vous pouvez entrer cette ligne directement dans votre client, ou bien dans le fichier "config.set".
+Comme toujours, l'interface permet de manipuler des options potentiellement complexes, mais elles sont toutes converties en SharpScript Ã  la fin, mÃªme si vous n'avez pas vraiment besoin de vous en occuper. CrÃ©er le trigger de notre exemple en SharpScript est assez facile : vous pouvez entrer cette ligne directement dans votre client, ou bien dans le fichier "config.set".
 
 <pre>
 #trigger [hrp]* {#play mon_fichier.wav}
 </pre>
 
-C'est une instruction SharpScript. De gauche à droite, nous avons :
+C'est une instruction SharpScript. De gauche Ã  droite, nous avons :
 
-* @#trigger@ est le nom de l'action SharpScript. Ici, @#trigger@ crée simplement un nouveau trigger ;
-* @[hrp]*@ est notre déclencheur, ce que le trigger doit surveiller quand on reçoit des messages du serveur. Tout comme audessus, on a précisé @[hrp]*@ , qui veut dire "toute ligne commençant par @[hrp]@" ;
-* Ensuite, on doit préciser la ou les actions à exécuter quand ce trigger se déclenche. Ici, @#play mon_fichier.wav@. @#play@ est une autre action SharpScript, qui permet simplement de jouer le fichier passé en argument. Puisque notre argument contient un espace entre le nom de l'action @#play@ et l'argument de la fonction @mon_fichier.wav@, on doit entourer l'argument d'accolades.
+* @#trigger@ est le nom de l'action SharpScript. Ici, @#trigger@ crÃ©e simplement un nouveau trigger ;
+* @[hrp]*@ est notre dÃ©clencheur, ce que le trigger doit surveiller quand on reÃ§oit des messages du serveur. Tout comme audessus, on a prÃ©cisÃ© @[hrp]*@ , qui veut dire "toute ligne commenÃ§ant par @[hrp]@" ;
+* Ensuite, on doit prÃ©ciser la ou les actions Ã  exÃ©cuter quand ce trigger se dÃ©clenche. Ici, @#play mon_fichier.wav@. @#play@ est une autre action SharpScript, qui permet simplement de jouer le fichier passÃ© en argument. Puisque notre argument contient un espace entre le nom de l'action @#play@ et l'argument de la fonction @mon_fichier.wav@, on doit entourer l'argument d'accolades.
 
-Ajouter un trigger en SharpScript est peut-être bien plus rapide, mais le système ne vous pardonnera pas facilement si vous faites des erreurs de syntaxe. L'interface nécessite d'avantage d'étapes, mais elle est généralement plus sûre.
+Ajouter un trigger en SharpScript est peut-Ãªtre bien plus rapide, mais le systÃ¨me ne vous pardonnera pas facilement si vous faites des erreurs de syntaxe. L'interface nÃ©cessite d'avantage d'Ã©tapes, mais elle est gÃ©nÃ©ralement plus sÃ»re.
 
 h2. Editer un trigger
 
-Dans la boîte de dialogue des triggers (menu *Jeu* -> *Triggers*), vous pouvez éditer un trigger. Vous aurez besoin d'éditer un trigger dans deux cas : si vous voulez changer son déclencheur (la partie qui indique au trigger quel morceau de texte surveiller) on ses actions (la partie qui décrit quoi faire quand ce trigger se déclenche).
+Dans la boÃ®te de dialogue des triggers (menu *Jeu* -> *Triggers*), vous pouvez Ã©diter un trigger. Vous aurez besoin d'Ã©diter un trigger dans deux cas : si vous voulez changer son dÃ©clencheur (la partie qui indique au trigger quel morceau de texte surveiller) on ses actions (la partie qui dÃ©crit quoi faire quand ce trigger se dÃ©clenche).
 
 h2. Supprimer un trigger
 
-Supprimer un trigger peut se faire depuis l'interface également. Cliquez simplement sur le bouton *Supprimer* après avoir sélectionné un trigger existant. Confirmez que vous voulez supprimer ce trigger. N'oubliez pas de fermer la boîte de dialogue en cliquant sur *OK*, sans quoi votre trigger ne sera pas effacé.
+Supprimer un trigger peut se faire depuis l'interface Ã©galement. Cliquez simplement sur le bouton *Supprimer* aprÃ¨s avoir sÃ©lectionnÃ© un trigger existant. Confirmez que vous voulez supprimer ce trigger. N'oubliez pas de fermer la boÃ®te de dialogue en cliquant sur *OK*, sans quoi votre trigger ne sera pas effacÃ©.
 
 h2. Utiliser des variables dans les triggers
 
-Il est tant de regarder plus attentivement le signe astérisque (@*@) que nous avons utilisé plus haut. Ce n'est pas un hasard si vous reconnaissez cette syntaxe depuis la documentation des [[Alias|alias]], puisqu'il s'agit de la même chose : l'astérisque veut dire "tout et n'importe quoi".
+Il est tant de regarder plus attentivement le signe astÃ©risque (@*@) que nous avons utilisÃ© plus haut. Ce n'est pas un hasard si vous reconnaissez cette syntaxe depuis la documentation des [[Alias|alias]], puisqu'il s'agit de la mÃªme chose : l'astÃ©risque veut dire "tout et n'importe quoi".
 
-Voici une liste des syntaxes possibles, pour vous donner une idée :
+Voici une liste des syntaxes possibles, pour vous donner une idÃ©e :
 
 | Syntaxe | Signifie |
-| @Bienvenue*@ | N'importe quelle ligne commençant par @Bienvenue@ . |
+| @Bienvenue*@ | N'importe quelle ligne commenÃ§ant par @Bienvenue@ . |
 | @*classe@ | N'importe quelle ligne finissant par @classe@ . |
-| @*passage*@ | N'importe quel ligne contenant (au début, à la fin ou au milieu) @passage@. Notez que ce trigger sera aussi déclenché si la ligne contient @passager@, par extension. |
-| @* passage *@ | N'importe quelle ligne contenant le mot @passage@ entouré d'espaces. Le mot @passager@ ne déclenchera plus ce trigger cette fois. |
-| @Vous gagnez * crédits en *.@ | Des lignes comme @Vous gagnez 80 crédits en combat.@ ou @Vous gagnez 10 crédits en management.@ déclencheront ce trigger. La ligne @Vous gagnez un certain nombre de crédits en quelque chose.@ déclenchera le trigger également. |
+| @*passage*@ | N'importe quel ligne contenant (au dÃ©but, Ã  la fin ou au milieu) @passage@. Notez que ce trigger sera aussi dÃ©clenchÃ© si la ligne contient @passager@, par extension. |
+| @* passage *@ | N'importe quelle ligne contenant le mot @passage@ entourÃ© d'espaces. Le mot @passager@ ne dÃ©clenchera plus ce trigger cette fois. |
+| @Vous gagnez * crÃ©dits en *.@ | Des lignes comme @Vous gagnez 80 crÃ©dits en combat.@ ou @Vous gagnez 10 crÃ©dits en management.@ dÃ©clencheront ce trigger. La ligne @Vous gagnez un certain nombre de crÃ©dits en quelque chose.@ dÃ©clenchera le trigger Ã©galement. |
 
-En bref, un signe astérisque veut dire n'importe quoi : une lettre, un chiffre, un mot, un nombre, un espace, un signe de ponctuation, un message assez long... voire rien du tout.
+En bref, un signe astÃ©risque veut dire n'importe quoi : une lettre, un chiffre, un mot, un nombre, un espace, un signe de ponctuation, un message assez long... voire rien du tout.
 
-Un mot de mise en garde : la syntaxe de vos déclencheurs est très importante, et vous devriez vérifier avec soin les lignes que vous souhaitez intercepter.
+Un mot de mise en garde : la syntaxe de vos dÃ©clencheurs est trÃ¨s importante, et vous devriez vÃ©rifier avec soin les lignes que vous souhaitez intercepter.
 
 <pre>
 *table*
 </pre>
 
-Ce trigger se déclenchera quand le mot @table@ se trouve dans une ligne, au début, au milieu ou à la fin. Ce trigger se déclencherait donc avec les lignes suivantes :
+Ce trigger se dÃ©clenchera quand le mot @table@ se trouve dans une ligne, au dÃ©but, au milieu ou Ã  la fin. Ce trigger se dÃ©clencherait donc avec les lignes suivantes :
 
 <pre>
 ~ un tableau noir (commande board) se trouve ici
-Dans l'angle nord-est de la cour se trouve un long bâtiment de bois peint en rouge, probablement une étable.
+Dans l'angle nord-est de la cour se trouve un long bÃ¢timent de bois peint en rouge, probablement une Ã©table.
 </pre>
 
-Souvenez-vous qu'un trigger est autant facile à restrindre que facile à déclencher. Il vous faut trouver le bon équilibre entre les deux.
+Souvenez-vous qu'un trigger est autant facile Ã  restrindre que facile Ã  dÃ©clencher. Il vous faut trouver le bon Ã©quilibre entre les deux.
 
-Retournons aux variables. Le signe astérisque (@*@) fait deux choses :
+Retournons aux variables. Le signe astÃ©risque (@*@) fait deux choses :
 
-* Il aide à décrire quand le trigger doit se déclencher (il veut dire "n'importe quoi") ;
-* Il écrit dans une ou plusieurs variables.
+* Il aide Ã  dÃ©crire quand le trigger doit se dÃ©clencher (il veut dire "n'importe quoi") ;
+* Il Ã©crit dans une ou plusieurs variables.
 
-Utilisons le même exemple, avec notre trigger @[hrp[*@. Qu'arrive-t-il lorsque vous recevez une ligne comme celle-ci :
+Utilisons le mÃªme exemple, avec notre trigger @[hrp[*@. Qu'arrive-t-il lorsque vous recevez une ligne comme celle-ci :
 
 <pre>
 [hrp] Edgar dit : je n'y comprend rien, quelqu'un pourrait-il m'aider ?
 </pre>
 
-D'abord, le trigger @[hrp]*@ est déclenché, puis la partie après @[hrp]@ (celle décrite par le signe astérisque) est capturée dans une variable. Les variables permettent de conserver des informations, et c'est justement ce qu'elles font ici. Les variables sont numérotées en partant de @$1@, @$2@, @$3@ et ainsi de suite. Donc dans notre exemple, si on reçoit la ligne suivante, le trigger va créer une variable @$1@ contenant la partie après @[hrp]@ :
+D'abord, le trigger @[hrp]*@ est dÃ©clenchÃ©, puis la partie aprÃ¨s @[hrp]@ (celle dÃ©crite par le signe astÃ©risque) est capturÃ©e dans une variable. Les variables permettent de conserver des informations, et c'est justement ce qu'elles font ici. Les variables sont numÃ©rotÃ©es en partant de @$1@, @$2@, @$3@ et ainsi de suite. Donc dans notre exemple, si on reÃ§oit la ligne suivante, le trigger va crÃ©er une variable @$1@ contenant la partie aprÃ¨s @[hrp]@ :
 
 <pre>
  Edgar dit : je n'y comprend rien, quelqu'un pourrait-il m'aider ?
 </pre>
 
-Que peut-on faire avec cette variable ? Beaucoup de choses. Chaque paramètre de nos actions liées au trigger peuvent utiliser les variables du trigger. Nous verrons des exemples concrets un peu plus bas, mais pour l'heure, nous pouvons commencer par l'afficher. Vous pouvez entrer l'instruction suivante dans votre client :
+Que peut-on faire avec cette variable ? Beaucoup de choses. Chaque paramÃ¨tre de nos actions liÃ©es au trigger peuvent utiliser les variables du trigger. Nous verrons des exemples concrets un peu plus bas, mais pour l'heure, nous pouvons commencer par l'afficher. Vous pouvez entrer l'instruction suivante dans votre client :
 
 <pre>
 #say $1
@@ -192,20 +192,20 @@ Qui devrait vous afficher :
 
 bq. Pourquoi la ligne commence par un espace ?
 
-Si vous vous posez cette question, essayez d'écrire le déclencheur du trigger et la ligne reçue l'un à côté de l'autre, cela devrait vous aider à comprendre :
+Si vous vous posez cette question, essayez d'Ã©crire le dÃ©clencheur du trigger et la ligne reÃ§ue l'un Ã  cÃ´tÃ© de l'autre, cela devrait vous aider Ã  comprendre :
 
-* Déclencheur : @[hrp]*@ ;
-* Ligne reçue : @[hrp] Edgar dit : je n'y comprend rien, quelqu'un pourrait-il m'aider ?@ .
+* DÃ©clencheur : @[hrp]*@ ;
+* Ligne reÃ§ue : @[hrp] Edgar dit : je n'y comprend rien, quelqu'un pourrait-il m'aider ?@ .
 
-Vous avez trouvé ? La ligne reçue par le client commence par "hrp" entre crochets, un espace puis le nom de la personne qui parle... alors que notre déclencheur capture tout ce qu'il y a après le crochet fermant de "[hrp]", ce qui inclue notre signe espace dans ce cas.
+Vous avez trouvÃ© ? La ligne reÃ§ue par le client commence par "hrp" entre crochets, un espace puis le nom de la personne qui parle... alors que notre dÃ©clencheur capture tout ce qu'il y a aprÃ¨s le crochet fermant de "[hrp]", ce qui inclue notre signe espace dans ce cas.
 
-La solution : modifier quelque peu notre déclencheur.
+La solution : modifier quelque peu notre dÃ©clencheur.
 
 <pre>
 [hrp] *
 </pre>
 
-Cette fois, on met un espace entre le crochet fermant et le signe astérisque. Si l'on reçoit la ligne :
+Cette fois, on met un espace entre le crochet fermant et le signe astÃ©risque. Si l'on reÃ§oit la ligne :
 
 <pre>
 [hrp] Edgar dit : je n'y comprend rien, quelqu'un pourrait-il m'aider ?
@@ -217,63 +217,63 @@ Et qu'on affiche @$1@, on devrait voir :
 Edgar dit : je n'y comprend rien, quelqu'un pourrait-il m'aider ?
 </pre>
 
-Les espaces dans les déclencheurs pourraient bien être l'une des erreurs principales quand on crée ses propres triggers la première fois. Le meilleur conseil que je puisse vous donner est de regarder avec attention les lignes que vous voulez surveiller à l'aide de triggers, et de n'utiliser le signe astérisque (@*@) que quand vous n'avez pas de moyen de savoir ce qui s'y trouve.
+Les espaces dans les dÃ©clencheurs pourraient bien Ãªtre l'une des erreurs principales quand on crÃ©e ses propres triggers la premiÃ¨re fois. Le meilleur conseil que je puisse vous donner est de regarder avec attention les lignes que vous voulez surveiller Ã  l'aide de triggers, et de n'utiliser le signe astÃ©risque (@*@) que quand vous n'avez pas de moyen de savoir ce qui s'y trouve.
 
 h2. Les canaux CocoMUD dans les triggers
 
-CocoMUD offre un système assez puissant de canaux. Cette fonctionnalité est à différencier des canaux en jeu, qui sont dépendants du jeu où vous vous connectez. Les canaux CocoMUD sont des listes d'`'evènements dans lesquels vous mettez ce que vous voulez. Ce n'est pas obligatoire de mettre des canaux en jeu dans des canaux CocoMUD, c'est juste plus comfortable. Nous allons voir cela (pourquoi l'utiliser et comment faire).
+CocoMUD offre un systÃ¨me assez puissant de canaux. Cette fonctionnalitÃ© est Ã  diffÃ©rencier des canaux en jeu, qui sont dÃ©pendants du jeu oÃ¹ vous vous connectez. Les canaux CocoMUD sont des listes d'`'evÃ¨nements dans lesquels vous mettez ce que vous voulez. Ce n'est pas obligatoire de mettre des canaux en jeu dans des canaux CocoMUD, c'est juste plus comfortable. Nous allons voir cela (pourquoi l'utiliser et comment faire).
 
 Vous trouverez plus d'informations sur ce concept et leur utilisation avec triggers en lisant [[Channels|la documentation des canaux]].
 
 h2. Les triggers muets
 
-Dans certains cas, quand on reçoit une certaine ligne, on ne veut pas l'afficher sur le client.
+Dans certains cas, quand on reÃ§oit une certaine ligne, on ne veut pas l'afficher sur le client.
 
 bq. Cela arrive vraiment ?
 
-Parfois. Par exemple, certains MUD envoient des messages d'ambiance régulièrement (toutes les 3-5 secondes) quand vous vous trouvez dans une certaine situation. Ce peut être agréable pour mettre dans l'ambiance, mais pas toujours avec un lecteur d'écran.
+Parfois. Par exemple, certains MUD envoient des messages d'ambiance rÃ©guliÃ¨rement (toutes les 3-5 secondes) quand vous vous trouvez dans une certaine situation. Ce peut Ãªtre agrÃ©able pour mettre dans l'ambiance, mais pas toujours avec un lecteur d'Ã©cran.
 
 <pre>
-Un noeud dans le bois éclate en une pluie d'étincelles.
+Un noeud dans le bois Ã©clate en une pluie d'Ã©tincelles.
 </pre>
 
-Joli et, bien il faut le reconnaître, près d'un feu de camp il est normal qu'il pétille, lance des étincelles et craque de temps en temps en temps. Mais avec un lecteur d'écran, ce n'est pas le plus utile. Nous allons donc retirer cette ligne de l'affichage.
+Joli et, bien il faut le reconnaÃ®tre, prÃ¨s d'un feu de camp il est normal qu'il pÃ©tille, lance des Ã©tincelles et craque de temps en temps en temps. Mais avec un lecteur d'Ã©cran, ce n'est pas le plus utile. Nous allons donc retirer cette ligne de l'affichage.
 
-Pour ce faire, créez un nouveau trigger.  En passant par l'interface :
+Pour ce faire, crÃ©ez un nouveau trigger.  En passant par l'interface :
 
 * Ouvrez le menu *Jeu* -> *Trigger* ;
 * Ajoutez un trigger en cliquant sur *Ajouter* ;
-* Collez la ligne dans le déclencheur : @Un noeud dans le bois éclate en une pluie d'étincelles.@ ;
-* Pas besoin de sélectionner une action, sauf si vous voulez jouer un son approprié, cela dit.
-* Tabulez jusqu'à trouver la case "Trigger muet". Cochez-la.
-* Validez plusieurs fois sur *OK* pour sortir de la boîte de dialogue en sauvegardant.
+* Collez la ligne dans le dÃ©clencheur : @Un noeud dans le bois Ã©clate en une pluie d'Ã©tincelles.@ ;
+* Pas besoin de sÃ©lectionner une action, sauf si vous voulez jouer un son appropriÃ©, cela dit.
+* Tabulez jusqu'Ã  trouver la case "Trigger muet". Cochez-la.
+* Validez plusieurs fois sur *OK* pour sortir de la boÃ®te de dialogue en sauvegardant.
 
-Si le client reçoit cette ligne, il ne l'affichera plus.
+Si le client reÃ§oit cette ligne, il ne l'affichera plus.
 
-Créer ce trigger en SharpScript est assez simple :
+CrÃ©er ce trigger en SharpScript est assez simple :
 
 <pre>
-#trigger {Un noeud dans le bois éclate en une pluie d'étincelles.} {} +mute
+#trigger {Un noeud dans le bois Ã©clate en une pluie d'Ã©tincelles.} {} +mute
 </pre>
 
-Notez que le second paramètre (définissant la liste d'actions associées à ce trigger) est vide dans notre exemple.  Le troisième paramètre quant à lui est un flag, commençant par @+@ ou @-@ et suivi du nom du flag (ici @mute@ pour créer un trigger muet).
+Notez que le second paramÃ¨tre (dÃ©finissant la liste d'actions associÃ©es Ã  ce trigger) est vide dans notre exemple.  Le troisiÃ¨me paramÃ¨tre quant Ã  lui est un flag, commenÃ§ant par @+@ ou @-@ et suivi du nom du flag (ici @mute@ pour crÃ©er un trigger muet).
 
-Vous pouvez très bien avoir un trigger muet qui exécute cependant des actions, cela n'est pas du tout incompatible.
+Vous pouvez trÃ¨s bien avoir un trigger muet qui exÃ©cute cependant des actions, cela n'est pas du tout incompatible.
 
-h2. Les triggers marqués
+h2. Les triggers marquÃ©s
 
-Les triggers marqués peuvent être utiles pour l'accessibilité. Quand un trigger marqué se déclenche, il place le curseur directement sur la ligne ayant déclenché ce trigger. Vous pourriez avoir un trigger sur la ligne décrivant les sorties d'une salle, par exemple. Si ce trigger est marqué, quand vous explorerez plusieurs salles, le curseur sera toujours déplacé sur la listes des sorties, plutôt que ramené en bas de la fenêtre, où vous devrez appuyez plusieurs fois sur la flèche haut pour lire les sorties disponibles.
+Les triggers marquÃ©s peuvent Ãªtre utiles pour l'accessibilitÃ©. Quand un trigger marquÃ© se dÃ©clenche, il place le curseur directement sur la ligne ayant dÃ©clenchÃ© ce trigger. Vous pourriez avoir un trigger sur la ligne dÃ©crivant les sorties d'une salle, par exemple. Si ce trigger est marquÃ©, quand vous explorerez plusieurs salles, le curseur sera toujours dÃ©placÃ© sur la listes des sorties, plutÃ´t que ramenÃ© en bas de la fenÃªtre, oÃ¹ vous devrez appuyez plusieurs fois sur la flÃ¨che haut pour lire les sorties disponibles.
 
-C'est le même principe pour créer ce trigger :
+C'est le mÃªme principe pour crÃ©er ce trigger :
 
-* Dans la barre de menu, sélectionnez *Jeue* -> *Triggers*.
-* Cliquez sur le bouton *Ajouter* pour créer un nouveau trigger.
-* Écrivez dans le déclencheur quelque chsoe comme : @Sorties :*@ .
-* Tabulez plusieurs fois pour cocher la case "trigger marqué".
+* Dans la barre de menu, sÃ©lectionnez *Jeue* -> *Triggers*.
+* Cliquez sur le bouton *Ajouter* pour crÃ©er un nouveau trigger.
+* Ã‰crivez dans le dÃ©clencheur quelque chsoe comme : @Sorties :*@ .
+* Tabulez plusieurs fois pour cocher la case "trigger marquÃ©".
 
-La prochaine fois que vous recevrez une ligne commençant par @Sorties : @, le curseur sera déplacé automatiquement dessus.
+La prochaine fois que vous recevrez une ligne commenÃ§ant par @Sorties : @, le curseur sera dÃ©placÃ© automatiquement dessus.
 
-Créer ce trigger avec une instruction SharpScript donne :
+CrÃ©er ce trigger avec une instruction SharpScript donne :
 
 <pre>
 #trigger {Sorties : *} {} +mark
@@ -281,71 +281,71 @@ Créer ce trigger avec une instruction SharpScript donne :
 
 h2. Les triggers avec substitution
 
-Dans certains cas, quand un trigger s'exécute, on veut modifier la ligne qui a déclenché le trigger. L'un des exemples les plus fréquents est pour réduire une ligne un peu longue. Certains MUDs ont de longues lignes de texte et mettent l'information importante à la fin, ce qui n'est pas super pratique avec un lecteur d'écran. Par exemple :
+Dans certains cas, quand un trigger s'exÃ©cute, on veut modifier la ligne qui a dÃ©clenchÃ© le trigger. L'un des exemples les plus frÃ©quents est pour rÃ©duire une ligne un peu longue. Certains MUDs ont de longues lignes de texte et mettent l'information importante Ã  la fin, ce qui n'est pas super pratique avec un lecteur d'Ã©cran. Par exemple :
 
 <pre>
-Quelqu'un parle publiquement sur le canal 'hrp' avec une petite voix inquiète : c'est sans danger ?
+Quelqu'un parle publiquement sur le canal 'hrp' avec une petite voix inquiÃ¨te : c'est sans danger ?
 </pre>
 
-Bien que cette ligne de texte en apprenne beaucoup, l'information vraiment importante (le message) se trouve tout à la fin. Ce pourrait être bien de raccourcir un petit peu cette ligne de texte, et peut-être changer l'ordre des informations.
+Bien que cette ligne de texte en apprenne beaucoup, l'information vraiment importante (le message) se trouve tout Ã  la fin. Ce pourrait Ãªtre bien de raccourcir un petit peu cette ligne de texte, et peut-Ãªtre changer l'ordre des informations.
 
 <pre>
-[hrp] Quelqu'un : c'est sans danger ? (une petite voix inquiète)
+[hrp] Quelqu'un : c'est sans danger ? (une petite voix inquiÃ¨te)
 </pre>
 
-Pour faire cela, il faut créer un trigger, et créer une ligne de substitution. Quand le trigger est appelé, la ligne de substitution s'affichera à la place de la ligne d'origine qui a déclenché le trigger.
+Pour faire cela, il faut crÃ©er un trigger, et crÃ©er une ligne de substitution. Quand le trigger est appelÃ©, la ligne de substitution s'affichera Ã  la place de la ligne d'origine qui a dÃ©clenchÃ© le trigger.
 
 * Dans la barre de menu *Jeu* -> *Triggers* ;
-* Cliquez sur *Ajouter* pour créer un nouveau trigger ;
-* Écrivez le déclencheur comme d'habitude :
+* Cliquez sur *Ajouter* pour crÃ©er un nouveau trigger ;
+* Ã‰crivez le dÃ©clencheur comme d'habitude :
 <pre>
 * parle publiquement sur le canal '*' avec * : *
 </pre>
-* Notez que @$1@ contient le nom de l'auteur du message, @$2@ contient le nom du canal, @$3@ contient la voix utilisée et @$4@ contient le message lui-même ;
-* Tabulez jusqu'à trouver la zone de texte appelée "Message de remplacement de la ligne ayant déclenché le trigger".
-* Dedans, écrivez :
+* Notez que @$1@ contient le nom de l'auteur du message, @$2@ contient le nom du canal, @$3@ contient la voix utilisÃ©e et @$4@ contient le message lui-mÃªme ;
+* Tabulez jusqu'Ã  trouver la zone de texte appelÃ©e "Message de remplacement de la ligne ayant dÃ©clenchÃ© le trigger".
+* Dedans, Ã©crivez :
 <pre>
 [$2] $1 : $4 ($3)
 </pre>
-C'est compréhensible ? Si ce n'est pas le cas, prenez le temps de relire à quoi correspond chaque variable.
+C'est comprÃ©hensible ? Si ce n'est pas le cas, prenez le temps de relire Ã  quoi correspond chaque variable.
 
-Créer le même trigger en SharpScript serait :
+CrÃ©er le mÃªme trigger en SharpScript serait :
 
 <pre>
 #trigger {* parle publiquement sur le canal '*' avec * : *} {} {[$2] $1 : $4 ($3)}
 </pre>
 
-Note importante : nous avons trois arguments ici, dans notre action @#trigger@. Le premier contient toujours le déclencheur du trigger, le second la liste d'actions (vide ici). Le troisième contient la chaîne de substitution. Si il n'y a pas de troisième paramètre, ou que le paramètre est vide, la ligne est affichée telle qu'elle (c'est le cas dans tous nos exemples précédents).
+Note importante : nous avons trois arguments ici, dans notre action @#trigger@. Le premier contient toujours le dÃ©clencheur du trigger, le second la liste d'actions (vide ici). Le troisiÃ¨me contient la chaÃ®ne de substitution. Si il n'y a pas de troisiÃ¨me paramÃ¨tre, ou que le paramÃ¨tre est vide, la ligne est affichÃ©e telle qu'elle (c'est le cas dans tous nos exemples prÃ©cÃ©dents).
 
-h2. Les triggers déclenchés par expressions régulières
+h2. Les triggers dÃ©clenchÃ©s par expressions rÃ©guliÃ¨res
 
-Cette section et celles qui suivent sont un peu plus avancées.
+Cette section et celles qui suivent sont un peu plus avancÃ©es.
 
-Le symbole astérisque (@*@) est très pratique. Mais il n'est pas très précis. CocoMUD permet d'écrire des "expressions régulières":https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql/les-expressions-regulieres-partie-1-2 . Le but ici n'est pas de décrire la syntaxe de ces expressions, c'est un sujet à part entière, mais vous trouverez de nombreuses ressources (à commencer par le lien ci-dessus).
+Le symbole astÃ©risque (@*@) est trÃ¨s pratique. Mais il n'est pas trÃ¨s prÃ©cis. CocoMUD permet d'Ã©crire des "expressions rÃ©guliÃ¨res":https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql/les-expressions-regulieres-partie-1-2 . Le but ici n'est pas de dÃ©crire la syntaxe de ces expressions, c'est un sujet Ã  part entiÃ¨re, mais vous trouverez de nombreuses ressources (Ã  commencer par le lien ci-dessus).
 
-Pour utiliser des expressions régulières dans des déclencheurs de trigger, il suffit de commencer le trigger avec le signe @^@. CocoMUD comprend que ce déclencheur doit être une expression régulière. Par exemple :
+Pour utiliser des expressions rÃ©guliÃ¨res dans des dÃ©clencheurs de trigger, il suffit de commencer le trigger avec le signe @^@. CocoMUD comprend que ce dÃ©clencheur doit Ãªtre une expression rÃ©guliÃ¨re. Par exemple :
 
 <pre>
 ^Vous recevez \d+ XP.$
 </pre>
 
-Ce trigger sera déclenché si vous recevez la ligne "Vous recevez ... XP.", avec ... étant un ou plusieurs chiffres. Ce trigger ne sera pas déclenché par la ligne : "Vous recevez un peu d'XP."
+Ce trigger sera dÃ©clenchÃ© si vous recevez la ligne "Vous recevez ... XP.", avec ... Ã©tant un ou plusieurs chiffres. Ce trigger ne sera pas dÃ©clenchÃ© par la ligne : "Vous recevez un peu d'XP."
 
-Une chose importante à garder à l'esprit quand on utilise des triggers avec expressions régulières, cependant, est que si on veut capturer des informations, il faut utiliser des groupes de capture (des parenthèses).
+Une chose importante Ã  garder Ã  l'esprit quand on utilise des triggers avec expressions rÃ©guliÃ¨res, cependant, est que si on veut capturer des informations, il faut utiliser des groupes de capture (des parenthÃ¨ses).
 
 <pre>
 ^Vous recevez (\d+) XP.$
 </pre>
 
-Ici, le nombre d'XP sera mis dans @$1@.  Vous pouvez aussi utiliser des groupes nommés et y faire référence avec @$nom_du_groupe@.
+Ici, le nombre d'XP sera mis dans @$1@.  Vous pouvez aussi utiliser des groupes nommÃ©s et y faire rÃ©fÃ©rence avec @$nom_du_groupe@.
 
-h2. Des triggers avancés en Python
+h2. Des triggers avancÃ©s en Python
 
-Le moteur SharpScript est léger et puissant, mais ce reste un langage de script qui ne permet pas tout. Et qui ne permettra pas tout : il est censé resté léger et optimisé. Ce n'est pas un langage de programmation. Mais Python en est un, et CocoMUD est développé en Python. Le moteur SharpScript a une syntaxe particulière pour envoyer du code à Python directement, ce qui permet d'outre-passer les limites du moteur SharpScript de façon assez définitive. Depuis le code Python, on peut toujours utiliser les fonctions SharpScript, ce qui rend l'élaboration de triggers plus complexes assez simple, dès lors que l'on connaît Python.
+Le moteur SharpScript est lÃ©ger et puissant, mais ce reste un langage de script qui ne permet pas tout. Et qui ne permettra pas tout : il est censÃ© restÃ© lÃ©ger et optimisÃ©. Ce n'est pas un langage de programmation. Mais Python en est un, et CocoMUD est dÃ©veloppÃ© en Python. Le moteur SharpScript a une syntaxe particuliÃ¨re pour envoyer du code Ã  Python directement, ce qui permet d'outre-passer les limites du moteur SharpScript de faÃ§on assez dÃ©finitive. Depuis le code Python, on peut toujours utiliser les fonctions SharpScript, ce qui rend l'Ã©laboration de triggers plus complexes assez simple, dÃ¨s lors que l'on connaÃ®t Python.
 
-Nous allons prendre un exemple, comme toujours, mais souvenez-vous qu'il n'y a pas de réelle limite à ce que vous pouvez faire, tant que Python le permet.
+Nous allons prendre un exemple, comme toujours, mais souvenez-vous qu'il n'y a pas de rÃ©elle limite Ã  ce que vous pouvez faire, tant que Python le permet.
 
-Admettons que le jeu envoie une ligne quand on reçoit de l'XP mais précise aussi le nombre d'XP nécessaire pour passer au niveau suivant.
+Admettons que le jeu envoie une ligne quand on reÃ§oit de l'XP mais prÃ©cise aussi le nombre d'XP nÃ©cessaire pour passer au niveau suivant.
 
 Par exemple :
 
@@ -353,13 +353,13 @@ Par exemple :
 Vous recevez 37 XP et avez besoin de 500 pour passer au niveau suivant.
 </pre>
 
-On va vouloir extraire ces deux nombres et afficher un pourcentage à la place : @xp / total * 100@.  Ce n'est pas possible en utilisant simplement du SharpScript.
+On va vouloir extraire ces deux nombres et afficher un pourcentage Ã  la place : @xp / total * 100@.  Ce n'est pas possible en utilisant simplement du SharpScript.
 
-Pour l'instant, ce n'est pas possible d'utiliser l'interface pour manipuler du code Python. Vous devrez faire les essais en éditant directement le fichier "config.set".
+Pour l'instant, ce n'est pas possible d'utiliser l'interface pour manipuler du code Python. Vous devrez faire les essais en Ã©ditant directement le fichier "config.set".
 
 <pre>
 #trigger {Vous recevez * XP et avez besoin de * pour passer au niveau suivant.} {+
-    # $1 contient le nombre d'XP gagné
+    # $1 contient le nombre d'XP gagnÃ©
     # $2 contient le total pour passer au niveau suivant
     xp = args["1"]
     total = args["2"]
@@ -369,7 +369,7 @@ Pour l'instant, ce n'est pas possible d'utiliser l'interface pour manipuler du c
         xp = int(xp)
         total = int(total)
     except ValueError:
-        # La conversion n'a pas marché, mais on ne fait rien
+        # La conversion n'a pas marchÃ©, mais on ne fait rien
         pass
     else:
         pourcent = xp * 100.0 / total
@@ -377,22 +377,22 @@ Pour l'instant, ce n'est pas possible d'utiliser l'interface pour manipuler du c
 }
 </pre>
 
-Voilà du trigger plutôt avancé ! Quelques explications :
+VoilÃ  du trigger plutÃ´t avancÃ© ! Quelques explications :
 
-* Le déclencheur du trigger ne devrait pas être une grosse surprise pour vous à ce stade ;
-* Le second paramètre commence par @{+@ (accolade gauche suivi du signe @+@).  C'est la syntaxe pour dire à CocoMUD que ce qui se trouve entre les accolades est du code Python.
-* Notez que tout le code est indenté. Il ne s'agit plus d'un comfort de lecture ici, mais d'une nécessité. Python a besoin de l'indentation pour fonctionner. J'ai utilisé 4 espaces, mais vous pouvez en utiliser un (ou un signe de tabulation si vous voulez) ;
-* Quelques commentaires. Cela peut toujours être utile.
-* On extrait les deux nombres @xp@ et @total@. Pour accéder aux variables du trigger, on utilise @args@ qui est un dictionnaire les contenant. La première variable étant @$1@, on y accède en Python grâce à @args["1"]@.
-* On a besoin de convertir ces variables. Pourquoi ? Ce sont toujours des chaînes de caractère à ce stade, il faut les convertir en nombre. CocoMUD ne vérifie pas que ce sont des nombres, on doit donc le faire manuellement. C'est pourquoi on convertit dans un bloc try/except/else. Notez qu'on ne fait rien si la conversion échoue pour X raison.
-* On crée ensuite le pourcentage. Puisqu'il s'agit de Python2, il faut lui indiquer de faire attention aux virgules.
-* On affiche notre message ensuite, en utilisant la fonction @say|()@. C'est exactement comme appeler la fonction @#say@ en SharpScript, c'est la même fonction qui est appelée. De même façon, on peut utiliser les fonctions @send()@, @play()@, @feed()@ et autre. La syntaxe diffère car on est en Python, mais ce sont les mêmes fonctions et mêmes arguments.
+* Le dÃ©clencheur du trigger ne devrait pas Ãªtre une grosse surprise pour vous Ã  ce stade ;
+* Le second paramÃ¨tre commence par @{+@ (accolade gauche suivi du signe @+@).  C'est la syntaxe pour dire Ã  CocoMUD que ce qui se trouve entre les accolades est du code Python.
+* Notez que tout le code est indentÃ©. Il ne s'agit plus d'un comfort de lecture ici, mais d'une nÃ©cessitÃ©. Python a besoin de l'indentation pour fonctionner. J'ai utilisÃ© 4 espaces, mais vous pouvez en utiliser un (ou un signe de tabulation si vous voulez) ;
+* Quelques commentaires. Cela peut toujours Ãªtre utile.
+* On extrait les deux nombres @xp@ et @total@. Pour accÃ©der aux variables du trigger, on utilise @args@ qui est un dictionnaire les contenant. La premiÃ¨re variable Ã©tant @$1@, on y accÃ¨de en Python grÃ¢ce Ã  @args["1"]@.
+* On a besoin de convertir ces variables. Pourquoi ? Ce sont toujours des chaÃ®nes de caractÃ¨re Ã  ce stade, il faut les convertir en nombre. CocoMUD ne vÃ©rifie pas que ce sont des nombres, on doit donc le faire manuellement. C'est pourquoi on convertit dans un bloc try/except/else. Notez qu'on ne fait rien si la conversion Ã©choue pour X raison.
+* On crÃ©e ensuite le pourcentage. Puisqu'il s'agit de Python2, il faut lui indiquer de faire attention aux virgules.
+* On affiche notre message ensuite, en utilisant la fonction @say|()@. C'est exactement comme appeler la fonction @#say@ en SharpScript, c'est la mÃªme fonction qui est appelÃ©e. De mÃªme faÃ§on, on peut utiliser les fonctions @send()@, @play()@, @feed()@ et autre. La syntaxe diffÃ¨re car on est en Python, mais ce sont les mÃªmes fonctions et mÃªmes arguments.
 
-Bien... je ne suis pas vraiment satisfait par le trigger que je viens de créer... on pourrait le raccourcir un petit peu, et le rendre plus lisible. Il ne faut pas toujours chercher la concision, mais ça aide. Si on était sûr que nos variables contiennent des nombres, on aurait moins de code à faire :
+Bien... je ne suis pas vraiment satisfait par le trigger que je viens de crÃ©er... on pourrait le raccourcir un petit peu, et le rendre plus lisible. Il ne faut pas toujours chercher la concision, mais Ã§a aide. Si on Ã©tait sÃ»r que nos variables contiennent des nombres, on aurait moins de code Ã  faire :
 
 <pre>
 #trigger {^Vous recevez (\d+) XP et avez besoin de (\d+) pour passer au niveau suivant.$} {+
-    # $1 contient le nombre d'XP gagné
+    # $1 contient le nombre d'XP gagnÃ©
     # $2 contient le total pour passer au niveau suivant
     xp = int(args["1"])
     total = int(args["2"])
@@ -401,6 +401,6 @@ Bien... je ne suis pas vraiment satisfait par le trigger que je viens de créer..
 }
 </pre>
 
-Utiliser les expressions régulières ici ajoute un peu de complexité au déclencheur, mais ça rend le code bien plus lisible je trouve.
+Utiliser les expressions rÃ©guliÃ¨res ici ajoute un peu de complexitÃ© au dÃ©clencheur, mais Ã§a rend le code bien plus lisible je trouve.
 
-Si vous voulez plus d'informations sur l'utilisation de code Python dans les instructions SharpScript, vous trouverez une section détaillée dans [[SharpScript|la documentation du SharpScript]].
+Si vous voulez plus d'informations sur l'utilisation de code Python dans les instructions SharpScript, vous trouverez une section dÃ©taillÃ©e dans [[SharpScript|la documentation du SharpScript]].

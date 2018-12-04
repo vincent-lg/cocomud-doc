@@ -1,30 +1,30 @@
 h1. Macros
 
-CocoMUD propose un systËme de macros comme la plupart des autres clients MUD, qui permet de relier une touche de raccourci avec une action (comme une commande ‡ envoyer au serveur. Ce document explique la crÈation de macros simples et plus complexes.
+CocoMUD propose un syst√®me de macros comme la plupart des autres clients MUD, qui permet de relier une touche de raccourci avec une action (comme une commande √† envoyer au serveur. Ce document explique la cr√©ation de macros simples et plus complexes.
 
 {{toc}}
 
-h2. FonctionnalitÈ basique
+h2. Fonctionnalit√© basique
 
-Dans sa version la plus simple, un macro fait le lien entre une touche de raccourci et une commande : par exemple, si vous appuyez sur @Ctrl + F1@, CocoMUD pourrait envoyer la commande "regarder" au serveur de jeu. Dans cette documentation, nous verrons comment crÈer un macro reliant la touche @F1@ avec la commande "nord".
+Dans sa version la plus simple, un macro fait le lien entre une touche de raccourci et une commande : par exemple, si vous appuyez sur @Ctrl + F1@, CocoMUD pourrait envoyer la commande "regarder" au serveur de jeu. Dans cette documentation, nous verrons comment cr√©er un macro reliant la touche @F1@ avec la commande "nord".
 
 h2. Ajouter un macro
 
-Il existe deux moyens d'ajouter un macro. L'interface Ètant l'alternative la plus simple, ce moyen sera dÈcrit en premier.
+Il existe deux moyens d'ajouter un macro. L'interface √©tant l'alternative la plus simple, ce moyen sera d√©crit en premier.
 
 h3. Via l'interface
 
-Dans la barre de menu, cliquez sur *Jeu* -> *Macro*. Une boÓte de dialogue devrait s'ouvrir, contenant la liste des macros actuellement configurÈs. Cette liste sera probablement vide la premiËre fois que vous ouvrirez cette interface. Cliquez sur le bouton *Ajouter*.
+Dans la barre de menu, cliquez sur *Jeu* -> *Macro*. Une bo√Æte de dialogue devrait s'ouvrir, contenant la liste des macros actuellement configur√©s. Cette liste sera probablement vide la premi√®re fois que vous ouvrirez cette interface. Cliquez sur le bouton *Ajouter*.
 
-Une autre boÓte de dialogue devrait s'ouvrir pour ajouter un nouveau macro. Le curseur devrait se trouver sur une zone de texte, mais il ne vous est pas demandÈ d'entrer du texte ici : ‡ la place, appuyez sur la combinaison de touches que vous souhaitez associer ‡ ce macro. Par exemple, appuyez sur la touche @F1@.
+Une autre bo√Æte de dialogue devrait s'ouvrir pour ajouter un nouveau macro. Le curseur devrait se trouver sur une zone de texte, mais il ne vous est pas demand√© d'entrer du texte ici : √† la place, appuyez sur la combinaison de touches que vous souhaitez associer √† ce macro. Par exemple, appuyez sur la touche @F1@.
 
-Dans la zone de texte devrait apparaÓtre le nom du raccourci, "F1" dans notre cas. Vous pouvez utiliser de nombreuses touches de raccourci pour vos macros. Par exemple, appuyez sur la touche @Ctrl@, maintenez-la enfoncÈe, appuyez sur la touche @I@ et rel‚chez les deux touches. Dans la zone de texte devrait apparaÓtre :
+Dans la zone de texte devrait appara√Ætre le nom du raccourci, "F1" dans notre cas. Vous pouvez utiliser de nombreuses touches de raccourci pour vos macros. Par exemple, appuyez sur la touche @Ctrl@, maintenez-la enfonc√©e, appuyez sur la touche @I@ et rel√¢chez les deux touches. Dans la zone de texte devrait appara√Ætre :
 
 <pre>
 Ctrl + I
 </pre>
 
-Vous pouvez utiliser Shift, Ctrl ou Alt dans vos macros.  En pratique, ce n'est pas conseillÈ d'utiliser Alt, qui est une touche rÈservÈe pour les menus (@Alt + F@ ouvre le menu *fichier*, par exemple). Il y a malgrÈ tout un grand nombre de raccourcis possibles, par exemple :
+Vous pouvez utiliser Shift, Ctrl ou Alt dans vos macros.  En pratique, ce n'est pas conseill√© d'utiliser Alt, qui est une touche r√©serv√©e pour les menus (@Alt + F@ ouvre le menu *fichier*, par exemple). Il y a malgr√© tout un grand nombre de raccourcis possibles, par exemple :
 
 <pre>
 Shift + Backspace
@@ -33,55 +33,55 @@ Ctrl + Shift + O
 Ctrl + PavNum8
 </pre>
 
-Si vous voulez connecter un macro ‡ une touche du pavÈ numÈrique, vous devez activer ce dernier avant de cliquer sur le bouton *Ajouter*, ou bien naviguer dans une autre partie de la fenÍtre pour ce faire. Sinon, CocoMUD va associer la touche du verrouillage de pavÈ numÈrique avec le macro, ce qui n'est pas souvent souhaitable.
+Si vous voulez connecter un macro √† une touche du pav√© num√©rique, vous devez activer ce dernier avant de cliquer sur le bouton *Ajouter*, ou bien naviguer dans une autre partie de la fen√™tre pour ce faire. Sinon, CocoMUD va associer la touche du verrouillage de pav√© num√©rique avec le macro, ce qui n'est pas souvent souhaitable.
 
-AprËs avoir entrÈ le raccourci voulu, appuyez sur la touche de tabulation. Le second champ de cette boÓte de dialogue est Ègalement un champ de texte, celui-ci devant contenir la ou les commandes ‡ envoyer au serveur de jeu quand on presse le raccourci renseignÈ prÈcÈdemment. En poursuivant notre exemple, aprËs avoir sÈlectionnÈ *Ajouter*, appuyÈ sur la touche @F1@, puis sur la touche de tabulation, vous pouvez maintenant Ècrire "nord".
+Apr√®s avoir entr√© le raccourci voulu, appuyez sur la touche de tabulation. Le second champ de cette bo√Æte de dialogue est √©galement un champ de texte, celui-ci devant contenir la ou les commandes √† envoyer au serveur de jeu quand on presse le raccourci renseign√© pr√©c√©demment. En poursuivant notre exemple, apr√®s avoir s√©lectionn√© *Ajouter*, appuy√© sur la touche @F1@, puis sur la touche de tabulation, vous pouvez maintenant √©crire "nord".
 
-La zone suivante est une liste d'actions ‡ associer ‡ ce macro. Cette fonctionnalitÈ sera dÈtaillÈe plus bas, elle n'est pas nÈcessaire pour les macros simples. Tabulez jusqu'‡ trouver le bouton *OK* et validez. Vous devriez voir le macro que vous avez ajoutÈ dans la liste.
+La zone suivante est une liste d'actions √† associer √† ce macro. Cette fonctionnalit√© sera d√©taill√©e plus bas, elle n'est pas n√©cessaire pour les macros simples. Tabulez jusqu'√† trouver le bouton *OK* et validez. Vous devriez voir le macro que vous avez ajout√© dans la liste.
 
-Si vous voulez changer la ou les commandes ‡ envoyer au serveur quand le macro est activÈ, vous devez l'Èditer (en le sÈlectionnant dans la liste, et tabuler jusqu'‡ trouver le bouton *Editer*). Cependant, si vous souhaitez changer le raccourci associÈ ‡ un macro, il vous suffit de le sÈlectionner et de tabuler une fois. Vous devriez voir une zone de texte (ou plutÙt, une zone d'Èdition du raccourci). Appuyez sur la nouvelle combinaison de touches que vous souhaitez associer ‡ ce macro, puis tabulez jusqu'‡ trouver le bouton *OK*. Si vous quittez cette boÓte de dialogue sans cliquer sur *OK*, vos modifications seront perdues (cela inclut le macro que vous avez ajoutÈ).
+Si vous voulez changer la ou les commandes √† envoyer au serveur quand le macro est activ√©, vous devez l'√©diter (en le s√©lectionnant dans la liste, et tabuler jusqu'√† trouver le bouton *Editer*). Cependant, si vous souhaitez changer le raccourci associ√© √† un macro, il vous suffit de le s√©lectionner et de tabuler une fois. Vous devriez voir une zone de texte (ou plut√¥t, une zone d'√©dition du raccourci). Appuyez sur la nouvelle combinaison de touches que vous souhaitez associer √† ce macro, puis tabulez jusqu'√† trouver le bouton *OK*. Si vous quittez cette bo√Æte de dialogue sans cliquer sur *OK*, vos modifications seront perdues (cela inclut le macro que vous avez ajout√©).
 
-De retour dans la fenÍtre principale de CocoMUD, appuyez sur @F1@. La commande "nord" est envoyÈe (silencieusement) au serveur de jeu qui devrait vous rÈpondre, en fonction de l'univers. Pour moi, je reÁois le message :
+De retour dans la fen√™tre principale de CocoMUD, appuyez sur @F1@. La commande "nord" est envoy√©e (silencieusement) au serveur de jeu qui devrait vous r√©pondre, en fonction de l'univers. Pour moi, je re√ßois le message :
 
-bq. Vous ne pouvez aller par l‡...
+bq. Vous ne pouvez aller par l√†...
 
 h3. Via le SharpScript
 
-Vous pouvez aussi ajouter un macro via une syntaxe du scripting SharpScript. En fait, c'est comme Áa que vos triggers, macros et alias sont enregistrÈs dans votre fichier *config.set* (une configuration par univers).
+Vous pouvez aussi ajouter un macro via une syntaxe du scripting SharpScript. En fait, c'est comme √ßa que vos triggers, macros et alias sont enregistr√©s dans votre fichier *config.set* (une configuration par univers).
 
-Pour crÈer un macro, utilisez l'action @#macro@. Elle prend deux paramËtres :
+Pour cr√©er un macro, utilisez l'action @#macro@. Elle prend deux param√®tres :
 
-* Le raccourci ‡ associer ‡ ce macro ;
-* La commande ‡ envoyer au serveur quand on entre ce raccourci.
+* Le raccourci √† associer √† ce macro ;
+* La commande √† envoyer au serveur quand on entre ce raccourci.
 
-Dans notre exemple, on aurait pu crÈer notre macro en entrant l'instruction SharpScript suivante :
+Dans notre exemple, on aurait pu cr√©er notre macro en entrant l'instruction SharpScript suivante :
 
 <pre>
 #macro F1 nord
 </pre>
 
-Vous pouvez coller cette instruction directement dans CocoMUD et appuyez sur EntrÈe, comme pour envoyer une commande. CocoMUD voit que cette commande commence par un seul signe diËse et l'envoie ‡ l'interprÈteur SharpScript. Si vous ajoutez un macro de cette maniËre (et si vous n'avez pas fait d'erreurs de syntaxe), le macro sera visible instantanÈment dans la barre de menu *Jeu* -> *Macro*.
+Vous pouvez coller cette instruction directement dans CocoMUD et appuyez sur Entr√©e, comme pour envoyer une commande. CocoMUD voit que cette commande commence par un seul signe di√®se et l'envoie √† l'interpr√©teur SharpScript. Si vous ajoutez un macro de cette mani√®re (et si vous n'avez pas fait d'erreurs de syntaxe), le macro sera visible instantan√©ment dans la barre de menu *Jeu* -> *Macro*.
 
-Si l'un des paramËtres contient des espaces, n'oubliez pas de l'entourer d'accolades :
+Si l'un des param√®tres contient des espaces, n'oubliez pas de l'entourer d'accolades :
 
 <pre>
-#macro {Ctrl + Shift + O} {dire c'est plutÙt une longue commande.}
+#macro {Ctrl + Shift + O} {dire c'est plut√¥t une longue commande.}
 </pre>
 
-Les accolades ne sont absolument nÈcessaires que si le paramËtre contient des espaces. Mais vous pouvez mettre des accolades autour des paramËtres mÍme si ils n'ont pas d'espaces, le moteur SharpScript les retirera sans faire d'histoire.
+Les accolades ne sont absolument n√©cessaires que si le param√®tre contient des espaces. Mais vous pouvez mettre des accolades autour des param√®tres m√™me si ils n'ont pas d'espaces, le moteur SharpScript les retirera sans faire d'histoire.
 
 h2. Editer un macro
 
-Nous avons vu plus haut comment Èditer un macro. Il n'y a rien de trËs compliquÈ, en vÈritÈ. L'important ‡ retenir, c'est que si vous voulez changer le raccourci associÈ ‡ un macro, vous devez juste le sÈlectionner et faire Tab pour entrer le nouveau raccourci. Si vous souhaitez changer la ou les commandes associÈes ‡ ce macro, cependant, vous devez le sÈlectionner et cliquer sur le bouton *Editer*. La boÓte de dialogue est identique ‡ celle pour ajouter un macro, dÈcrite prÈcÈdemment.
+Nous avons vu plus haut comment √©diter un macro. Il n'y a rien de tr√®s compliqu√©, en v√©rit√©. L'important √† retenir, c'est que si vous voulez changer le raccourci associ√© √† un macro, vous devez juste le s√©lectionner et faire Tab pour entrer le nouveau raccourci. Si vous souhaitez changer la ou les commandes associ√©es √† ce macro, cependant, vous devez le s√©lectionner et cliquer sur le bouton *Editer*. La bo√Æte de dialogue est identique √† celle pour ajouter un macro, d√©crite pr√©c√©demment.
 
 h2. Supprimer un macro
 
-Supprimer un macro se fait des plus simplement.  Dans la boÓte de dialogue (menu *Jeu* -> *Macro*), sÈlectionnez le macro que vous voulez supprimer, et tabulez jusqu'‡ trouver le bouton *Supprimer*. Une confirmation de suppression sera affichÈe. N'oubliez pas de validez en cliquant sur le bouton *OK*, sans quoi le macro ne sera pas complËtement supprimÈ.
+Supprimer un macro se fait des plus simplement.  Dans la bo√Æte de dialogue (menu *Jeu* -> *Macro*), s√©lectionnez le macro que vous voulez supprimer, et tabulez jusqu'√† trouver le bouton *Supprimer*. Une confirmation de suppression sera affich√©e. N'oubliez pas de validez en cliquant sur le bouton *OK*, sans quoi le macro ne sera pas compl√®tement supprim√©.
 
 h2. Macros un peu plus complexes
 
-Les macros relient souvent une touche de raccourci ‡ une ou plusieurs commandes ‡ envoyer au serveur. Cependant, vous pouvez aussi relier un raccourci clavier avec une action plus complexe, comme jouer un son, afficher un message (avec variables, Èventuellement) ou afficher un canal. L'intÈrÍt de telles action n'est pas forcÈment apparent tout d'abord. Un exemple de macro plus complexe peut se trouver dans l'utilisation des prompts sonores.
+Les macros relient souvent une touche de raccourci √† une ou plusieurs commandes √† envoyer au serveur. Cependant, vous pouvez aussi relier un raccourci clavier avec une action plus complexe, comme jouer un son, afficher un message (avec variables, √©ventuellement) ou afficher un canal. L'int√©r√™t de telles action n'est pas forc√©ment apparent tout d'abord. Un exemple de macro plus complexe peut se trouver dans l'utilisation des prompts sonores.
 
-Le principe d'un prompt sonorisÈ est que la barre de prompt (contenant vos points de vie, magie et mouvement, par exemple) est interceptÈe par un trigger et n'apparaÓt plus. Votre vie, magie et mouvement actuels sont conservÈs dans des variables ‡ part. Ceci dÈpasse le cadre de cette documentation, mais l'important est qu'un macro peut Ítre crÈÈ pour afficher ces variables. Par exemple, si vous appuyez sur @Ctrl + J@, vous pourriez voir votre vie actuelle.
+Le principe d'un prompt sonoris√© est que la barre de prompt (contenant vos points de vie, magie et mouvement, par exemple) est intercept√©e par un trigger et n'appara√Æt plus. Votre vie, magie et mouvement actuels sont conserv√©s dans des variables √† part. Ceci d√©passe le cadre de cette documentation, mais l'important est qu'un macro peut √™tre cr√©√© pour afficher ces variables. Par exemple, si vous appuyez sur @Ctrl + J@, vous pourriez voir votre vie actuelle.
 
-Nous avons utilisÈ la seconde zone de texte pour prÈciser quelles commandes envoyer au serveur de jeu quand on entre le raccourci indiquÈ. En vÈritÈ, on peut entrer des instructions SharpScript dans cette zone de texte. Mais puisque Ècrire les instructions SharpScript ‡ la main n'est pas le plus facile, on peut passer par l'Èditeur SharpScript. Cela n'est vraiment pas compliquÈ : dans l'interface d'ajout ou d'Èdition d'un macro, laissez le second champ de texte vide, et tabulez une fois pour vous trouver sur la liste des actions. SÈlectionnez une action, par exemple "Affiche un message et l'envoie au lecteur d'Ècran". Cliquez sur le bouton *Ajouter l'action*. On vous demandera d'entrer d'autres informations (dans notre cas, le message ‡ afficher, et des informations sur comment l'afficher). Validez une fois ces informations renseignÈes. N'oubliez pas d'appuyer sur *OK* pour fermer la boÓte de dialogue en sauvegardant les modifications.
+Nous avons utilis√© la seconde zone de texte pour pr√©ciser quelles commandes envoyer au serveur de jeu quand on entre le raccourci indiqu√©. En v√©rit√©, on peut entrer des instructions SharpScript dans cette zone de texte. Mais puisque √©crire les instructions SharpScript √† la main n'est pas le plus facile, on peut passer par l'√©diteur SharpScript. Cela n'est vraiment pas compliqu√© : dans l'interface d'ajout ou d'√©dition d'un macro, laissez le second champ de texte vide, et tabulez une fois pour vous trouver sur la liste des actions. S√©lectionnez une action, par exemple "Affiche un message et l'envoie au lecteur d'√©cran". Cliquez sur le bouton *Ajouter l'action*. On vous demandera d'entrer d'autres informations (dans notre cas, le message √† afficher, et des informations sur comment l'afficher). Validez une fois ces informations renseign√©es. N'oubliez pas d'appuyer sur *OK* pour fermer la bo√Æte de dialogue en sauvegardant les modifications.

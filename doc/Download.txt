@@ -1,40 +1,40 @@
-h1. Télécharger et installer CocoMUD
+h1. TÃ©lÃ©charger et installer CocoMUD
 
-CocoMUD est prêt à l'emplois sous Windows, dans une version portable. Vous n'avez pas besoin de l'installer sur votre système, juste le télécharger sous forme d'archive (voir les liens ci-dessous), l'extraire et lancer *cocomud.exe*. La procédure est détaillée dans les sections suivantes de ce document.
+CocoMUD est prÃªt Ã  l'emplois sous Windows, dans une version portable. Vous n'avez pas besoin de l'installer sur votre systÃ¨me, juste le tÃ©lÃ©charger sous forme d'archive (voir les liens ci-dessous), l'extraire et lancer *cocomud.exe*. La procÃ©dure est dÃ©taillÃ©e dans les sections suivantes de ce document.
 
-h2. Télécharger CocoMUD
+h2. TÃ©lÃ©charger CocoMUD
 
 | Build | Windows |
-| +*45*+ | "CocoMUD pour Windows (.zip)":https://cocomud.plan.io/attachments/download/64/CocoMUD.zip |
+| +*48*+ | "CocoMUD pour Windows (.zip)":https://cocomud.plan.io/attachments/download/73/CocoMUD.zip |
 
-Si vous utilisez un autre système d'exploitation que Windows, vous pourriez vouloir [[InstallFromSource|installer CocoMUD depuis les sources]]. CocoMUD fonctionne sous Linux et Mac OS, bien qu'il n'existe pas encore de version prête à l'emplois pour ces systèmes.
+Si vous utilisez un autre systÃ¨me d'exploitation que Windows, vous pourriez vouloir [[InstallFromSource|installer CocoMUD depuis les sources]]. CocoMUD fonctionne sous Linux et Mac OS, bien qu'il n'existe pas encore de version prÃªte Ã  l'emplois pour ces systÃ¨mes.
 
-Si vous accédez à ces informations depuis une version déjà installée de CocoMUD, les liens donnés ci-dessus pourraient ne pas être à jour. Il vous est recommendé de vous rendre sur "la documentation en ligne":https://cocomud.plan.io/projects/fr/wiki/Download pour avoir les liens de téléchargement à jour.
+Si vous accÃ©dez Ã  ces informations depuis une version dÃ©jÃ  installÃ©e de CocoMUD, les liens donnÃ©s ci-dessus pourraient ne pas Ãªtre Ã  jour. Il vous est recommendÃ© de vous rendre sur "la documentation en ligne":https://cocomud.plan.io/projects/fr/wiki/Download pour avoir les liens de tÃ©lÃ©chargement Ã  jour.
 
 h2. Installer CocoMUD
 
-Une fois l'archive téléchargée, vous devez l'extraire dans un dossier. CocoMUD n'a pas besoin de s'installer pour fonctionner, il tourne en version portable (vous pourriez même le mettre sur une clé USB pour l'emporter avec vous si vous voulez).
+Une fois l'archive tÃ©lÃ©chargÃ©e, vous devez l'extraire dans un dossier. CocoMUD n'a pas besoin de s'installer pour fonctionner, il tourne en version portable (vous pourriez mÃªme le mettre sur une clÃ© USB pour l'emporter avec vous si vous voulez).
 
-# Commencez par extraire l'archive *CocoMUD.zip* dans le dossier que vous voulez. CocoMUD ne pourra pas se lancer directement depuis l'archive, et même si il y arrive, il ne pourra pas écrire dedans.
-# Dans le dossier où vous avez extrait l'archive, vous devriez trouver un dossier *CocoMUD*. Ouvrez-le.
-# Dedans se trouve un fichier *cocomud.exe* (parmi beaucoup d'autres). Pour lancer CocoMUD, il suffit de lancer ce fichier *cocomud.exe*. CocoMUD devrait s'ouvrir sur son écran de connexion.
-# Si vous appréciez CocoMUD, n'hésitez pas à faire un raccourci menant au fichier *cocomud.exe*, cela vous simplifiera la vie.
+# Commencez par extraire l'archive *CocoMUD.zip* dans le dossier que vous voulez. CocoMUD ne pourra pas se lancer directement depuis l'archive, et mÃªme si il y arrive, il ne pourra pas Ã©crire dedans.
+# Dans le dossier oÃ¹ vous avez extrait l'archive, vous devriez trouver un dossier *CocoMUD*. Ouvrez-le.
+# Dedans se trouve un fichier *cocomud.exe* (parmi beaucoup d'autres). Pour lancer CocoMUD, il suffit de lancer ce fichier *cocomud.exe*. CocoMUD devrait s'ouvrir sur son Ã©cran de connexion.
+# Si vous apprÃ©ciez CocoMUD, n'hÃ©sitez pas Ã  faire un raccourci menant au fichier *cocomud.exe*, cela vous simplifiera la vie.
 
-Pour apprendre à utiliser CocoMUD, vous devriez lire [[Basics|un aperçu des fonctionnalités basiques de CocoMUDD]]. Ce petit tutoriel est fait pour apprendre à utiliser les fonctionnalités les plus simples de CocoMUD. D'autres documents sont disponibles pour apprendre à utiliser les fonctionnalités plus avancées du client.
+Pour apprendre Ã  utiliser CocoMUD, vous devriez lire [[Basics|un aperÃ§u des fonctionnalitÃ©s basiques de CocoMUDD]]. Ce petit tutoriel est fait pour apprendre Ã  utiliser les fonctionnalitÃ©s les plus simples de CocoMUD. D'autres documents sont disponibles pour apprendre Ã  utiliser les fonctionnalitÃ©s plus avancÃ©es du client.
 
-h2. Mettre à jour CocoMUD
+h2. Mettre Ã  jour CocoMUD
 
-CocoMUD possède un updater intégré pour se mettre à jour automatiquement. Cet updater se lancera avec CocoMUD. Si il trouve une version plus récente de CocoMUD sur le site officiel, il vous proposera de l'installer. Si vous répondez "oui", CocoMUD sera refermé pendant que l'updater télécharge et installe la nouvelle version. Si tout va bien, CocoMUD s'ouvrira tout seul après la mise à jour.
+CocoMUD possÃ¨de un updater intÃ©grÃ© pour se mettre Ã  jour automatiquement. Cet updater se lancera avec CocoMUD. Si il trouve une version plus rÃ©cente de CocoMUD sur le site officiel, il vous proposera de l'installer. Si vous rÃ©pondez "oui", CocoMUD sera refermÃ© pendant que l'updater tÃ©lÃ©charge et installe la nouvelle version. Si tout va bien, CocoMUD s'ouvrira tout seul aprÃ¨s la mise Ã  jour.
 
-Vous pouvez vérifier à tout moment si il y a des mises à jour. Dans le menu *Aide* de CocoMUD, choisissez *Vérifier les mises à jour disponibles*. La réponse pourrait se faire attendre quelques secondes, car CocoMUD regarde les mises à jour sur le site officiel. CocoMUD va vérifier si il existe des mises à jour et vous dire si il y en a. Si c'est le cas, il vous proposera de mettre à jour.
+Vous pouvez vÃ©rifier Ã  tout moment si il y a des mises Ã  jour. Dans le menu *Aide* de CocoMUD, choisissez *VÃ©rifier les mises Ã  jour disponibles*. La rÃ©ponse pourrait se faire attendre quelques secondes, car CocoMUD regarde les mises Ã  jour sur le site officiel. CocoMUD va vÃ©rifier si il existe des mises Ã  jour et vous dire si il y en a. Si c'est le cas, il vous proposera de mettre Ã  jour.
 
-La mise à jour automatique pourrait ne pas s'exécuter correctement dans certains cas. Le pare-feu de Windows, Windows Defender, un logiciel antivirus ou un logiciel conçu pour protéger votre système pourraient élever des objections à la mise à jour automatique de CocoMUD. 
+La mise Ã  jour automatique pourrait ne pas s'exÃ©cuter correctement dans certains cas. Le pare-feu de Windows, Windows Defender, un logiciel antivirus ou un logiciel conÃ§u pour protÃ©ger votre systÃ¨me pourraient Ã©lever des objections Ã  la mise Ã  jour automatique de CocoMUD. 
 
-Si la mise à jour rencontre des erreurs, CocoMUD pourrait devenir corrompu (c'est-à-dire que CocoMUD pourrait ne pas se lancer, ou bien générer de nombreuses erreurs au lancement). Si cela se produit, il y a plusieurs moyens de résoudre le problème :
+Si la mise Ã  jour rencontre des erreurs, CocoMUD pourrait devenir corrompu (c'est-Ã -dire que CocoMUD pourrait ne pas se lancer, ou bien gÃ©nÃ©rer de nombreuses erreurs au lancement). Si cela se produit, il y a plusieurs moyens de rÃ©soudre le problÃ¨me :
 
-# Forcer la mise à jour : dans certains cas, CocoMUD essaye de se mettre à jour, mais certains fichiers ou dossiers ne sont pas modifiés. Un logiciel qui essaye de protéger votre système pourrait augmenter les risques qu'une telle situation se produise. Le pare-feu Windows et Windows defender ne semblent pas causer ce problème. Si vous cliquez sur *cocomud.exe* et que rien ne se passe, ou bien que CocoMUD se lance en générant de nmbreuses erreurs, vous pouvez forcer la mise à jour de CocoMUD. Pour ce faire, exécutez le fichier *dbg_updater.exe* dans votre dossier CocoMUD. *dbg* indique *debug*, et cette version de l'updater se veut aussi légère que possible. Même si il semble que votre version de CocoMUD soit à jour, le *dbg_updater* va télécharger et installer la version la plus récente depuis le site officiel, en gardant votre configuration. Ce fichier devrait ouvrir une console avec une barre de progression, mais vous n'avez pas besoin de vous en inquiéter : laissez-le travailler, télécharger et installer CocoMUD. Si tout va bien, CocoMUD sera ouvert automatiquement dans sa nouvelle version. Si cela ne change rien, essayez de lancer *dbg_updater* une nouvelle fois avant de passer à l'étape 2.
-# Mise à jour manuelle : parfois, CocoMUD est tellement corrompu que *dbg_updater* ne peut même pas se lancer, ou bien qu'il n'arrive pas à faire grand chose. Si cela se produit, vous devrez réinstaller CocoMUD manuellement. Téléchargez la version la plus récente de CocoMUD (voir les liens ci-dessus). Décompressez l'archve dans un nouveau dossier. Pour conserver votre configuration, rendez-vous dans votre ancien dossier. Copiez les dossiers *settings* et *worlds* et placez-les dans votre nouveau dossier *CocoMUD*. Vous devriez ensuite pouvoir lancer CocoMUD normalement.
+# Forcer la mise Ã  jour : dans certains cas, CocoMUD essaye de se mettre Ã  jour, mais certains fichiers ou dossiers ne sont pas modifiÃ©s. Un logiciel qui essaye de protÃ©ger votre systÃ¨me pourrait augmenter les risques qu'une telle situation se produise. Le pare-feu Windows et Windows defender ne semblent pas causer ce problÃ¨me. Si vous cliquez sur *cocomud.exe* et que rien ne se passe, ou bien que CocoMUD se lance en gÃ©nÃ©rant de nmbreuses erreurs, vous pouvez forcer la mise Ã  jour de CocoMUD. Pour ce faire, exÃ©cutez le fichier *dbg_updater.exe* dans votre dossier CocoMUD. *dbg* indique *debug*, et cette version de l'updater se veut aussi lÃ©gÃ¨re que possible. MÃªme si il semble que votre version de CocoMUD soit Ã  jour, le *dbg_updater* va tÃ©lÃ©charger et installer la version la plus rÃ©cente depuis le site officiel, en gardant votre configuration. Ce fichier devrait ouvrir une console avec une barre de progression, mais vous n'avez pas besoin de vous en inquiÃ©ter : laissez-le travailler, tÃ©lÃ©charger et installer CocoMUD. Si tout va bien, CocoMUD sera ouvert automatiquement dans sa nouvelle version. Si cela ne change rien, essayez de lancer *dbg_updater* une nouvelle fois avant de passer Ã  l'Ã©tape 2.
+# Mise Ã  jour manuelle : parfois, CocoMUD est tellement corrompu que *dbg_updater* ne peut mÃªme pas se lancer, ou bien qu'il n'arrive pas Ã  faire grand chose. Si cela se produit, vous devrez rÃ©installer CocoMUD manuellement. TÃ©lÃ©chargez la version la plus rÃ©cente de CocoMUD (voir les liens ci-dessus). DÃ©compressez l'archve dans un nouveau dossier. Pour conserver votre configuration, rendez-vous dans votre ancien dossier. Copiez les dossiers *settings* et *worlds* et placez-les dans votre nouveau dossier *CocoMUD*. Vous devriez ensuite pouvoir lancer CocoMUD normalement.
 
-Si vous rencontrez toujours des erreurs, n'hésitez pas à contacter l'équipe des développeurs en "créant un rapport de bug":https://cocomud.plan.io/projects/fr/issues/new .
+Si vous rencontrez toujours des erreurs, n'hÃ©sitez pas Ã  contacter l'Ã©quipe des dÃ©veloppeurs en "crÃ©ant un rapport de bug":https://cocomud.plan.io/projects/fr/issues/new .
 
-Nous vous souhaitons l'expérience de jeu la plus agréable possible avec CocoMUD !
+Nous vous souhaitons l'expÃ©rience de jeu la plus agrÃ©able possible avec CocoMUD !

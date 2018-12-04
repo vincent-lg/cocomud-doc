@@ -1,65 +1,65 @@
-h1. Fonctionnalités basiques de CocoMUD
+h1. FonctionnalitÃ©s basiques de CocoMUD
 
-CocoMUD est un "client MUD":https://en.wikipedia.org/wiki/MUD_client conçu pour être accessible et agréable avec un lecteur d'écran.  Il supporte nativement un système de TTS (Text-to-Speech) pour la plupart des lecteurs d'écran sous Windows, ainsi que la gestion de plages tactiles.
+CocoMUD est un "client MUD":https://en.wikipedia.org/wiki/MUD_client conÃ§u pour Ãªtre accessible et agrÃ©able avec un lecteur d'Ã©cran.  Il supporte nativement un systÃ¨me de TTS (Text-to-Speech) pour la plupart des lecteurs d'Ã©cran sous Windows, ainsi que la gestion de plages tactiles.
 
-Ce document décrit les fonctionnalités basiques de CocoMUD, savoir ce qu'il permet et comment l'utiliser, avec des exemples. Certaines fonctionnalités plus complexes sont décrites dans des documents à part.
+Ce document dÃ©crit les fonctionnalitÃ©s basiques de CocoMUD, savoir ce qu'il permet et comment l'utiliser, avec des exemples. Certaines fonctionnalitÃ©s plus complexes sont dÃ©crites dans des documents Ã  part.
 
 {{toc}}
 
-h2. À l'ouverture de CocoMUD
+h2. Ã€ l'ouverture de CocoMUD
 
-Quand vous ouvrez CocoMUD, vous devriez voir une liste de serveurs configurés (ou d'univers, dans le vocabulaire du client).  C'est une liste, vous pouvez sélectionner un autre univers avec les flèches ou vous déplacer plus rapidement en entrant les premières lettres de l'univers en question.  Il est possible que le serveur de jeu auquel vous souhaitez vous connecter ne soit pas présent dans la configuration par défaut : pour cela, il vous faut [[#Ajouter-un-univers|l'ajouter avant de continuer]].
+Quand vous ouvrez CocoMUD, vous devriez voir une liste de serveurs configurÃ©s (ou d'univers, dans le vocabulaire du client).  C'est une liste, vous pouvez sÃ©lectionner un autre univers avec les flÃ¨ches ou vous dÃ©placer plus rapidement en entrant les premiÃ¨res lettres de l'univers en question.  Il est possible que le serveur de jeu auquel vous souhaitez vous connecter ne soit pas prÃ©sent dans la configuration par dÃ©faut : pour cela, il vous faut [[#Ajouter-un-univers|l'ajouter avant de continuer]].
 
-Quand vous avez sélectionné l'univers auquel vous souhaitez vous connecter, appuyez sur Entrée (ou cliquez sur le bouton *se connecter*).
+Quand vous avez sÃ©lectionnÃ© l'univers auquel vous souhaitez vous connecter, appuyez sur EntrÃ©e (ou cliquez sur le bouton *se connecter*).
 
-h2. La fenêtre principale du client
+h2. La fenÃªtre principale du client
 
-La fenêtre principale de CocoMUD est aussi simple que possible. Elle ne contient qu'une seule zone de texte, dans laquelle vous pouvez vous déplacer en utilisant les flèches, sélectionner et copier du texte, vous déplacer au début ou à la fin de la fenêtre, etc.
+La fenÃªtre principale de CocoMUD est aussi simple que possible. Elle ne contient qu'une seule zone de texte, dans laquelle vous pouvez vous dÃ©placer en utilisant les flÃ¨ches, sÃ©lectionner et copier du texte, vous dÃ©placer au dÃ©but ou Ã  la fin de la fenÃªtre, etc.
 
-Quand vous écrivez dans ce champ de texte, le curseur est automatiquement déplacé en bas de la fenêtre. Vous pouvez considérer cette zone de texte comme une zone en lecture seule, à l'exception de la dernière ligne. Vous pouvez envoyer votre commande en appuyant sur Entrée comme d'habitude. Vous pourrez ensuite remonter avec les flèches pour voir la réponse du serveur. Cette navigation peut sembler assez étrange de prime abord, mais elle devient très intuitive après quelques essais seulement.
+Quand vous Ã©crivez dans ce champ de texte, le curseur est automatiquement dÃ©placÃ© en bas de la fenÃªtre. Vous pouvez considÃ©rer cette zone de texte comme une zone en lecture seule, Ã  l'exception de la derniÃ¨re ligne. Vous pouvez envoyer votre commande en appuyant sur EntrÃ©e comme d'habitude. Vous pourrez ensuite remonter avec les flÃ¨ches pour voir la rÃ©ponse du serveur. Cette navigation peut sembler assez Ã©trange de prime abord, mais elle devient trÃ¨s intuitive aprÃ¨s quelques essais seulement.
 
-Quand vous appuyez sur Entrée après avoir sélectionné un univers, CocoMUD essaye de se connecter au serveur. Si tout se passe bien, le client se connecte et le message d'accueil du jeu s'affiche dans la zone de texte (vous pouvez le lire en utilisant les flèches). Le message d'accueil devrait également être envoyé au lecteur d'écran (et, si vous avez une plage tactile, le message devrait apparaître dessus également). La plupart des MUD vous demanderont un nom d'utilisateur et un mot de passe.
+Quand vous appuyez sur EntrÃ©e aprÃ¨s avoir sÃ©lectionnÃ© un univers, CocoMUD essaye de se connecter au serveur. Si tout se passe bien, le client se connecte et le message d'accueil du jeu s'affiche dans la zone de texte (vous pouvez le lire en utilisant les flÃ¨ches). Le message d'accueil devrait Ã©galement Ãªtre envoyÃ© au lecteur d'Ã©cran (et, si vous avez une plage tactile, le message devrait apparaÃ®tre dessus Ã©galement). La plupart des MUD vous demanderont un nom d'utilisateur et un mot de passe.
 
 h2. Historique des commandes
 
-Quand vous appuyez sur Entrée pour envoyer une commande, elle est ajoutée à votre historique de commandes. Vous pouvez naviguer dans cette historique de commande pour envoyer de nouveau une commande ou bien la modifier si nécessaire. Il existe deux façons d'utiliser l'historique des commandes :
+Quand vous appuyez sur EntrÃ©e pour envoyer une commande, elle est ajoutÃ©e Ã  votre historique de commandes. Vous pouvez naviguer dans cette historique de commande pour envoyer de nouveau une commande ou bien la modifier si nÃ©cessaire. Il existe deux faÃ§ons d'utiliser l'historique des commandes :
 
-* En utilisant CTRL + les flèches haut ou bas, vous pouvez naviguer dans l'historique des commandes. Si vous appuyez sur CTRL + flèche haut, le client affichera la commande que vous venez d'entrer. Vous pouvez l'envoyer de nouveau en appuyant sur Entrée, ou bien la modifier avant envoi si nécessaire. Appuyez sur CTRL + flèche bas pour descendre dans votre historique de commandes.
-* En utilisant le mode verrouillé. Pour entrer dans ce mode, appuyez sur échappe. Vous pourrez maintenant naviguer avec les flèches haut et bas pour parcourir l'historique des commandes. Pour repasser en mode non-verrouillé et lire le résultats de vos commandes, appuyez sur échappe de nouveau.
+* En utilisant CTRL + les flÃ¨ches haut ou bas, vous pouvez naviguer dans l'historique des commandes. Si vous appuyez sur CTRL + flÃ¨che haut, le client affichera la commande que vous venez d'entrer. Vous pouvez l'envoyer de nouveau en appuyant sur EntrÃ©e, ou bien la modifier avant envoi si nÃ©cessaire. Appuyez sur CTRL + flÃ¨che bas pour descendre dans votre historique de commandes.
+* En utilisant le mode verrouillÃ©. Pour entrer dans ce mode, appuyez sur Ã©chappe. Vous pourrez maintenant naviguer avec les flÃ¨ches haut et bas pour parcourir l'historique des commandes. Pour repasser en mode non-verrouillÃ© et lire le rÃ©sultats de vos commandes, appuyez sur Ã©chappe de nouveau.
 
-h2. Auto-complétion
+h2. Auto-complÃ©tion
 
-CocoMUD propose une fonctionnalité d'auto-complétion. Quand vous commencez à écrire un mot, vous pouvez appuyer sur la touche de tabulation, le client essayera de trouver la fin du mot que vous étiez en train de taper, en se basant sur le texte que vous avez reçu du serveur. Par exemple, si vous écrivez "po" dans le client, puis appuyez sur la touche de tabulation, le client écrira "porte", "portail" ou "potion" ou autre, en fonction des mots les plus fréquents qu'il a reçu. Les mots apparaissant le plus souvent sont proposés en premier.
+CocoMUD propose une fonctionnalitÃ© d'auto-complÃ©tion. Quand vous commencez Ã  Ã©crire un mot, vous pouvez appuyer sur la touche de tabulation, le client essayera de trouver la fin du mot que vous Ã©tiez en train de taper, en se basant sur le texte que vous avez reÃ§u du serveur. Par exemple, si vous Ã©crivez "po" dans le client, puis appuyez sur la touche de tabulation, le client Ã©crira "porte", "portail" ou "potion" ou autre, en fonction des mots les plus frÃ©quents qu'il a reÃ§u. Les mots apparaissant le plus souvent sont proposÃ©s en premier.
 
-Quand vous appuyez sur la touche de tabulation, le mot est écrit juste avant le curseur. Vous pouvez continuer à écrire votre commande ou l'envoyer telle qu'elle. Si le mot trouvé par l'auto-complétion n'est pas le bon, vous pouvez de nouveau appuyer sur la touche de tabulation : le client cherchera un autre mot en se basant sur les premières lettres que vous aviez écrites. Vous pouvez appuyer sur la touche de tabulation autant de fois que nécessaire pour trouver votre mot : la sélection se base sur la fréquence (le plus souvent un mot apparaît, les meilleures chances il a d'être choisi pour l'auto-complétion). Si le client ne trouve plus de résultat, il vous remettra les lettres initialement écrites et vous devrez finir le mot vous-même.
+Quand vous appuyez sur la touche de tabulation, le mot est Ã©crit juste avant le curseur. Vous pouvez continuer Ã  Ã©crire votre commande ou l'envoyer telle qu'elle. Si le mot trouvÃ© par l'auto-complÃ©tion n'est pas le bon, vous pouvez de nouveau appuyer sur la touche de tabulation : le client cherchera un autre mot en se basant sur les premiÃ¨res lettres que vous aviez Ã©crites. Vous pouvez appuyer sur la touche de tabulation autant de fois que nÃ©cessaire pour trouver votre mot : la sÃ©lection se base sur la frÃ©quence (le plus souvent un mot apparaÃ®t, les meilleures chances il a d'Ãªtre choisi pour l'auto-complÃ©tion). Si le client ne trouve plus de rÃ©sultat, il vous remettra les lettres initialement Ã©crites et vous devrez finir le mot vous-mÃªme.
 
 {{include(CommandStacking)}}
 
 h2. La barre de menu
 
-Certaines options sont accessibles dans la barre de menu. Dans Fichier -> Options, vous verrez plusieurs options que vous pouvez modifier pour rendre votre expérience avec CocoMUD plus agréable.
+Certaines options sont accessibles dans la barre de menu. Dans Fichier -> Options, vous verrez plusieurs options que vous pouvez modifier pour rendre votre expÃ©rience avec CocoMUD plus agrÃ©able.
 
 h2. Les options
 
-Quand vous sélectionnez Fichier -> Options dans la barre de menu, ou entrez _Alt + Entrée_, vous devriez voir une boîte de dialogue avec plusieurs onglets.  L'onglet sélectionné par défaut est *général*. Pour l'heure, il ne contient que le réglage de la langue de CocoMUD. Le client devrait être dans la langue de votre système, si une traduction existe dans le logiciel, ou bien anglais si ce n'est pas le cas.
+Quand vous sÃ©lectionnez Fichier -> Options dans la barre de menu, ou entrez _Alt + EntrÃ©e_, vous devriez voir une boÃ®te de dialogue avec plusieurs onglets.  L'onglet sÃ©lectionnÃ© par dÃ©faut est *gÃ©nÃ©ral*. Pour l'heure, il ne contient que le rÃ©glage de la langue de CocoMUD. Le client devrait Ãªtre dans la langue de votre systÃ¨me, si une traduction existe dans le logiciel, ou bien anglais si ce n'est pas le cas.
 
-Dans l'onglet *affichage*, vous pouvez sélectionner un encodage différent. Par défaut, CocoMUD utilise un encodage Latin, mais vous pouvez le changer si besoin est.
+Dans l'onglet *affichage*, vous pouvez sÃ©lectionner un encodage diffÃ©rent. Par dÃ©faut, CocoMUD utilise un encodage Latin, mais vous pouvez le changer si besoin est.
 
-Dans l'onglet *commandes*, vous pouvez modifier le caractère utilisé pour l'envoi de commandes multiples (command stacking en anglais).
+Dans l'onglet *commandes*, vous pouvez modifier le caractÃ¨re utilisÃ© pour l'envoi de commandes multiples (command stacking en anglais).
 
-Dans l'onglet *accessibilité* se trouvent plusieurs options qui modifient le comportement d'accessibilité du client. Les voici plus en détail :
+Dans l'onglet *accessibilitÃ©* se trouvent plusieurs options qui modifient le comportement d'accessibilitÃ© du client. Les voici plus en dÃ©tail :
 
-* Activer le TTS (Text-to-Speech): vous pouvez ici désactiver le TTS (Text-to-Speech). Le TTS permet d'envoyer au lecteur d'écran les messages reçus par le serveur. Parfois, avoir le TTS actif n'est pas utile, et vous pouvez le désactiver ici.
-* Activer le TTS hors de la fenêtre: par défaut, CocoMUD active le TTS même si vous vous trouvez dans une autre fenêtre. Ainsi, vous pourriez être sur le web, ou un livre, ou envoyer un e-mail, quand le lecteur d'écran se met à parler pour vous avertir de messages reçus sur le MUD auquel vous êtes connectés. Cela peut être utile, mais cela peut aussi être problématique, et vous pouvez le désactiver ici.
+* Activer le TTS (Text-to-Speech): vous pouvez ici dÃ©sactiver le TTS (Text-to-Speech). Le TTS permet d'envoyer au lecteur d'Ã©cran les messages reÃ§us par le serveur. Parfois, avoir le TTS actif n'est pas utile, et vous pouvez le dÃ©sactiver ici.
+* Activer le TTS hors de la fenÃªtre: par dÃ©faut, CocoMUD active le TTS mÃªme si vous vous trouvez dans une autre fenÃªtre. Ainsi, vous pourriez Ãªtre sur le web, ou un livre, ou envoyer un e-mail, quand le lecteur d'Ã©cran se met Ã  parler pour vous avertir de messages reÃ§us sur le MUD auquel vous Ãªtes connectÃ©s. Cela peut Ãªtre utile, mais cela peut aussi Ãªtre problÃ©matique, et vous pouvez le dÃ©sactiver ici.
 
 h2. Ajouter un univers
 
-Si vous voulez ajouter un univers (un serveur de jeu), dans la sélection des univers (à l'ouverture du client), cliquez sur le bouton *Ajouter*. Une boîte de dialogue s'ouvrira, vous demandant trois informations :
+Si vous voulez ajouter un univers (un serveur de jeu), dans la sÃ©lection des univers (Ã  l'ouverture du client), cliquez sur le bouton *Ajouter*. Une boÃ®te de dialogue s'ouvrira, vous demandant trois informations :
 
-* Le nom de l'univers : quel nom donner à ce serveur ? En général, ce sera le nom du MUD, comme VanciaMUD ou MultiMUD.
-* Le nom d'hôte du serveur.
-* Le numéro de port du serveur.
+* Le nom de l'univers : quel nom donner Ã  ce serveur ? En gÃ©nÃ©ral, ce sera le nom du MUD, comme VanciaMUD ou MultiMUD.
+* Le nom d'hÃ´te du serveur.
+* Le numÃ©ro de port du serveur.
 
-Le nom de l'univers, nom d'hôte du serveur et numéro de port peuvent être modifiés après coup. Cependant, le nom du serveur est celui donné à son dossier, où les options de connexion et autres informations seront conservées. Changer le nom ne changera pas le nom du dossier.
+Le nom de l'univers, nom d'hÃ´te du serveur et numÃ©ro de port peuvent Ãªtre modifiÃ©s aprÃ¨s coup. Cependant, le nom du serveur est celui donnÃ© Ã  son dossier, oÃ¹ les options de connexion et autres informations seront conservÃ©es. Changer le nom ne changera pas le nom du dossier.
 
-Une fois créé, vous verrez l'univers dans la liste et pourrez vous y connecter.
+Une fois crÃ©Ã©, vous verrez l'univers dans la liste et pourrez vous y connecter.
