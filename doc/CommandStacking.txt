@@ -1,36 +1,36 @@
-h2. Command stacking
-
-Command stacking is a feature that allows users to send multiple commands at once.  For instance:
-
-<pre>
-say sounds;say good
-</pre>
-
-This syntax is equivalent to writing:
-
-<pre>
-say sounds
-say good
-</pre>
-
-Sending multiple commands at once can be useful in some situations.  By default, the character for command stacking is the semicolon (;), but it can be changed in the preferences, input tab.  If you wish to remove command stacking, simply remove the character in the setting.
-
-You can double the command stacking character to actually send one.  If you have set the semicolon (;) as a delimiter for command stacking (the default), you can type:
-
-<pre>
-say one command;say another command with a wink emoticon ;;)
-</pre>
-
-This command is equivalent to writing:
-
-<pre>
-say one command
-say another command with a wink emoticon ;)
-</pre>
-
-Once the delimiter is present more than one time, it is not used as delimiter in the command stacking.  Therefore:
-
-| Command | Equivalent |
-| @say ;;)@ | @say ;)@ |
-| @say ;;;)@ | @say ;;)@ |
-| @say ;;;;)@ | @say ;;;)@ |
+h2. Command stacking
+
+Command stacking is a feature that allows users to send multiple commands at once.  For instance:
+
+<pre>
+say sounds;say good
+</pre>
+
+This syntax is equivalent to writing:
+
+<pre>
+say sounds
+say good
+</pre>
+
+Sending multiple commands at once can be useful in some situations.  By default, the character for command stacking is the semicolon (;), but it can be changed in the preferences, input tab.  If you wish to remove command stacking, simply remove the character in the setting.
+
+You can double the command stacking character to actually send one.  If you have set the semicolon (;) as a delimiter for command stacking (the default), you can type:
+
+<pre>
+say one command;say another command with a wink emoticon ;;)
+</pre>
+
+This command is equivalent to writing:
+
+<pre>
+say one command
+say another command with a wink emoticon ;)
+</pre>
+
+Once the delimiter is present more than one time, it is not used as delimiter in the command stacking.  Therefore:
+
+| Command | Equivalent |
+| @say ;;)@ | @say ;)@ |
+| @say ;;;)@ | @say ;;)@ |
+| @say ;;;;)@ | @say ;;;)@ |
