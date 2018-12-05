@@ -1,0 +1,9 @@
+h1. CocoMUD main Features
+
+Here are CocoMUD client's main features.
+
+* [[Macros|Macros]]
+
+A new line.
+
+Thanks for editing this document!
