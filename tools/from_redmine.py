@@ -19,7 +19,7 @@ from redminelib import Redmine
 parser = argparse.ArgumentParser(
         description="export wiki pages in TXT formats")
 parser.add_argument("lang", help="the language code (en, fr, es...)",
-        nargs='?', choices=["en", "fr"], default="en")
+        nargs='?', choices=["en", "es", "fr"], default="en")
 parser.add_argument("-i", "--interactive", action="store_true",
         help="should the program ask a confirmation for each file?")
 args = parser.parse_args()
