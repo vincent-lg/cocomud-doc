@@ -1,7 +1,24 @@
-h1. Quoi de neuf dans les récents builds
+﻿h1. Quoi de neuf dans les récents builds
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
+h2. Build 49
+
+* CocoMUD est à présent disponible en espagnol ! Un grand merci au contributeur qui a traduit CocoMUD dans cette langue et a participé à d'autres demandes pendant cette version.
+* CocoMUD tourne à présent sous Python 3, à la place de Python 2 (#128). Quelques erreurs mineures de compatibilité pourraient persister, n'hésitez pas à les signaler si vous en rencontrez.
+* Les macros et d'autres éléments de configuration sont maintenant correctement liés à une session, pas à un univers. Il n'y a donc plus de conflit si vous ouvrez plusieurs onglets sur le même univers (#136).
+* CocoMUD peut maintenant jouer des fichiers audio dans les format MP3, OGG et WAV sans distinction. L'ancienne dépendance sur @pygame@ a été rejetée, CocoMUD utilise à présent une bibliothèque audio bien plus légère et efficace (#134).
+* La console est à présent masquée quand CocoMUD se met à jour (#135). Cela fait parti d'un effort pour rendre la mise à jour plus agréable.
+* La console Python a été retirée du menu *Fichier*. À la place, un nouveau menu *Outils* a été ajouté la contenant.
+* Une console SharpScript a été ajoutée dans le menu *Outils*. Si vous avez utilisé CocoMUD depuis le début, vous vous souviendrez peut-être qu'il était possible d'entrer des instructions SharpScript (comme @#say@) directement dans le client. Cette option a été retirée car elle créait trop de conflit avec certains jeux. Vous pouvez maintenant entrer les exemples de configuration rapide dans cette console (#138).
+* CocoMUD prend à présent un argument de ligne de commande optionnel, permettant de spécifier un dossier de configuration différent. Par défaut, CocoMUD conserve ses données dans le répertoire courant (celui où se trouve *cocomud.exe*). On peut maintenant lui préciser un autre répertoire. Cette option ne sera sans doute pas utilisée par la plupart des utilisateurs, mais elle est bien pratique pour les développeurs (#139). Exemple d'utilisation : @cocomud.exe --config-dir=D:\CocoMUD@
+* Le compteur de notifications non lues augmentait systématiquement même si l'information reçue était dissimulée par un trigger muet. Cela a été corrigé (#127).
+* CocoMUD plantait à l'ouverture si aucune connexion Internet n'était disponible. Cela a été corrigé (#132).
+* Une régression a été corrigée, interdisant de créer et charger des personnages (#141). Notez également qu'afin de rendre CocoMUD plus facile à utiliser pour une population internationale croissante, la configuration des univers et mondes (principalement les fichiers @config.set@ pour commencer) seront convertis dans l'encodage utf-8. Cette opération se fait automatiquement et ne nécessite généralement aucune action de votre part.
+* Les erreurs générées dans la console Python n'étaient pas correctement affichées. Cela a été corrigé (#142).
+* Les couleurs en jeu n'étaient pas toujours affichées. Cela a été corrigé et optimisé (#144).
+* Note pour les développeurs : CocoMUD utilise maintenant @pipenv@ pour le support de ses dépendances, ce qui permet une installation depuis les sources bien plus simple. Une documentation plus détaillée sera fournie prochainement.
+
 h2. Build 48
 
 * Une option dans la barre de menu (*Jeu* -> *Canaux*) permet d'éditer les canaux. Vous trouverez [[Channels|la documentation sur les canaux ici]] (#120).

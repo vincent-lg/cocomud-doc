@@ -19,7 +19,7 @@ from redminelib import Redmine
 parser = argparse.ArgumentParser(
         description="import wiki pages in various languages")
 parser.add_argument("lang", help="the language code (en, fr, es...)",
-        nargs='?', choices=["en", "fr"], default="en")
+        nargs='?', choices=["en", "es", "fr"], default="en")
 parser.add_argument("-k", "--key", required=True,
         help="your Redmine API key")
 parser.add_argument("-i", "--interactive", action="store_true",
