@@ -2,8 +2,26 @@
 
 Cette page décrit les changements apportés par chaque build. Vous pouvez naviguer entre builds en utilisant la navigation par titre.
 
-h2. Build 49
-
+h2. Build 50
+
+* Ajoute une fonctionnalité empêchant certains jeux de vous déconnecter si vous êtes inactif (idle out) (#157). Cette fonctionnalité, une fois active, envoie simplement des commandes vides au serveur de jeu sur une base aléatoire. À noter que la plupart des serveurs de jeu interdisent l'utilisation de ce genre de fonctionnalités.
+* Ajout de la fonction @#randplay@ permettant de jouer un son aléatoire parmi une liste de possibilités (#118).
+* CocoMUD reconnaît et interprète convenablement le signal Telnet Go-Ahead (#130). En terne plus simple, CocoMUD devrait avoir bien moins tendance à couper des lignes de texte si le jeu envoie beaucoup d'informations d'un seul coup.
+* Ajout de la première version des pauses (delays), permettant la mise en place des timers, speed walking et autres fonctionnalités dans des futures versions (#156).
+* Le bloc-notes CocoMUD, utilisé pour écrire et lire des notes sur le jeu, ne masque plus la fenêtre du client (#158). Il est donc possible d'ouvrir ces deux fenêtres en même temps sans inconvénient.
+* CocoMUD peut à présent répéter la dernière commande entrée à l'aide de la fonction @#repeat@ (#151). Cela permet notamment de créer un alias @!@ pour répéter la dernière commande entrée.
+* Corrige un bug dans les macros utilisant le moins du pavé numérique (#154).
+* Corrige un bug empêchant d'importer un univers depuis un fichier (#152).
+* Corrige un bug dans les macros utilisant le raccourci @ALT + X@ ou @ALT + Shift + X@ (#149).
+* Créer un nouveau personnage est le choix par défaut si aucun personnage n'existe dans cet univers (#147).
+* Corrige un bug qui faisait planter CocoMUD à l'ouverture de la console SharpScript (#146).
+* Termine l'optimisation de la fenêtre de contenu (#133). Malheureusement, certains utilisateurs trouvent toujours CocoMUD assez lent quand il contient beaucoup de texte. Ce bug ne sera vraisemblablement pas corrigé, il n'est guère possible d'optimiser la fenêtre davantage et la solution reste d'effacer l'historique quand cela se produit.
+* Ajout d'un testeur de mise à jour pour s'assurer que les versions futures n'entraîneront pas de problèmes pour CocoMUD (#153).
+
+h2. Build 49
+
+
+
 * CocoMUD est à présent disponible en espagnol ! Un grand merci au contributeur qui a traduit CocoMUD dans cette langue et a participé à d'autres demandes pendant cette version.
 * CocoMUD tourne à présent sous Python 3, à la place de Python 2 (#128). Quelques erreurs mineures de compatibilité pourraient persister, n'hésitez pas à les signaler si vous en rencontrez.
 * Les macros et d'autres éléments de configuration sont maintenant correctement liés à une session, pas à un univers. Il n'y a donc plus de conflit si vous ouvrez plusieurs onglets sur le même univers (#136).
@@ -18,7 +36,8 @@ h2. Build 49
 * Les erreurs générées dans la console Python n'étaient pas correctement affichées. Cela a été corrigé (#142).
 * Les couleurs en jeu n'étaient pas toujours affichées. Cela a été corrigé et optimisé (#144).
 * Note pour les développeurs : CocoMUD utilise maintenant @pipenv@ pour le support de ses dépendances, ce qui permet une installation depuis les sources bien plus simple. Une documentation plus détaillée sera fournie prochainement.
-
+
+
 h2. Build 48
 
 * Une option dans la barre de menu (*Jeu* -> *Canaux*) permet d'éditer les canaux. Vous trouverez [[Channels|la documentation sur les canaux ici]] (#120).
