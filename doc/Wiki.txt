@@ -1,33 +1,33 @@
-h1. CocoMUD client
-
-CocoMUD client is a MUD client designed for ease-of-access with a screen reader.  It plans to offer just as many features as another MUD client, while remaining as accessible as possible through several features, including a Text-To-Speech (TTS) for speech and Braille messaging.
-
-[[cocomud-client:|Home]] [[Download|Download]] [[Basics|Quick start]] "New issue":https://cocomud.plan.io/projects/cocomud-client/issues/new
-
-Other languages: [[Fr:|French]].
-
-h2. Start using now
-
-To download CocoMUD, go to the [[Download|download page]].  You might also like to read [[Basics|CocoMUD basics]] to learn how to use the main features of CocoMUD.
-
-h2. Main features
-
-These features are the main tasks of the CocoMUD client roadmap.  You can click on one of these issues to see its progress as the project evolves.
-
-* A MUD client with a steady networking system (#5).
-* An accessible client with most screen readers (#6).
-* A portable client on Windows, Linux and Mac OS (#7).
-* A translated interface into different languages (#8).
-* A simple but powerful mechanism to customize the user experience (#9), with [[Alias|aliases]], [[Macros|macros]], [[Triggers|triggers]] and more.
-
-h2. Contact and discussions
-
-You have a bug to report, a feature to suggest?  You just want to say hello or talk about some ideas you have?
-
-* You can post on "CocoMUD forums":https://cocomud.plan.io/projects/cocomud-client/boards, assuming you have an account here (if not, "click here to register":https://cocomud.plan.io//account/register) .
-* You can "open a new issue":https://cocomud.plan.io/projects/cocomud-client/issues/new, assuming you have an account here (if not, "click here to register":https://cocomud.plan.io//account/register) .
-* You can subscribe an post to the "mailing list of CocoMUD":https://www.freelists.org/list/cocomud.  You don't need an account to do so, but you will need to subscribe by entering your email address.
-
-h2. Licensing
-
-CocoMUD is distributed under the "3-clause BSD":https://opensource.org/licenses/BSD-3-Clause.  Its source code can be found on its "Github repository":https://github.com/vlegoff/cocomud .  Note that the project itself (discussions, issues, forums, documentation) is hosted on "PlanIO":https://cocomud.plan.io.
+h1. CocoMUD client
+
+CocoMUD client is a MUD client designed for ease-of-access with a screen reader.  It plans to offer just as many features as another MUD client, while remaining as accessible as possible through several features, including a Text-To-Speech (TTS) for speech and Braille messaging.
+
+[[cocomud-client:|Home]] [[Download|Download]] [[Basics|Quick start]] "New issue":https://cocomud.plan.io/projects/cocomud-client/issues/new
+
+Other languages: [[Fr:|French]].
+
+h2. Start using now
+
+To download CocoMUD, go to the [[Download|download page]].  You might also like to read [[Basics|CocoMUD basics]] to learn how to use the main features of CocoMUD.
+
+h2. Main features
+
+These features are the main tasks of the CocoMUD client roadmap.  You can click on one of these issues to see its progress as the project evolves.
+
+* A MUD client with a steady networking system (#5).
+* An accessible client with most screen readers (#6).
+* A portable client on Windows, Linux and Mac OS (#7).
+* A translated interface into different languages (#8).
+* A simple but powerful mechanism to customize the user experience (#9), with [[Alias|aliases]], [[Macros|macros]], [[Triggers|triggers]] and more.
+
+h2. Contact and discussions
+
+You have a bug to report, a feature to suggest?  You just want to say hello or talk about some ideas you have?
+
+* You can post on "CocoMUD forums":https://cocomud.plan.io/projects/cocomud-client/boards, assuming you have an account here (if not, "click here to register":https://cocomud.plan.io//account/register) .
+* You can "open a new issue":https://cocomud.plan.io/projects/cocomud-client/issues/new, assuming you have an account here (if not, "click here to register":https://cocomud.plan.io//account/register) .
+* You can subscribe an post to the "mailing list of CocoMUD":https://www.freelists.org/list/cocomud.  You don't need an account to do so, but you will need to subscribe by entering your email address.
+
+h2. Licensing
+
+CocoMUD is distributed under the "3-clause BSD":https://opensource.org/licenses/BSD-3-Clause.  Its source code can be found on its "Github repository":https://github.com/vlegoff/cocomud .  Note that the project itself (discussions, issues, forums, documentation) is hosted on "PlanIO":https://cocomud.plan.io.

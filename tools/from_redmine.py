@@ -55,6 +55,7 @@ for page in pages:
 
     print("Writing", page.title, "in", path)
     text = page.text
+    text = text.replace("\r", "")
     with open(path, "w", encoding="utf-8") as file:
         file.write(text)
         file.close()
