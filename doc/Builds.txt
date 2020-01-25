@@ -2,6 +2,22 @@ h1. What's new in recent builds
 
 This page describes the new features added and changes made to each build.  You can browse through each build using headings.
 
+h2. Build 50
+
+* Add a feature to prevent some games from disconnecting you based on "idle out" (#157).  This simply sends empty commands randomly to the server.  Notice that most game servers forbid this kind of automatic playing.
+* Add the @#randplay@ function, to randomly play a sound from a list of files (#118).
+* CocoMUD now recognizes and act according to the Telnet Go-Ahead (#130).  In non-technical terms, users should see an improvement in CocoMUD's behavior when receiving long blocks of text that used to be cut in the middle.
+* Add the first version of delays in CocoMUD, paving the way for timers, speed walking and such (#156).
+* The notepad dialog, used to write/read notes in CocoMUD, doesn't hide the client window anymore (#158).  It is possible to have them both open at once.
+* CocoMUD now correctly handles the action to repeat the last entered command in the history (#151).  This means you can configure a @!@ alias to repeat the last command.
+* Fix a bug to use macros using the minus of the numeric keypad (#154).
+* Fix a bug preventing importing a world from a file (#152).
+* Fix a bug with macros using the combination @ALT + X@ or @ALT + Shift + X@ (#149).
+* Creating a new character is only the default choice if no character exists in this world (#147).
+* Fix a bug where CocoMUD crashed on opening the SharpScript console (#146).
+* Complete optimization of the output window (#133).  Unfortunately, some users are still complaining about strange sluggishness, but as it is, no better solution has been found, except clearing the output window.
+* Add an updater to make sure future releases don't break compatibility with CocoMUD (#153).
+
 h2. Build 49
 
 * CocoMUD is now available in Spanish!  Many thanks to the contributor who helped in translating CocoMUD in this language and offered additional help during this build.
