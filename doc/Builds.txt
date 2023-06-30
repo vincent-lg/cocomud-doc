@@ -4,15 +4,15 @@ This page describes the new features added and changes made to each build.  You 
 
 h2. Build 51
 
-*   Add a logger which writes your sessions' text (and the output you give) into a file on disk.  The logger is on by default, but it can be turned off for all sessions (see the logging preferences).  It can also be turned on and off for individual sessions (see the ***Game* menu).
-*   Add the `#pause` functions in SharpScript, to add a pause in your script between actions (like commands) to send to the MUD.  As usual, this is usable in aliases, macros or triggers.  You can add the `#pause` function directly from the interface.
+*   Add a logger which writes your sessions' text (and the output you give) into a file on disk.  The logger is on by default, but it can be turned off for all sessions (see the logging preferences).  It can also be turned on and off for individual sessions (see the *Game* menu).
+*   Add the @#pause@ functions in SharpScript, to add a pause in your script between actions (like commands) to send to the MUD.  As usual, this is usable in aliases, macros or triggers.  You can add the @#pause@ function directly from the interface.
 *   Add the variable functionality to SharpScript.  SharpScript variables can retain information while the session is running (variables will remain if you reconnect to the same session).  Variables can store contextual information which can be used later.
 
-    To add a variable, you can use the `#writevar` SharpScript function (once again, you can add it directly from the interface, have it set on aliases, macros or triggers).  On a MUD with spacecrafts, for instance, you might want to create a variable `curship` which contains the name of your current ship.  You would set it through an alias (add an alias `curship *` that does `#writevar curship $1`, that is, what's after the space will be set in the `curship` variable).  You can then use it later very simply in all your SharpScript, like `#send {openhatch $curship}`.  If you have to perform a lot of operations on a ship, this could save time.
+    To add a variable, you can use the @#writevar@ SharpScript function (once again, you can add it directly from the interface, have it set on aliases, macros or triggers).  On a MUD with spacecrafts, for instance, you might want to create a variable @curship@ which contains the name of your current ship.  You would set it through an alias (add an alias @curship *@ that does @#writevar curship $1@, that is, what's after the space will be set in the @curship@ variable).  You can then use it later very simply in all your SharpScript, like @#send {openhatch $curship}@.  If you have to perform a lot of operations on a ship, this could save time.
 
-    You also have access to the `#checkvar` SharpScript function which checks that the variable exists.  If it does not, `#checkvar` can send you a message and will stop the script right there.  This is very useful in some contexts to make sure varibles exist before proceeding.
+    You also have access to the @#checkvar@ SharpScript function which checks that the variable exists.  If it does not, @#checkvar@ can send you a message and will stop the script right there.  This is very useful in some contexts to make sure varibles exist before proceeding.
 
-> Note : these features are used from the SharpScript interface.  They have been tested in different contexts.  Few users have played with Python in SharpScript.  If you are one of them, though, know that additional documentation and better code is currently being written to support more intuitive Python code inside the SharpScript engine.
+> Note: these features are used from the SharpScript interface.  They have been tested in different contexts.  Few users have played with Python in SharpScript.  If you are one of them, though, know that additional documentation and better code is currently being written to support more intuitive Python code inside the SharpScript engine.
 
 h2. Build 50
 
